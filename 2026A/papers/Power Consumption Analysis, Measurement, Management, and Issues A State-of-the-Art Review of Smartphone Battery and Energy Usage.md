@@ -1,0 +1,1 @@
+论文标题 DOI 官方链接 免费获取渠道 核心关联因素 Power Consumption Analysis, Measurement, Management, and Issues: A State-of-the-Art Review of Smartphone Battery and Energy Usage 10.1016/j.rser.2019.109402 https://www.sciencedirect.com/science/article/pii/S1364032119306634 Sci-Hub（https://sci-hub.ru/downloads/2019-12-20/77/pramanik2019.pdf） 硬件组件、网络连接、应用负载、电池老化、环境温度

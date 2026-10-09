@@ -1,0 +1,73 @@
+\section{Model Preparation}
+
+\subsection{Assumptions and Justifications}
+
+To develop a tractable yet accurate model, we make the following assumptions:
+
+\begin{table}[H]
+\centering
+\caption{Model Assumptions and Justifications}
+\label{tab:assumptions}
+\begin{tabular}{p{0.4\textwidth}p{0.55\textwidth}}
+\toprule
+\textbf{Assumption} & \textbf{Justification} \\
+\midrule
+\textbf{A1:} Battery cell temperature is spatially uniform & Smartphone batteries are thin ($<5$mm) with high thermal conductivity, making temperature gradients negligible (<2°C) \\
+\midrule
+\textbf{A2:} Electrochemical reactions are quasi-equilibrium & Typical discharge rates (0.2C-1C) allow equilibrium assumptions; validated by small hysteresis \\
+\midrule
+\textbf{A3:} Aging effects are separable from instantaneous dynamics & Aging timescales (months) are much longer than operational timescales (hours) \\
+\midrule
+\textbf{A4:} Power consumption is additive across components & Component isolation in smartphone design allows linear superposition \\
+\midrule
+\textbf{A5:} OCV-SOC relationship is monotonic & Lithium-ion chemistry exhibits monotonic voltage-capacity curves in operational range \\
+\midrule
+\textbf{A6:} Environmental conditions (humidity, pressure) have secondary effects & Temperature dominates; humidity/pressure corrections are <3\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Data Sources and Preprocessing}
+
+Our model is calibrated and validated using multiple data sources:
+
+\begin{enumerate}
+    \item \textbf{Battery characterization data:} Laboratory measurements of OCV-SOC curves, impedance spectra, and capacity fade from published literature \cite{chen2021, bole2014}
+    
+    \item \textbf{Usage pattern data:} Real-world smartphone usage traces capturing screen time, app usage, and network activity
+    
+    \item \textbf{Environmental data:} Temperature profiles representing diverse operating conditions from -10°C to 45°C
+\end{enumerate}
+
+Data preprocessing steps include:
+\begin{itemize}
+    \item Outlier removal using 3-sigma filtering
+    \item Resampling to uniform time intervals (1-second resolution)
+    \item Synchronization of multi-source data streams
+    \item Normalization of capacity measurements to nominal values
+\end{itemize}
+
+\subsection{Model Parameters}
+
+Table \ref{tab:parameters} presents the baseline parameter values used in our models.
+
+\begin{table}[H]
+\centering
+\caption{Baseline Model Parameters}
+\label{tab:parameters}
+\begin{tabular}{llll}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Unit} & \textbf{Source} \\
+\midrule
+Nominal capacity $Q_{\text{nom}}$ & 4000 & mAh & Typical smartphone \\
+Ohmic resistance $R_0$ & 0.05 & $\Omega$ & ECM fitting \\
+Polarization $R_1$ & 0.02 & $\Omega$ & ECM fitting \\
+Polarization $R_2$ & 0.015 & $\Omega$ & ECM fitting \\
+Time constant $\tau_1$ & 30 & s & ECM fitting \\
+Time constant $\tau_2$ & 300 & s & ECM fitting \\
+Activation energy $E_a$ & 20000 & J/mol & Literature \\
+Reference temperature $T_{\text{ref}}$ & 298.15 & K & Standard \\
+SEI growth rate $k_{\text{SEI}}$ & $2\times10^{-7}$ & 1/s$^{0.5}$ & Calibration \\
+\bottomrule
+\end{tabular}
+\end{table}

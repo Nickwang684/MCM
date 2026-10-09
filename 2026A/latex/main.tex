@@ -1,0 +1,102 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{natbib}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Team \#XXXXXX}
+\lhead{Page \thepage\ of 25}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Custom commands
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\soc}{\text{SOC}}
+\newcommand{\ocv}{\text{OCV}}
+\newcommand{\expect}{\mathbb{E}}
+
+% Colors
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Listing style
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\begin{document}
+
+% Summary (no page number on first page header)
+\thispagestyle{empty}
+\input{sections/summary}
+
+\newpage
+\setcounter{page}{2}
+\input{sections/introduction}
+
+\newpage
+\input{sections/model_preparation}
+
+\newpage
+\input{sections/model1_soc}
+
+\newpage
+\input{sections/model2_prediction}
+
+\newpage
+\input{sections/model3_performance}
+
+\newpage
+\input{sections/sensitivity}
+
+\newpage
+\input{sections/conclusion}
+
+% References
+\newpage
+\bibliographystyle{plain}
+\bibliography{references}
+
+% Appendix
+\newpage
+\appendix
+\input{sections/appendix}
+
+\end{document}

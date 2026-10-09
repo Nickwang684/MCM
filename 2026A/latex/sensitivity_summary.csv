@@ -1,0 +1,10 @@
+Parameter,S1,ST,mu_star,sigma,Classification
+Initial SOC,0.3686,0.7099,5.5929,5.6606,High
+CPU Utilization,0.1203,0.3891,4.0536,4.6553,High
+Nominal Capacity,0.0990,0.0904,2.5964,2.9947,Medium
+Screen Brightness,0.0000,0.0768,2.0283,2.5756,Medium
+GPS Status,0.1515,0.0549,1.3783,1.8983,Medium
+Network Power,0.0128,0.0455,1.0860,1.4230,Medium
+State of Health,0.0000,0.0302,1.3711,1.6152,Medium
+Internal Resist.,0.0000,0.0000,0.0000,0.0000,Low
+Ambient Temp.,0.0000,0.0000,0.0000,0.0000,Low

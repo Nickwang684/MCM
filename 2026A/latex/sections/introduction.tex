@@ -1,0 +1,115 @@
+\section{Introduction}
+
+\subsection{Background}
+
+The proliferation of smartphones has fundamentally transformed how people communicate, work, and access information. As of 2024, there are over 6.8 billion smartphone users worldwide, with the average user spending more than 4 hours daily on their devices \cite{statista2024}. This intensive usage pattern places significant demands on battery systems, making battery life a critical determinant of user satisfaction and device utility.
+
+Lithium-ion batteries, the predominant power source for modern smartphones, operate through complex electrochemical processes that are influenced by numerous factors including temperature, discharge rate, usage patterns, and aging effects \cite{chen2021}. Understanding these dynamics is essential for:
+
+\begin{itemize}
+    \item \textbf{Accurate remaining time prediction:} Users rely on battery indicators to plan their activities
+    \item \textbf{Power management optimization:} Operating systems need reliable models for adaptive power control
+    \item \textbf{Battery health assessment:} Predicting capacity fade informs replacement decisions
+    \item \textbf{Thermal safety:} Preventing dangerous operating conditions requires real-time monitoring
+\end{itemize}
+
+The challenge lies in developing models that are simultaneously accurate, computationally efficient for real-time implementation, and robust across diverse operating conditions.
+
+\subsection{Problem Restatement}
+
+We are tasked with developing a comprehensive mathematical framework for smartphone battery discharge modeling. Specifically, we must address:
+
+\textbf{Task 1 - SOC Modeling:} Develop a continuous-time differential equation model for State of Charge (SOC) that:
+\begin{itemize}[noitemsep]
+    \item Captures fundamental electrochemical discharge mechanisms
+    \item Incorporates equivalent circuit model (ECM) dynamics
+    \item Enables real-time state estimation through filtering techniques
+    \item Accounts for multi-component power consumption patterns
+\end{itemize}
+
+\textbf{Task 2 - Depletion Time Prediction:} Create a prediction model that:
+\begin{itemize}[noitemsep]
+    \item Estimates remaining battery life under current and projected usage
+    \item Couples thermal effects with discharge dynamics
+    \item Validates predictions against realistic usage scenarios
+\end{itemize}
+
+\textbf{Task 3 - Performance Impact Analysis:} Develop models to analyze:
+\begin{itemize}[noitemsep]
+    \item Battery aging mechanisms and capacity fade
+    \item Impact of operational factors on long-term battery health
+    \item Recommendations for optimizing battery longevity
+\end{itemize}
+
+\subsection{Our Work}
+
+Our solution integrates electrochemical modeling, thermal dynamics, and statistical analysis into a unified framework. Figure \ref{fig:workflow} presents our overall approach.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=1.2cm, auto,
+    block/.style={rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=3em},
+    bigblock/.style={rectangle, draw, fill=green!20, text width=8em, text centered, rounded corners, minimum height=3em},
+    line/.style={draw, -latex'},
+    cloud/.style={ellipse, draw, fill=red!20, minimum height=2em}]
+    
+    % Nodes
+    \node [block] (data) {Data Collection};
+    \node [block, right=of data] (ecm) {ECM Model};
+    \node [block, right=of ecm] (ekf) {EKF Estimation};
+    
+    \node [bigblock, below=of data] (model1) {Model 1: SOC Dynamics};
+    \node [bigblock, below=of ecm] (model2) {Model 2: Depletion Prediction};
+    \node [bigblock, below=of ekf] (model3) {Model 3: Aging Analysis};
+    
+    \node [block, below=of model2] (sensitivity) {Sensitivity Analysis};
+    \node [cloud, below=of sensitivity] (output) {Results \& Recommendations};
+    
+    % Arrows
+    \path [line] (data) -- (ecm);
+    \path [line] (ecm) -- (ekf);
+    \path [line] (data) -- (model1);
+    \path [line] (ecm) -- (model2);
+    \path [line] (ekf) -- (model3);
+    \path [line] (model1) -- (sensitivity);
+    \path [line] (model2) -- (sensitivity);
+    \path [line] (model3) -- (sensitivity);
+    \path [line] (sensitivity) -- (output);
+\end{tikzpicture}
+\caption{Workflow of our integrated battery modeling framework}
+\label{fig:workflow}
+\end{figure}
+
+\textbf{Key innovations in our approach include:}
+
+\begin{enumerate}
+    \item \textbf{Adaptive ECM-EKF Integration:} We employ a second-order equivalent circuit model with Extended Kalman Filter for robust SOC estimation that adapts to varying operating conditions.
+    
+    \item \textbf{Temperature-Coupled Prediction:} Our depletion time model incorporates Arrhenius-based thermal effects, capturing the nonlinear impact of temperature on battery capacity.
+    
+    \item \textbf{Multi-Scale Aging Framework:} We model aging across multiple timescales, from instantaneous stress factors to long-term capacity fade.
+    
+    \item \textbf{Global Sensitivity Analysis:} Sobol indices and Morris screening identify the most influential parameters, guiding both model refinement and practical recommendations.
+\end{enumerate}
+
+Table \ref{tab:notation} summarizes the key notation used throughout this paper.
+
+\begin{table}[H]
+\centering
+\caption{Nomenclature and Symbols}
+\label{tab:notation}
+\begin{tabular}{cl|cl}
+\toprule
+\textbf{Symbol} & \textbf{Description} & \textbf{Symbol} & \textbf{Description} \\
+\midrule
+$\soc$ & State of Charge (\%) & $T$ & Temperature (K) \\
+$\ocv$ & Open Circuit Voltage (V) & $Q_{\max}$ & Maximum capacity (Ah) \\
+$I$ & Current (A) & $R_0$ & Ohmic resistance ($\Omega$) \\
+$V_t$ & Terminal voltage (V) & $R_1, R_2$ & Polarization resistance ($\Omega$) \\
+$C_1, C_2$ & RC time constants (F) & $P_{\text{total}}$ & Total power consumption (W) \\
+$\eta_c$ & Coulombic efficiency & $\text{SOH}$ & State of Health (\%) \\
+$E_a$ & Activation energy (J/mol) & $k_{\text{SEI}}$ & SEI growth rate \\
+$C_{\text{rate}}$ & Discharge rate (C) & $\Delta t$ & Time step (s) \\
+\bottomrule
+\end{tabular}
+\end{table}

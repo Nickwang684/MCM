@@ -1,0 +1,96 @@
+% Report on Use of AI Tools
+% Per COMAP 2025 Contest Policy - This section is outside the 25-page limit
+
+\section*{Report on Use of AI Tools}
+\addcontentsline{toc}{section}{Report on Use of AI Tools}
+
+In accordance with COMAP's 2025 policy on AI tool usage, we disclose the following applications of artificial intelligence tools during the development of this solution.
+
+\vspace{1em}
+
+\noindent\textbf{1. Claude (Anthropic, Claude-3.5 Sonnet, January 2025 version)}
+
+\noindent\textit{Purpose:} Literature review, mathematical model development, code implementation assistance, and writing refinement.
+
+\noindent\textbf{Query 1:}
+\begin{quote}
+``Summarize the key methods for State of Charge (SOC) estimation in lithium-ion batteries, including Coulomb counting, Kalman filtering, and model-based approaches. Include relevant academic references.''
+\end{quote}
+
+\noindent\textbf{Output 1:} The AI provided a structured summary of SOC estimation methods including: (1) Coulomb counting with integration error accumulation issues, (2) OCV-based methods using voltage-SOC relationships, (3) Extended Kalman Filter approaches combining models with measurements, and (4) equivalent circuit model methods. References to Plett (2004, 2015), Hu et al. (2012), and Chen \& Rinc\'on-Mora (2006) were suggested. \textit{We verified all references against original sources and incorporated relevant methods into our model.}
+
+\vspace{0.5em}
+
+\noindent\textbf{Query 2:}
+\begin{quote}
+``Derive the state-space equations for a 2-RC equivalent circuit model coupled with thermal dynamics, suitable for Extended Kalman Filter implementation.''
+\end{quote}
+
+\noindent\textbf{Output 2:} The AI provided the coupled ODE system with state vector $[SOC, V_{RC1}, V_{RC2}, T]^T$, including the Coulomb counting equation, RC branch dynamics, and lumped thermal model. \textit{We independently verified the equations through dimensional analysis and adapted them to include SOH dynamics for our aging model.}
+
+\vspace{0.5em}
+
+\noindent\textbf{Query 3:}
+\begin{quote}
+``Implement a 4th-order Runge-Kutta solver in Python for the coupled SOC-thermal ODE system with adaptive time-stepping.''
+\end{quote}
+
+\noindent\textbf{Output 3:} The AI provided Python code using scipy.integrate.solve\_ivp with RK45 method. \textit{We modified the code for our specific model parameters and validated against analytical solutions for simplified cases.}
+
+\vspace{0.5em}
+
+\noindent\textbf{Query 4:}
+\begin{quote}
+``Explain the Sobol sensitivity analysis method and how to implement it for battery model parameter importance ranking.''
+\end{quote}
+
+\noindent\textbf{Output 4:} The AI explained variance-based global sensitivity with first-order and total-order indices, and suggested using SALib Python library. \textit{We implemented the method following Saltelli et al. (2008) and verified results with manual parameter sweeps.}
+
+\vspace{1em}
+
+\noindent\textbf{2. GitHub Copilot (January 2025 version)}
+
+\noindent\textit{Purpose:} Auto-completions for Python/MATLAB code used in preparing numerical simulations and data visualization.
+
+\noindent\textbf{Usage:} Code auto-completion suggestions were used for boilerplate code in plotting functions, file I/O operations, and array manipulations. All auto-completed code was reviewed and tested before inclusion.
+
+\vspace{1em}
+
+\noindent\textbf{3. Baidu Translate / DeepL (2025 version)}
+
+\noindent\textit{Purpose:} Translation assistance for technical terminology verification.
+
+\noindent\textbf{Usage:} Used to verify translations of technical battery terminology between Chinese and English to ensure accuracy in the final English report.
+
+\vspace{1em}
+
+\noindent\textbf{4. MATLAB (R2024a with Symbolic Math Toolbox)}
+
+\noindent\textit{Purpose:} Symbolic computation and numerical simulation.
+
+\noindent\textbf{Usage:} Built-in functions including ode45 solver, symbolic differentiation for Jacobian computation, and optimization toolbox for parameter fitting. These are standard computational tools with embedded AI-assisted features.
+
+\vspace{1em}
+
+\noindent\textbf{5. Python Libraries (NumPy, SciPy, SALib)}
+
+\noindent\textit{Purpose:} Numerical computation and sensitivity analysis.
+
+\noindent\textbf{Usage:} Standard scientific computing libraries used for ODE solving, optimization, and Sobol sensitivity analysis implementation.
+
+\vspace{1.5em}
+
+\subsection*{Verification and Validation Statement}
+
+All AI-assisted outputs were subject to rigorous verification:
+\begin{itemize}[noitemsep]
+    \item Mathematical equations were verified through dimensional analysis and boundary condition checks
+    \item All literature citations were traced to original sources and verified for accuracy
+    \item Numerical code was validated against analytical solutions where available
+    \item Model predictions were compared against experimental data from published datasets
+    \item Final writing was reviewed by all team members for technical accuracy
+\end{itemize}
+
+\subsection*{Statement of Originality}
+
+The core intellectual contributions of this work---including problem interpretation, model architecture design, result analysis, and scientific conclusions---represent the original work of the team members. AI tools served as productivity aids; all strategic decisions and critical evaluations were performed by the human team.

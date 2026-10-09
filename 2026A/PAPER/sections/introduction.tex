@@ -1,0 +1,91 @@
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{Background}
+\label{subsec:background}
+
+Smartphones have become indispensable tools in modern life, serving as communication hubs, navigation systems, entertainment devices, and productivity platforms. At the heart of every smartphone lies a lithium-ion battery that powers these diverse functions. With global smartphone users exceeding 6.8 billion in 2024, battery performance directly impacts the daily experience of a significant portion of the world's population. Studies by Carroll and Heiser \cite{Carroll2010} and Pathak et al. \cite{Pathak2012} have characterized the complex power consumption patterns of modern smartphones.
+
+Battery State of Charge (SOC) represents the remaining capacity relative to the total usable capacity, typically expressed as a percentage. Accurate SOC estimation and prediction are crucial for:
+\begin{itemize}
+    \item \textbf{User Experience:} Providing reliable ``time remaining'' estimates helps users plan their activities.
+    \item \textbf{Battery Management Systems (BMS):} SOC informs charging algorithms and protects against over-discharge.
+    \item \textbf{Operating System Optimization:} Power management decisions rely on accurate state estimates.
+\end{itemize}
+
+Despite advances in battery technology, users consistently report battery anxiety---the fear of running out of power before reaching a charging opportunity. This concern is exacerbated by increasingly power-hungry applications, high-resolution displays, and always-on connectivity features.
+
+\subsection{Problem Restatement}
+\label{subsec:problem}
+
+The 2026 MCM Problem A challenges us to develop a \textbf{continuous-time mathematical model} for smartphone battery SOC as a function of time. Specifically, we address the following tasks:
+
+\begin{enumerate}
+    \item \textbf{SOC Dynamics Modeling:} Develop a continuous-time model $\SOC(t)$ that captures battery discharge under various usage scenarios, considering factors such as screen brightness, CPU utilization, network activity, and environmental conditions.
+    
+    \item \textbf{Time-to-Empty Prediction:} Create a predictive model that estimates when the battery will reach a critical low threshold, accounting for uncertainty in usage patterns and environmental conditions.
+    
+    \item \textbf{Sensitivity Analysis:} Identify which factors most significantly affect battery drain rate and, importantly, which factors have surprisingly minimal impact despite common perceptions.
+    
+    \item \textbf{Practical Recommendations:} Provide actionable advice for smartphone users and operating system designers to optimize battery life, including quantitative estimates of improvement potential.
+    
+    \item \textbf{Model Generalization:} Discuss how the model can be extended to other battery-powered portable devices.
+\end{enumerate}
+
+\subsection{Our Approach}
+\label{subsec:approach}
+
+We adopt a \textbf{task-driven, multi-model framework} that systematically addresses each problem requirement. Our approach combines electrochemical principles \cite{Plett2015} with practical engineering considerations \cite{Waag2014} to achieve both accuracy and computational efficiency.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.2cm,
+        box/.style={rectangle, draw, minimum width=3cm, minimum height=0.8cm, align=center, fill=blue!10},
+        arrow/.style={->, thick, >=stealth}
+    ]
+        % Inputs
+        \node[box, fill=green!20] (input) {Usage Inputs\\(Brightness, CPU, Network, GPS)};
+        
+        % Models
+        \node[box, below=of input] (power) {Power Model\\$P(t) = \sum P_i(t)$};
+        \node[box, below=of power] (soc) {SOC Dynamics\\(Model 1: 2-RC ECM)};
+        \node[box, right=1.5cm of soc] (thermal) {Thermal Model\\$dT/dt$};
+        \node[box, left=1.5cm of soc] (aging) {Aging Model\\$dSOH/dt$};
+        
+        % Outputs
+        \node[box, below=of soc, fill=orange!20] (pred) {Time-to-Empty\\(Model 2)};
+        \node[box, below=of pred, fill=red!20] (sens) {Sensitivity Analysis\\(Sobol Indices)};
+        \node[box, below=of sens, fill=yellow!30] (rec) {Recommendations\\(User + OS)};
+        
+        % Arrows
+        \draw[arrow] (input) -- (power);
+        \draw[arrow] (power) -- (soc);
+        \draw[arrow] (soc) -- (thermal);
+        \draw[arrow] (soc) -- (aging);
+        \draw[arrow] (thermal) -- (soc);
+        \draw[arrow] (aging) -- (soc);
+        \draw[arrow] (soc) -- (pred);
+        \draw[arrow] (pred) -- (sens);
+        \draw[arrow] (sens) -- (rec);
+        
+    \end{tikzpicture}
+    \caption{Model framework overview: From usage inputs to actionable recommendations.}
+    \label{fig:workflow}
+\end{figure}
+
+\textbf{Key methodological choices:}
+
+\begin{itemize}
+    \item \textbf{Second-Order Equivalent Circuit Model (2-RC ECM):} We select this model class for its balance between accuracy and computational tractability. Unlike computationally intensive electrochemical models (e.g., P2D), ECM enables real-time simulation while maintaining voltage prediction errors below 30 mV.
+    
+    \item \textbf{Continuous-Time ODE Formulation:} All dynamics are expressed as continuous-time differential equations, which naturally capture transient behaviors and allow flexible numerical integration.
+    
+    \item \textbf{Extended Kalman Filter (EKF):} To mitigate accumulated errors from Coulomb counting, we incorporate EKF for online SOC correction using voltage measurements.
+    
+    \item \textbf{Global Sensitivity Analysis:} Sobol indices quantify each parameter's contribution to output variance, enabling rigorous identification of key factors.
+    
+    \item \textbf{Monte Carlo Uncertainty Quantification:} Parameter uncertainty propagates through the model to provide confidence intervals for predictions.
+\end{itemize}
+
+The remainder of this paper is organized as follows: Section~\ref{sec:assumptions} presents our assumptions and notation. Sections~\ref{sec:model1}--\ref{sec:model3} develop our three-model framework. Section~\ref{sec:sensitivity} analyzes sensitivity. Section~\ref{sec:strengths} discusses strengths and weaknesses. Section~\ref{sec:conclusion} provides conclusions and recommendations.

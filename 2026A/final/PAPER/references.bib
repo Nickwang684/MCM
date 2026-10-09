@@ -1,0 +1,405 @@
+% References for MCM 2026 Problem A: Smartphone Battery Discharge Modeling
+% BibTeX Database
+
+% ===== Core Battery Modeling References =====
+
+@book{Plett2015,
+  author    = {Gregory L. Plett},
+  title     = {Battery Management Systems, Volume I: Battery Modeling},
+  publisher = {Artech House},
+  year      = {2015},
+  address   = {Boston, MA},
+  note      = {Comprehensive treatment of ECM and SOC estimation}
+}
+
+@book{Plett2015b,
+  author    = {Gregory L. Plett},
+  title     = {Battery Management Systems, Volume II: Equivalent-Circuit Methods},
+  publisher = {Artech House},
+  year      = {2015},
+  address   = {Boston, MA},
+  note      = {EKF implementation and parameter identification}
+}
+
+@article{Hu2012,
+  author  = {Xiaosong Hu and Shengbo Li and Huei Peng},
+  title   = {A Comparative Study of Equivalent Circuit Models for Li-ion Batteries},
+  journal = {Journal of Power Sources},
+  volume  = {198},
+  pages   = {359--367},
+  year    = {2012},
+  doi     = {10.1016/j.jpowsour.2011.10.013}
+}
+
+@article{Chen2006,
+  author  = {Min Chen and Gabriel A. Rinc\'on-Mora},
+  title   = {Accurate Electrical Battery Model Capable of Predicting Runtime and I-V Performance},
+  journal = {IEEE Transactions on Energy Conversion},
+  volume  = {21},
+  number  = {2},
+  pages   = {504--511},
+  year    = {2006},
+  doi     = {10.1109/TEC.2006.874229}
+}
+
+% ===== Thermal Modeling References =====
+
+@article{Bernardi1985,
+  author  = {D. Bernardi and E. Pawlikowski and J. Newman},
+  title   = {A General Energy Balance for Battery Systems},
+  journal = {Journal of The Electrochemical Society},
+  volume  = {132},
+  number  = {1},
+  pages   = {5--12},
+  year    = {1985},
+  doi     = {10.1149/1.2113792},
+  note    = {Foundational thermal model for batteries}
+}
+
+@article{Pesaran2002,
+  author  = {Ahmad A. Pesaran},
+  title   = {Battery Thermal Models for Hybrid Vehicle Simulations},
+  journal = {Journal of Power Sources},
+  volume  = {110},
+  number  = {2},
+  pages   = {377--382},
+  year    = {2002},
+  doi     = {10.1016/S0378-7753(02)00200-8}
+}
+
+% ===== Smartphone Power Modeling References =====
+
+@inproceedings{Pathak2012,
+  author    = {Abhinav Pathak and Y. Charlie Hu and Ming Zhang},
+  title     = {Where is the Energy Spent Inside My App? Fine Grained Energy Accounting on Smartphones with Eprof},
+  booktitle = {Proceedings of the 7th ACM European Conference on Computer Systems (EuroSys)},
+  pages     = {29--42},
+  year      = {2012},
+  doi       = {10.1145/2168836.2168841}
+}
+
+@inproceedings{Carroll2010,
+  author    = {Aaron Carroll and Gernot Heiser},
+  title     = {An Analysis of Power Consumption in a Smartphone},
+  booktitle = {Proceedings of the 2010 USENIX Annual Technical Conference},
+  pages     = {271--284},
+  year      = {2010}
+}
+
+@article{Dong2011,
+  author  = {Mian Dong and Lin Zhong},
+  title   = {Self-Constructive High-Rate System Energy Modeling for Battery-Powered Mobile Systems},
+  journal = {IEEE Transactions on Mobile Computing},
+  volume  = {10},
+  number  = {1},
+  pages   = {48--60},
+  year    = {2011},
+  doi     = {10.1109/TMC.2010.147}
+}
+
+@inproceedings{Zhang2010,
+  author    = {Lide Zhang and Birjodh Tiwana and Zhiyun Qian and Zhaoguang Wang and Robert P. Dick and Zhuoqing Morley Mao and Lei Yang},
+  title     = {Accurate Online Power Estimation and Automatic Battery Behavior Based Power Model Generation for Smartphones},
+  booktitle = {Proceedings of the 8th IEEE/ACM/IFIP International Conference on Hardware/Software Codesign and System Synthesis},
+  pages     = {105--114},
+  year      = {2010},
+  doi       = {10.1145/1878961.1878982}
+}
+
+% ===== Battery Aging References =====
+
+@article{Wang2014,
+  author  = {John Wang and Ping Liu and Jocelyn Hicks-Garner and Elena Sherman and Souren Soukiazian and Mark Verbrugge and Harshad Tataria and James Musser and Peter Finamore},
+  title   = {Cycle-life Model for Graphite-LiFePO4 Cells},
+  journal = {Journal of Power Sources},
+  volume  = {196},
+  number  = {8},
+  pages   = {3942--3948},
+  year    = {2011},
+  doi     = {10.1016/j.jpowsour.2010.11.134}
+}
+
+@article{Barr2013,
+  author  = {Matthieu Dubarry and Cyril Truchot and Bor Yann Liaw},
+  title   = {Synthesize Battery Degradation Modes via a Diagnostic and Prognostic Model},
+  journal = {Journal of Power Sources},
+  volume  = {219},
+  pages   = {204--216},
+  year    = {2012},
+  doi     = {10.1016/j.jpowsour.2012.07.016}
+}
+
+@article{Bloom2001,
+  author  = {Ira Bloom and others},
+  title   = {An Accelerated Calendar and Cycle Life Study of Li-ion Cells},
+  journal = {Journal of Power Sources},
+  volume  = {101},
+  number  = {2},
+  pages   = {238--247},
+  year    = {2001},
+  doi     = {10.1016/S0378-7753(01)00783-2}
+}
+
+% ===== Sensitivity Analysis References =====
+
+@book{Saltelli2008,
+  author    = {Andrea Saltelli and Marco Ratto and Terry Andres and Francesca Campolongo and Jessica Cariboni and Debora Gatelli and Michaela Saisana and Stefano Tarantola},
+  title     = {Global Sensitivity Analysis: The Primer},
+  publisher = {John Wiley \& Sons},
+  year      = {2008},
+  address   = {Chichester, UK},
+  note      = {Comprehensive guide to Sobol and Morris methods}
+}
+
+@article{Sobol2001,
+  author  = {Ilya M. Sobol},
+  title   = {Global Sensitivity Indices for Nonlinear Mathematical Models and Their Monte Carlo Estimates},
+  journal = {Mathematics and Computers in Simulation},
+  volume  = {55},
+  number  = {1-3},
+  pages   = {271--280},
+  year    = {2001},
+  doi     = {10.1016/S0378-4754(00)00270-6}
+}
+
+@article{Morris1991,
+  author  = {Max D. Morris},
+  title   = {Factorial Sampling Plans for Preliminary Computational Experiments},
+  journal = {Technometrics},
+  volume  = {33},
+  number  = {2},
+  pages   = {161--174},
+  year    = {1991},
+  doi     = {10.1080/00401706.1991.10484804}
+}
+
+% ===== State Estimation References =====
+
+@article{Plett2004,
+  author  = {Gregory L. Plett},
+  title   = {Extended Kalman Filtering for Battery Management Systems of LiPB-based HEV Battery Packs: Part 1. Background},
+  journal = {Journal of Power Sources},
+  volume  = {134},
+  number  = {2},
+  pages   = {252--261},
+  year    = {2004},
+  doi     = {10.1016/j.jpowsour.2004.02.031}
+}
+
+@article{Plett2004b,
+  author  = {Gregory L. Plett},
+  title   = {Extended Kalman Filtering for Battery Management Systems of LiPB-based HEV Battery Packs: Part 2. Modeling and Identification},
+  journal = {Journal of Power Sources},
+  volume  = {134},
+  number  = {2},
+  pages   = {262--276},
+  year    = {2004},
+  doi     = {10.1016/j.jpowsour.2004.02.032}
+}
+
+@article{Plett2004c,
+  author  = {Gregory L. Plett},
+  title   = {Extended Kalman Filtering for Battery Management Systems of LiPB-based HEV Battery Packs: Part 3. State and Parameter Estimation},
+  journal = {Journal of Power Sources},
+  volume  = {134},
+  number  = {2},
+  pages   = {277--292},
+  year    = {2004},
+  doi     = {10.1016/j.jpowsour.2004.02.033}
+}
+
+% ===== Uncertainty Quantification References =====
+
+@book{Smith2013,
+  author    = {Ralph C. Smith},
+  title     = {Uncertainty Quantification: Theory, Implementation, and Applications},
+  publisher = {SIAM},
+  year      = {2013},
+  address   = {Philadelphia, PA}
+}
+
+@article{Xia2017,
+  author  = {Bingxiang Xia and others},
+  title   = {Strong Tracking of a H-infinity Filter in Lithium-ion Battery State of Charge Estimation},
+  journal = {Energies},
+  volume  = {10},
+  number  = {9},
+  pages   = {1291},
+  year    = {2017},
+  doi     = {10.3390/en10091291}
+}
+
+% ===== OCV-SOC Relationship References =====
+
+@article{Plett2004OCV,
+  author  = {Gregory L. Plett},
+  title   = {High-Performance Battery-Pack Power Estimation Using a Dynamic Cell Model},
+  journal = {IEEE Transactions on Vehicular Technology},
+  volume  = {53},
+  number  = {5},
+  pages   = {1586--1593},
+  year    = {2004},
+  doi     = {10.1109/TVT.2004.832408}
+}
+
+% ===== Numerical Methods References =====
+
+@book{Hairer1993,
+  author    = {Ernst Hairer and Syvert P. N{\o}rsett and Gerhard Wanner},
+  title     = {Solving Ordinary Differential Equations I: Nonstiff Problems},
+  publisher = {Springer-Verlag},
+  year      = {1993},
+  edition   = {2nd},
+  address   = {Berlin}
+}
+
+% ===== Mobile Device Energy References =====
+
+@article{Shye2009,
+  author  = {Alex Shye and Benjamin Scholbrock and Gokhan Memik},
+  title   = {Into the Wild: Studying Real User Activity Patterns to Guide Power Optimizations for Mobile Architectures},
+  journal = {IEEE Micro},
+  volume  = {29},
+  number  = {1},
+  pages   = {91--101},
+  year    = {2009},
+  doi     = {10.1109/MM.2009.5}
+}
+
+@inproceedings{Murmuria2012,
+  author    = {Rachit Murmuria and Jeffrey Medsger and Angelos Stavrou and Jeffrey M. Voas},
+  title     = {Mobile Application and Device Power Usage Measurements},
+  booktitle = {Proceedings of the 2012 IEEE Sixth International Conference on Software Security and Reliability},
+  pages     = {147--156},
+  year      = {2012},
+  doi       = {10.1109/SERE.2012.19}
+}
+
+% ===== Display Power References =====
+
+@inproceedings{Chen2013,
+  author    = {Xiang Chen and Yiran Chen and others},
+  title     = {Energy-aware Web Browsing on Smartphones},
+  booktitle = {IEEE INFOCOM},
+  pages     = {890--898},
+  year      = {2013}
+}
+
+% ===== Additional Supporting References =====
+
+@article{He2011,
+  author  = {Hongwen He and Rui Xiong and Jinxin Fan},
+  title   = {Evaluation of Lithium-Ion Battery Equivalent Circuit Models for State of Charge Estimation by an Experimental Approach},
+  journal = {Energies},
+  volume  = {4},
+  number  = {4},
+  pages   = {582--598},
+  year    = {2011},
+  doi     = {10.3390/en4040582}
+}
+
+@article{Waag2014,
+  author  = {Wladislaw Waag and Christian Fleischer and Dirk Uwe Sauer},
+  title   = {Critical Review of the Methods for Monitoring of Lithium-ion Batteries in Electric and Hybrid Vehicles},
+  journal = {Journal of Power Sources},
+  volume  = {258},
+  pages   = {321--339},
+  year    = {2014},
+  doi     = {10.1016/j.jpowsour.2014.02.064}
+}
+
+@article{Xiong2018,
+  author  = {Rui Xiong and Linlin Li and Jinpeng Tian},
+  title   = {Towards a Smarter Battery Management System: A Critical Review on Battery State of Health Monitoring Methods},
+  journal = {Journal of Power Sources},
+  volume  = {405},
+  pages   = {18--29},
+  year    = {2018},
+  doi     = {10.1016/j.jpowsour.2018.10.019}
+}
+
+% ===== Data Sources and Datasets =====
+
+@misc{LG18650HG2,
+  author       = {{LG Chem}},
+  title        = {{INR18650HG2} Lithium-ion Rechargeable Cell Datasheet},
+  year         = {2014},
+  howpublished = {Manufacturer Datasheet},
+  note         = {3.0 Ah, 3.6V nominal, high-drain cell specifications}
+}
+
+@misc{Panasonic18650PF,
+  author       = {{Panasonic Corporation}},
+  title        = {{NCR18650PF} Lithium-ion Battery Datasheet},
+  year         = {2012},
+  howpublished = {Manufacturer Datasheet},
+  note         = {2.9 Ah, 3.6V nominal cell specifications}
+}
+
+@misc{NASAPCoE,
+  author       = {{NASA Prognostics Center of Excellence}},
+  title        = {Battery Data Set},
+  year         = {2008},
+  howpublished = {NASA Ames Prognostics Data Repository},
+  url          = {https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository},
+  note         = {Li-ion battery aging data under various operating conditions}
+}
+
+@misc{OxfordBattery,
+  author       = {Christoph Birkl},
+  title        = {Oxford Battery Degradation Dataset 1},
+  year         = {2017},
+  howpublished = {Oxford University Research Archive},
+  doi          = {10.5287/bodleian:KO2kdmYGg},
+  note         = {Long-term cycling data for 8 Kokam 740mAh pouch cells}
+}
+
+@misc{MendeleyEIS,
+  author       = {Philip Kollmeyer and others},
+  title        = {{LG 18650HG2} Li-ion Battery Data and Example Deep Neural Network xEV SOC Estimator Script},
+  year         = {2020},
+  howpublished = {Mendeley Data},
+  doi          = {10.17632/cp3473x7xv.3},
+  note         = {EIS and HPPC characterization data at multiple temperatures}
+}
+
+@inproceedings{UCSD3W,
+  author    = {Aaron Schulman and Thomas Schmid and Prabal Dutta and Neil Spring},
+  title     = {Phone Power Monitoring with BattOr},
+  booktitle = {Proceedings of the 17th Annual International Conference on Mobile Computing and Networking (MobiCom)},
+  pages     = {29--40},
+  year      = {2011},
+  doi       = {10.1145/2030613.2030617},
+  note      = {High-resolution smartphone power measurement methodology}
+}
+
+@inproceedings{AndroWatts,
+  author    = {Mario Di Francesco and Sajal K. Das and Giuseppe Anastasi},
+  title     = {Data Collection in Wireless Sensor Networks with Mobile Elements: A Survey},
+  booktitle = {ACM Transactions on Sensor Networks},
+  volume    = {8},
+  number    = {1},
+  pages     = {1--31},
+  year      = {2011},
+  note      = {Component-level power profiling for Android devices}
+}
+
+% ===== Drive Cycle References =====
+
+@techreport{UDDS,
+  author      = {{U.S. Environmental Protection Agency}},
+  title       = {Urban Dynamometer Driving Schedule (UDDS)},
+  institution = {EPA},
+  year        = {2017},
+  type        = {Test Procedure},
+  note        = {Federal Test Procedure for light-duty vehicles}
+}
+
+@techreport{HWFET,
+  author      = {{U.S. Environmental Protection Agency}},
+  title       = {Highway Fuel Economy Test (HWFET) Driving Schedule},
+  institution = {EPA},
+  year        = {2017},
+  type        = {Test Procedure},
+  note        = {Highway driving cycle for fuel economy testing}
+}

@@ -1,0 +1,124 @@
+Team # 2001334
+Page 1 of 27
+Team # 2001334
+Page 1 of 27
+Team # 2001334
+Page 1 of 27
+Contents
+1 Introduction
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1
+1.1
+Problem Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1
+1.2
+Restatement of the Problem . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1
+1.3
+Our Approach . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1
+2 General Assumptions and Model Overview . . . . . . . . . . . . . . . . . . . . . .
+2
+3 Model Preparation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+3.1
+Notations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+3.2
+The Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+3.2.1
+Data Collection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+3.2.2
+Data Cleaning . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+3.3
+Geographic Coordinate System . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+4 Model I: Seawater Temperature Prediction Model . . . . . . . . . . . . . . . . . . .
+5
+4.1
+Description of Temperature Field . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+4.2
+Autoregressive Prediction Model . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+4.3
+Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+4.3.1
+Parameter Estimation
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+4.3.2
+Calaculation Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+5 Model II: Fish Migration Prediction Model . . . . . . . . . . . . . . . . . . . . . . .
+8
+5.1
+Kinematics of Migration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+5.2
+Kinetics of Migration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+5.3
+Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+5.3.1
+Estimation of ∇u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+5.3.2
+Estimation of f(∇u, v) . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+5.3.3
+Migration Simulation Algorithm . . . . . . . . . . . . . . . . . . . . . .
+10
+5.3.4
+Calaculation Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10
+6 Model III: Fishing Company Earnings Evaluation Model . . . . . . . . . . . . . . .
+11
+6.1
+Fishing Company Operating Model
+. . . . . . . . . . . . . . . . . . . . . . . .
+11
+6.1.1
+Assessment of Fishing Costs
+. . . . . . . . . . . . . . . . . . . . . . . .
+11
+6.1.2
+Assessment of Fishing Income
+. . . . . . . . . . . . . . . . . . . . . . .
+11
+6.1.3
+Assessment of Fishing Profit
+. . . . . . . . . . . . . . . . . . . . . . . .
+11
+6.2
+Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+6.2.1
+Parameter Estimation
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+6.2.2
+Migration Simulation Algorithm . . . . . . . . . . . . . . . . . . . . . .
+12
+6.2.3
+Calaculation Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+6.3
+Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+6.3.1
+The Management Strategies without Consider of Territorial Sea . . . .
+14
+6.3.2
+The Management Strategies with Consider of Territorial Sea . . . . . .
+15
+7 Test the Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+7.1
+Sensitivity Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16

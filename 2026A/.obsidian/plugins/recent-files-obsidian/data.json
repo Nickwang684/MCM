@@ -1,0 +1,207 @@
+{
+  "recentFiles": [
+    {
+      "basename": "未命名",
+      "path": "temp/未命名.md"
+    },
+    {
+      "basename": "report",
+      "path": "model/compare/report.md"
+    },
+    {
+      "basename": "panasonic_eis_columns",
+      "path": "model/compare/plots/panasonic_eis_columns.png"
+    },
+    {
+      "basename": "t_empty_hist",
+      "path": "model/compare/plots/t_empty_hist.png"
+    },
+    {
+      "basename": "ocv_scatter",
+      "path": "model/compare/plots/ocv_scatter.png"
+    },
+    {
+      "basename": "ocv_rmse",
+      "path": "model/compare/plots/ocv_rmse.png"
+    },
+    {
+      "basename": "lg_v_rmse",
+      "path": "model/compare/plots/lg_v_rmse.png"
+    },
+    {
+      "basename": "lg_temp_rmse",
+      "path": "model/compare/plots/lg_temp_rmse.png"
+    },
+    {
+      "basename": "lg_soc_rmse",
+      "path": "model/compare/plots/lg_soc_rmse.png"
+    },
+    {
+      "basename": "lg_sample_trace",
+      "path": "model/compare/plots/lg_sample_trace.png"
+    },
+    {
+      "basename": "diff",
+      "path": "model/diff.md"
+    },
+    {
+      "basename": "08_recommendations",
+      "path": "model/08_recommendations.md"
+    },
+    {
+      "basename": "07_uncertainty_quantification",
+      "path": "model/07_uncertainty_quantification.md"
+    },
+    {
+      "basename": "06_sensitivity_analysis",
+      "path": "model/06_sensitivity_analysis.md"
+    },
+    {
+      "basename": "VALIDATION_CHECKLIST",
+      "path": "VALIDATION_CHECKLIST.md"
+    },
+    {
+      "basename": "DATASET_INVENTORY",
+      "path": "DATASET_INVENTORY.md"
+    },
+    {
+      "basename": "05_prediction_model",
+      "path": "model/05_prediction_model.md"
+    },
+    {
+      "basename": "04_aging_model",
+      "path": "model/04_aging_model.md"
+    },
+    {
+      "basename": "文献溯源",
+      "path": "model/文献溯源.md"
+    },
+    {
+      "basename": "model2",
+      "path": "model2.md"
+    },
+    {
+      "basename": "03_thermal_model",
+      "path": "model/03_thermal_model.md"
+    },
+    {
+      "basename": "01_battery_model",
+      "path": "model/01_battery_model.md"
+    },
+    {
+      "basename": "02_power_model",
+      "path": "model/02_power_model.md"
+    },
+    {
+      "basename": "00_framework",
+      "path": "model/00_framework.md"
+    },
+    {
+      "basename": "model1",
+      "path": "model1.md"
+    },
+    {
+      "basename": "108-open-battery-datasets-comparison",
+      "path": "papers/108-open-battery-datasets-comparison.md"
+    },
+    {
+      "basename": "91-NASA-battery-aging-datasets",
+      "path": "papers/91-NASA-battery-aging-datasets.md"
+    },
+    {
+      "basename": "174-AndroWatts-component-power",
+      "path": "papers/174-AndroWatts-component-power.md"
+    },
+    {
+      "basename": "178-3Ws-smartphone-power-UCSD",
+      "path": "papers/178-3Ws-smartphone-power-UCSD.md"
+    },
+    {
+      "basename": "109-DPM-tuning-mobile-devices-thesis",
+      "path": "papers/109-DPM-tuning-mobile-devices-thesis.md"
+    },
+    {
+      "basename": "277-AppliedEnergy-continuous-time-modeling",
+      "path": "papers/277-AppliedEnergy-continuous-time-modeling.md"
+    },
+    {
+      "basename": "电池耗电机制",
+      "path": "电池耗电机制.pdf"
+    },
+    {
+      "basename": "idea",
+      "path": "idea.md"
+    },
+    {
+      "basename": "paper",
+      "path": "paper.md"
+    },
+    {
+      "basename": "总结内容",
+      "path": "mathmodel/总结内容.md"
+    },
+    {
+      "basename": "2026A",
+      "path": "mathmodel/2026A.md"
+    },
+    {
+      "basename": "楼梯磨损统一模型说明",
+      "path": "mathmodel/2025A/楼梯磨损统一模型说明.md"
+    },
+    {
+      "basename": "未命名",
+      "path": "mathmodel/2025A/未命名.md"
+    },
+    {
+      "basename": "2005国赛A题",
+      "path": "mathmodel/2005国赛A题.md"
+    },
+    {
+      "basename": "2005国赛A题_解题思路与答案",
+      "path": "mathmodel/2005国赛A题_解题思路与答案.md"
+    },
+    {
+      "basename": "2017美赛D题",
+      "path": "mathmodel/2017美赛D题.md"
+    },
+    {
+      "basename": "2022美赛A",
+      "path": "mathmodel/2022美赛A.md"
+    },
+    {
+      "basename": "数模宝典1",
+      "path": "mathmodel/数模宝典1.md"
+    },
+    {
+      "basename": "数模宝典2",
+      "path": "mathmodel/数模宝典2.md"
+    },
+    {
+      "basename": "射频指纹容量估计解释",
+      "path": "MI/射频指纹容量估计解释.md"
+    },
+    {
+      "basename": "non-destructive testing",
+      "path": "mathmodel/2025A/non-destructive testing.md"
+    },
+    {
+      "basename": "文档鉴别材料",
+      "path": "projects/监考系统/文档鉴别材料.md"
+    },
+    {
+      "basename": "程序鉴别材料",
+      "path": "projects/监考系统/程序鉴别材料.md"
+    },
+    {
+      "basename": "大学物理",
+      "path": "projects/class-in subjects/大学物理.md"
+    },
+    {
+      "basename": "大学物理大题",
+      "path": "projects/class-in subjects/大学物理大题.md"
+    }
+  ],
+  "omittedPaths": [],
+  "omittedTags": [],
+  "omitBookmarks": false
+}

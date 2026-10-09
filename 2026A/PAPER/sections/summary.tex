@@ -1,0 +1,43 @@
+\section*{Summary}
+\addcontentsline{toc}{section}{Summary}
+
+\textbf{Background.} Smartphone battery life remains a critical concern for billions of users worldwide. Understanding how the State of Charge (SOC) evolves over time under various usage patterns is essential for accurate battery management and user experience optimization.
+
+\textbf{Problem.} We develop a continuous-time mathematical model that predicts smartphone battery SOC as a function of time, identifies factors that rapidly drain the battery, quantifies prediction uncertainty, and provides actionable recommendations for users and operating system designers.
+
+\textbf{Model Chain.} Our modeling approach consists of three interconnected components:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{SOC Dynamics Model (Model 1):} We establish a five-state continuous-time ordinary differential equation (ODE) system based on a second-order Equivalent Circuit Model (2-RC ECM). The state vector includes SOC, two RC-branch voltages, battery temperature, and State of Health (SOH). The core SOC dynamics follow Coulomb counting:
+    \begin{equation*}
+        \frac{d\SOC}{dt} = -\frac{I(t)}{\Qnom \cdot \SOH \cdot 3600}
+    \end{equation*}
+    We incorporate Extended Kalman Filtering (EKF) for online SOC estimation to correct accumulated errors.
+    
+    \item \textbf{Time-to-Empty Prediction Model (Model 2):} Building upon Model 1, we develop an energy-based prediction framework that couples thermal dynamics with power consumption models. The time-to-empty is computed as:
+    \begin{equation*}
+        t_{\text{empty}} = \int_{\SOC_0}^{\SOC_{\min}} \frac{Q_{\text{eff}}(\SOH, T)}{I(\SOC, \mathbf{u})} \, d\SOC
+    \end{equation*}
+    where $\mathbf{u}$ represents usage patterns. Monte Carlo simulation provides 95\% confidence intervals.
+    
+    \item \textbf{Performance Impact Model (Model 3):} We model battery aging through calendar and cycle degradation:
+    \begin{equation*}
+        \frac{d\SOH}{dt} = -k_{\text{cal}}(T, \SOC) - k_{\text{cyc}}(I, T) \cdot |I|
+    \end{equation*}
+    This enables long-term performance prediction and charging strategy optimization.
+\end{enumerate}
+
+\textbf{Key Results.} Through Sobol global sensitivity analysis, we identify:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Factors causing rapid drain:} Nominal capacity ($S_T \approx 0.35$), initial SOC ($S_T \approx 0.25$), screen brightness ($S_T \approx 0.15$), and CPU load ($S_T \approx 0.12$).
+    \item \textbf{Surprisingly minor factors:} GPS status ($S_T \approx 0.02$) and internal resistance ($S_T \approx 0.01$) have much smaller impacts than commonly believed.
+\end{itemize}
+
+User behavior modifications yield significant improvements: reducing brightness from 100\% to 30\% extends battery life by \textbf{+82\%}; enabling dark mode on OLED screens adds \textbf{+28\%}; disabling location services adds \textbf{+18\%}.
+
+\textbf{Validation.} Model validation against benchmark datasets shows SOC prediction RMSE below 3\% and time-to-empty prediction error within 10\%, with 95\% confidence intervals capturing observed values.
+
+\textbf{Recommendations.} We provide a prioritized list of user behaviors ranked by effectiveness and implementation difficulty. For OS designers, we propose adaptive power management algorithms with context-aware scheduling. For battery longevity, we recommend maintaining charge between 20\%-80\% SOC, which reduces annual capacity loss by approximately 50\%.
+
+\vspace{0.5cm}
+\textbf{Keywords:} Smartphone Battery, State of Charge, Continuous-Time ODE, Equivalent Circuit Model, Extended Kalman Filter, Sensitivity Analysis, Time-to-Empty Prediction

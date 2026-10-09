@@ -1,0 +1,208 @@
+\section{Model 3: Performance Impact and Aging}
+\label{sec:model3}
+
+This section models how battery performance degrades over time and how various factors influence long-term battery health. Our aging model builds on the semi-empirical frameworks developed by Wang et al. \cite{Wang2014} and validated in accelerated life testing studies \cite{Bloom2001}.
+
+\subsection{Battery Aging Overview}
+\label{subsec:aging_overview}
+
+Lithium-ion batteries degrade through two primary mechanisms:
+
+\begin{enumerate}
+    \item \textbf{Calendar Aging:} Degradation due to time and storage conditions (temperature, SOC level)
+    \item \textbf{Cycle Aging:} Degradation due to charge/discharge cycling (depth of discharge, C-rate)
+\end{enumerate}
+
+Both mechanisms reduce usable capacity and increase internal resistance.
+
+\subsection{State of Health Definition}
+\label{subsec:soh_def}
+
+\begin{definition}[State of Health]
+SOH quantifies the remaining usable capacity relative to the original capacity:
+\begin{equation}
+    \SOH(t) = \frac{Q_{\text{current}}(t)}{Q_{\text{original}}}
+    \label{eq:soh_def}
+\end{equation}
+\end{definition}
+
+A new battery has $\SOH = 1.0$; end-of-life is typically defined as $\SOH = 0.80$ (20\% capacity loss).
+
+\subsection{Calendar Aging Model}
+\label{subsec:calendar_aging}
+
+Calendar aging follows a square-root-of-time dependence:
+
+\begin{equation}
+    \frac{d\SOH_{\text{cal}}}{dt} = -k_{\text{cal}}(T, \SOC) = -A_{\text{cal}} \cdot \exp\left(-\frac{E_{a,\text{cal}}}{R_{\text{gas}} T}\right) \cdot f_{\text{SOC}}(\SOC)
+    \label{eq:calendar_aging}
+\end{equation}
+
+\textbf{SOC stress factor:}
+\begin{equation}
+    f_{\text{SOC}}(\SOC) = \exp(\beta \cdot (\SOC - 0.5))
+\end{equation}
+
+High SOC storage accelerates degradation exponentially.
+
+\begin{table}[H]
+    \centering
+    \caption{Calendar aging rates at different storage conditions.}
+    \label{tab:calendar_aging}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Storage Condition} & \textbf{Temperature} & \textbf{Capacity Loss/Year} \\
+        \midrule
+        Optimal (50\% SOC, 25$^\circ$C) & 25$^\circ$C & 2--3\% \\
+        Full charge storage & 25$^\circ$C & 4--6\% \\
+        High temp (50\% SOC) & 40$^\circ$C & 6--8\% \\
+        Worst case (100\% SOC, 40$^\circ$C) & 40$^\circ$C & 12--15\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Cycle Aging Model}
+\label{subsec:cycle_aging}
+
+Cycle aging depends on depth of discharge (DOD) and charge/discharge rate:
+
+\begin{equation}
+    \frac{d\SOH_{\text{cyc}}}{dt} = -k_{\text{cyc}}(T) \cdot \text{DOD}^{\gamma} \cdot \left(\frac{I}{I_{\text{nom}}}\right)^{\alpha} \cdot |I|
+    \label{eq:cycle_aging}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $\gamma \approx 2.0$ is the DOD exponent (deeper cycles cause more damage)
+    \item $\alpha \approx 0.7$ is the C-rate exponent
+    \item $I_{\text{nom}}$ is the 1C discharge current
+\end{itemize}
+
+\textbf{Key insight:} Partial cycles (e.g., 20\%--80\% SOC) cause significantly less degradation than full cycles (0\%--100\%).
+
+\begin{equation}
+    \text{Aging Ratio} = \left(\frac{\text{DOD}_{\text{full}}}{\text{DOD}_{\text{partial}}}\right)^{\gamma} = \left(\frac{1.0}{0.6}\right)^{2} \approx 2.8
+\end{equation}
+
+\subsection{Combined Aging Model}
+\label{subsec:combined_aging}
+
+The total SOH degradation rate is:
+
+\begin{equation}
+    \boxed{\frac{d\SOH}{dt} = -\dot{\SOH}_{\text{cal}}(T, \SOC) - \dot{\SOH}_{\text{cyc}}(I, T, \SOC)}
+    \label{eq:total_aging}
+\end{equation}
+
+This fifth state equation completes our continuous-time model.
+
+\subsection{Resistance Growth}
+\label{subsec:resistance_growth}
+
+Internal resistance increases with aging:
+
+\begin{equation}
+    R(t) = R_0 \cdot \left(1 + k_R \cdot (1 - \SOH(t))\right)
+    \label{eq:resistance_growth}
+\end{equation}
+
+with $k_R \approx 2.0$. A 20\% capacity loss corresponds to approximately 40\% resistance increase.
+
+\subsection{Performance Impact on Battery Life}
+\label{subsec:performance_impact}
+
+We analyze how different charging behaviors affect long-term battery health:
+
+\begin{table}[H]
+    \centering
+    \caption{Charging strategy impact on 2-year battery health.}
+    \label{tab:charging_impact}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Strategy} & \textbf{DOD} & \textbf{Annual Loss} & \textbf{2-Year SOH} \\
+        \midrule
+        0--100\% daily & 100\% & 8--10\% & 80--84\% \\
+        20--80\% (Recommended) & 60\% & 4--5\% & 90--92\% \\
+        40--80\% (Optimal) & 40\% & 3--4\% & 92--94\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Temperature Effects on Aging}
+\label{subsec:temp_aging}
+
+Temperature has a profound impact on aging rate:
+
+\begin{equation}
+    \text{Aging Rate}(T) \propto \exp\left(-\frac{E_a}{R_{\text{gas}} T}\right)
+    \label{eq:temp_aging}
+\end{equation}
+
+\begin{table}[H]
+    \centering
+    \caption{Temperature impact on battery aging.}
+    \label{tab:temp_aging}
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Temperature} & \textbf{Relative Aging Rate} \\
+        \midrule
+        25$^\circ$C & 1.0$\times$ \\
+        35$^\circ$C & 2.0$\times$ \\
+        45$^\circ$C & 4.0$\times$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Environmental Factors}
+\label{subsec:environmental}
+
+Beyond temperature, other environmental factors influence battery behavior:
+
+\begin{itemize}
+    \item \textbf{Humidity:} High humidity ($>$80\%) reduces convective cooling efficiency, increasing battery temperature during high-load operation.
+    
+    \item \textbf{Pressure:} Low pressure (high altitude) reduces convective heat transfer, similarly increasing thermal stress.
+\end{itemize}
+
+We incorporate these effects through a modified heat transfer coefficient:
+
+\begin{equation}
+    h_{\text{eff}} = h_0 \cdot \left(1 - 0.001 \cdot (H - H_{\text{ref}})\right) \cdot \left(\frac{P}{P_{\text{ref}}}\right)^{0.05}
+    \label{eq:h_eff}
+\end{equation}
+
+where $H$ is relative humidity (\%) and $P$ is atmospheric pressure (Pa).
+
+\subsection{Aging Battery Recommendations}
+\label{subsec:aging_recommendations}
+
+Based on the aging model, we provide SOH-dependent recommendations:
+
+\begin{table}[H]
+    \centering
+    \caption{Recommendations by battery health status.}
+    \label{tab:soh_recommendations}
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{SOH Range} & \textbf{Status} & \textbf{Recommendation} \\
+        \midrule
+        90--100\% & Healthy & Normal use \\
+        80--90\% & Light aging & Enable optimized charging \\
+        70--80\% & Moderate aging & Avoid extreme temps, consider replacement \\
+        $<$70\% & Severe aging & Replace battery \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Long-Term Simulation}
+\label{subsec:long_term}
+
+For long-term predictions (months to years), we employ a multi-timescale approach:
+
+\begin{enumerate}
+    \item \textbf{Short-term (seconds to hours):} Solve full 5-state ODE with fixed SOH
+    \item \textbf{Medium-term (days):} Update SOH using average conditions
+    \item \textbf{Long-term (months to years):} Project SOH trajectory
+\end{enumerate}
+
+This hierarchical approach avoids computational burden while maintaining accuracy.

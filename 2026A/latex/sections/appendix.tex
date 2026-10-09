@@ -1,0 +1,160 @@
+\section*{Appendix A: Extended Kalman Filter Derivation}
+
+The discrete-time state transition for the ECM model is:
+\begin{equation}
+\mathbf{x}_{k+1} = \mathbf{A}_d \mathbf{x}_k + \mathbf{B}_d u_k
+\end{equation}
+
+where the discretized matrices (using zero-order hold with sampling time $\Delta t$) are:
+\begin{align}
+\mathbf{A}_d &= e^{\mathbf{A}\Delta t} \approx \mathbf{I} + \mathbf{A}\Delta t \\
+\mathbf{B}_d &= \mathbf{A}^{-1}(\mathbf{A}_d - \mathbf{I})\mathbf{B}
+\end{align}
+
+For our system:
+\begin{equation}
+\mathbf{A}_d = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & e^{-\Delta t/\tau_1} & 0 \\
+0 & 0 & e^{-\Delta t/\tau_2}
+\end{bmatrix}
+\end{equation}
+
+\section*{Appendix B: OCV-SOC Curve Fitting Coefficients}
+
+The polynomial coefficients for the OCV-SOC relationship:
+\begin{equation}
+\ocv(\soc) = \sum_{k=0}^{5} a_k \cdot \soc^k
+\end{equation}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cc|cc}
+\toprule
+$k$ & $a_k$ & $k$ & $a_k$ \\
+\midrule
+0 & 3.0373 & 3 & 0.04281 \\
+1 & 0.02183 & 4 & -0.06732 \\
+2 & -0.01824 & 5 & 0.02156 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{Appendix C: Python Implementation (Core Functions)}
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+from scipy.linalg import expm
+
+class BatteryEKF:
+    def __init__(self, Q_max=4.0, dt=1.0):
+        self.Q_max = Q_max  # Ah
+        self.dt = dt  # seconds
+        
+        # ECM parameters
+        self.R0 = 0.05
+        self.R1, self.C1 = 0.02, 1500  # tau1 = 30s
+        self.R2, self.C2 = 0.015, 20000  # tau2 = 300s
+        
+        # State: [SOC, V1, V2]
+        self.x = np.array([1.0, 0.0, 0.0])
+        self.P = np.diag([0.01, 0.001, 0.001])
+        
+        # Noise covariances
+        self.Q = np.diag([1e-6, 1e-8, 1e-8])
+        self.R = 0.001
+        
+    def ocv(self, soc):
+        """OCV-SOC relationship"""
+        return 3.0 + 1.2 * soc - 0.3 * soc**2 + 0.3 * soc**3
+    
+    def docv_dsoc(self, soc):
+        """Derivative of OCV w.r.t. SOC"""
+        return 1.2 - 0.6 * soc + 0.9 * soc**2
+    
+    def predict(self, I):
+        """EKF prediction step"""
+        soc, V1, V2 = self.x
+        
+        # State update
+        soc_new = soc - I * self.dt / (self.Q_max * 3600)
+        V1_new = V1 * np.exp(-self.dt / (self.R1*self.C1)) + \
+                 I * self.R1 * (1 - np.exp(-self.dt / (self.R1*self.C1)))
+        V2_new = V2 * np.exp(-self.dt / (self.R2*self.C2)) + \
+                 I * self.R2 * (1 - np.exp(-self.dt / (self.R2*self.C2)))
+        
+        self.x = np.array([soc_new, V1_new, V2_new])
+        
+        # Covariance prediction
+        F = np.diag([1, np.exp(-self.dt/(self.R1*self.C1)), 
+                     np.exp(-self.dt/(self.R2*self.C2))])
+        self.P = F @ self.P @ F.T + self.Q
+        
+    def update(self, V_meas, I):
+        """EKF update step"""
+        soc, V1, V2 = self.x
+        
+        # Predicted voltage
+        V_pred = self.ocv(soc) - I * self.R0 - V1 - V2
+        
+        # Innovation
+        y = V_meas - V_pred
+        
+        # Jacobian
+        H = np.array([self.docv_dsoc(soc), -1, -1])
+        
+        # Kalman gain
+        S = H @ self.P @ H.T + self.R
+        K = self.P @ H.T / S
+        
+        # State update
+        self.x = self.x + K * y
+        
+        # Covariance update
+        self.P = (np.eye(3) - np.outer(K, H)) @ self.P
+        
+        return self.x[0]  # Return SOC estimate
+
+
+def predict_depletion_time(soc_init, P_total, Q_max=4.0, T=25):
+    """Predict remaining battery time"""
+    soc_min = 0.05  # 5% cutoff
+    n_steps = 100
+    
+    # Temperature efficiency factor
+    if T > 25:
+        eta_T = 1.0
+    elif T > 0:
+        eta_T = 0.95 - 0.015 * (25 - T)
+    else:
+        eta_T = 0.7 - 0.02 * (0 - T)
+    
+    Q_eff = Q_max * eta_T
+    
+    # Numerical integration
+    soc_range = np.linspace(soc_init, soc_min, n_steps)
+    dt_total = 0
+    
+    for i in range(len(soc_range) - 1):
+        soc = soc_range[i]
+        V = 3.0 + 1.2 * soc  # Simplified OCV
+        I = P_total / V
+        dsoc = soc_range[i] - soc_range[i+1]
+        dt = dsoc * Q_eff * 3600 / I
+        dt_total += dt
+    
+    return dt_total / 3600  # Return hours
+\end{lstlisting}
+
+\section*{Appendix D: AI Usage Statement}
+
+In accordance with MCM/ICM guidelines, we disclose the following AI tool usage:
+
+\begin{enumerate}
+    \item \textbf{Literature Search:} AI-assisted search for relevant battery modeling papers
+    \item \textbf{Equation Verification:} Verification of mathematical derivations
+    \item \textbf{Code Debugging:} Assistance with Python implementation debugging
+    \item \textbf{Writing Assistance:} Grammar and clarity improvements for technical writing
+\end{enumerate}
+
+All model development, analysis, and conclusions represent original work by the team members. AI tools were used as assistive technology only, with all outputs critically evaluated and verified by the team.

@@ -1,0 +1,4 @@
+name,path,notes
+LG HG2,D:\jingsai\shumo\MCM\2026A\dataset\LG 18650HG2 Li-ion Battery Data and Example Deep Neural Network xEV SOC Estimator Script,"drive cycles, C/20, HPPC, temperatures"
+Panasonic PF,D:\jingsai\shumo\MCM\2026A\dataset\wykht8y7tg-1\Panasonic 18650PF Data,"drive cycles, EIS, Trise"
+OCV Excel,D:\jingsai\shumo\MCM\2026A\dataset\battery data,low-current & incremental OCV

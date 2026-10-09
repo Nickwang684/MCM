@@ -1,0 +1,257 @@
+{
+  "main": {
+    "id": "59d59c18cc77de19",
+    "type": "split",
+    "children": [
+      {
+        "id": "a5227bb056ebdf18",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c6a6ed9309e6a857",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "temp/2026 MCM Problem A 论文大纲.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026 MCM Problem A 论文大纲"
+            }
+          },
+          {
+            "id": "51b11a79f0aaae1f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5bfcb2b9bf37102e",
+    "type": "split",
+    "children": [
+      {
+        "id": "16395ad539c2a0ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ff40e1dd22e9cada",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "d392928909ec74de",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "5b0d0359ced9fe41",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          },
+          {
+            "id": "3779dd5a2487426b",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "b37486757a551f9f",
+    "type": "split",
+    "children": [
+      {
+        "id": "7b6012edcc20bb37",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b1e54017568f732",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MI估计/neural-MI-estimate-clean.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "neural-MI-estimate-clean 的反向链接列表"
+            }
+          },
+          {
+            "id": "180028cd451562d5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "MI估计/neural-MI-estimate-clean.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "neural-MI-estimate-clean 的出链列表"
+            }
+          },
+          {
+            "id": "b4f8e094b811b0cd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "85d90adb883d336c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "MI估计/neural-MI-estimate-clean.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "neural-MI-estimate-clean 的大纲"
+            }
+          },
+          {
+            "id": "36abf0010aa02e01",
+            "type": "leaf",
+            "state": {
+              "type": "comment-view",
+              "state": {},
+              "icon": "highlighter",
+              "title": "HiNote"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:新建数据库": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "workspaces:管理工作区布局": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "obsidian-kanban:创建新看板": false,
+      "hi-note:HiNote": false
+    }
+  },
+  "active": "51b11a79f0aaae1f",
+  "lastOpenFiles": [
+    "temp/2026 MCM Problem A 论文大纲.md",
+    "temp/~$26 MCM Problem A 论文大纲.docx",
+    "temp/2026 MCM Problem A 论文大纲.docx",
+    "temp/2026 MCM Problem A 论文大纲~C7FEF.tmp",
+    "model/compare/report.md",
+    "temp",
+    "model/compare/plots/panasonic_eis_columns.png",
+    "model/compare/plots/t_empty_hist.png",
+    "model/compare/plots/ocv_scatter.png",
+    "model/compare/plots/ocv_rmse.png",
+    "model/compare/plots/lg_v_rmse.png",
+    "model/compare/plots/lg_temp_rmse.png",
+    "model/compare/plots/lg_soc_rmse.png",
+    "model/compare/plots/lg_sample_trace.png",
+    "model/diff.md",
+    "model/08_recommendations.md",
+    "model/07_uncertainty_quantification.md",
+    "model/06_sensitivity_analysis.md",
+    "VALIDATION_CHECKLIST.md",
+    "model/compare/__pycache__/model_impl.cpython-312.pyc",
+    "model/compare/__pycache__/metrics.cpython-312.pyc",
+    "model/compare/__pycache__/data_loaders.cpython-312.pyc",
+    "model/compare/plot_results.py",
+    "model/compare/panasonic_eis_inventory.csv",
+    "model/compare/summary.json",
+    "DATASET_INVENTORY.md",
+    "model/05_prediction_model.md",
+    "model/validation_results.md",
+    "model/validation_summary.md",
+    "model/04_aging_model.md",
+    "model/figures/prediction_scenarios.png",
+    "model/figures/prediction_soc_vs_time.png",
+    "model/文献溯源.md",
+    "model2.md",
+    "MCM2026A2.md",
+    "model/03_thermal_model.md",
+    "model/01_battery_model.md",
+    "model/02_power_model.md",
+    "model/00_framework.md",
+    "model1.md",
+    "电池耗电机制.md",
+    "MCM2026A1.md",
+    "MCM2026A.md",
+    "papers/108-open-battery-datasets-comparison.md",
+    "papers/91-NASA-battery-aging-datasets.md"
+  ]
+}

@@ -1,0 +1,376 @@
+% Appendix: Code Implementation and AI Use Disclosure
+% MCM 2026 Problem A
+
+\section{Appendix A: Python Implementation}
+\label{app:code}
+
+This appendix provides the core Python implementation of our smartphone battery discharge model.
+
+\subsection{Battery Parameters Data Class}
+
+\begin{lstlisting}[caption={Battery Parameters Definition}, label={lst:params}]
+import numpy as np
+from scipy.integrate import solve_ivp
+from dataclasses import dataclass
+from typing import Callable, Tuple, Dict
+
+@dataclass
+class BatteryParams:
+    """Battery parameter data class for smartphone Li-ion cells"""
+    # Capacity and voltage
+    Q_nom: float = 3.0      # Nominal capacity [Ah]
+    V_nom: float = 3.8      # Nominal voltage [V]
+    V_min: float = 3.0      # Cutoff voltage [V]
+    V_max: float = 4.35     # Maximum voltage [V]
+    SOC_min: float = 0.05   # Minimum usable SOC [-]
+    
+    # ECM parameters (2-RC model)
+    R0: float = 0.080       # Ohmic resistance [Ohm]
+    R1: float = 0.020       # RC1 resistance [Ohm]
+    C1: float = 2000        # RC1 capacitance [F]
+    R2: float = 0.010       # RC2 resistance [Ohm]
+    C2: float = 50000       # RC2 capacitance [F]
+    
+    # OCV-SOC polynomial coefficients
+    K0: float = 3.685       # [V]
+    K1: float = 0.2156      # [V]
+    K2: float = 0.0351      # [V]
+    K3: float = -0.0175     # [V]
+    
+    # Thermal parameters
+    m: float = 0.050        # Battery mass [kg]
+    Cp: float = 1000        # Specific heat [J/(kg*K)]
+    h: float = 10           # Heat transfer coeff [W/(m^2*K)]
+    A: float = 0.006        # Surface area [m^2]
+    Ea_R: float = 25000     # Activation energy [J/mol]
+    T_ref: float = 298.15   # Reference temperature [K]
+    
+    # Aging parameters
+    k_cal: float = 2e-6     # Calendar aging rate [1/sqrt(s)]
+    k_cyc: float = 2e-5     # Cycle aging rate [1/Ah]
+    Ea_cal: float = 60000   # Calendar activation energy [J/mol]
+    Ea_cyc: float = 40000   # Cycle activation energy [J/mol]
+    gamma: float = 2.0      # DOD exponent [-]
+    alpha: float = 0.7      # C-rate exponent [-]
+    k_R: float = 2.0        # Resistance growth factor [-]
+
+R_GAS = 8.314  # Universal gas constant [J/(mol*K)]
+\end{lstlisting}
+
+\subsection{Main Battery Model Class}
+
+\begin{lstlisting}[caption={Smartphone Battery Model Implementation}, label={lst:model}]
+class SmartphoneBatteryModel:
+    """Continuous-time smartphone battery model with 2-RC ECM"""
+    
+    def __init__(self, params: BatteryParams = None):
+        self.params = params or BatteryParams()
+    
+    def ocv(self, SOC: float, T: float = 298.15) -> float:
+        """Open-circuit voltage model (combined polynomial-log)"""
+        p = self.params
+        SOC = np.clip(SOC, 0.01, 0.99)
+        V_OC = p.K0 + p.K1*SOC + p.K2*np.log(SOC) + p.K3*np.log(1-SOC)
+        # Temperature correction
+        V_OC += -0.0003 * (T - p.T_ref)
+        return V_OC
+    
+    def resistance(self, T: float, SOC: float, SOH: float = 1.0) -> float:
+        """Temperature and SOH dependent internal resistance"""
+        p = self.params
+        # Arrhenius temperature correction
+        R_T = p.R0 * np.exp(-p.Ea_R/R_GAS * (1/T - 1/p.T_ref))
+        # SOH correction (resistance increases with aging)
+        R_SOH = R_T * (1 + p.k_R * (1 - SOH))
+        return R_SOH
+    
+    def power_to_current(self, P_mW: float, SOC: float, T: float,
+                         V_RC1: float, V_RC2: float, SOH: float) -> Tuple:
+        """Convert power demand to current (iterative solver)"""
+        V_OC = self.ocv(SOC, T)
+        R_total = self.resistance(T, SOC, SOH)
+        
+        # Newton iteration
+        V = V_OC - V_RC1 - V_RC2
+        for _ in range(5):
+            I = P_mW / V / 1000  # mW to A
+            V = V_OC - I * R_total - V_RC1 - V_RC2
+        return I, V
+    
+    def battery_ode(self, t: float, x: np.ndarray,
+                    power_func: Callable, T_amb: float = 298.15) -> np.ndarray:
+        """
+        Battery state ODE system
+        State vector: x = [SOC, V_RC1, V_RC2, T]
+        """
+        SOC, V_RC1, V_RC2, T = x
+        p = self.params
+        SOH = 1.0  # Assume constant for short-term simulation
+        
+        # Get power demand
+        P_load = power_func(t)
+        
+        # Solve for current and voltage
+        I, V = self.power_to_current(P_load, SOC, T, V_RC1, V_RC2, SOH)
+        
+        # Effective capacity [As]
+        Q_eff = p.Q_nom * SOH * 3600
+        
+        # SOC dynamics (Coulomb counting)
+        dSOC = -I / Q_eff
+        
+        # RC dynamics with temperature-dependent time constants
+        R1_T = p.R1 * np.exp(-p.Ea_R/R_GAS * (1/T - 1/p.T_ref))
+        R2_T = p.R2 * np.exp(-p.Ea_R/R_GAS * (1/T - 1/p.T_ref))
+        tau1, tau2 = R1_T * p.C1, R2_T * p.C2
+        
+        dV_RC1 = -V_RC1 / tau1 + I / p.C1
+        dV_RC2 = -V_RC2 / tau2 + I / p.C2
+        
+        # Thermal dynamics (lumped model)
+        R_total = self.resistance(T, SOC, SOH)
+        Q_gen = I**2 * R_total           # Heat generation
+        Q_loss = p.h * p.A * (T - T_amb) # Heat dissipation
+        dT = (Q_gen - Q_loss) / (p.m * p.Cp)
+        
+        return np.array([dSOC, dV_RC1, dV_RC2, dT])
+\end{lstlisting}
+
+\subsection{Simulation and Prediction Methods}
+
+\begin{lstlisting}[caption={Simulation and Time-to-Empty Prediction}, label={lst:sim}]
+def simulate(self, SOC_0: float, T_0: float, power_func: Callable,
+             t_span: Tuple[float, float], T_amb: float = 298.15) -> Dict:
+    """
+    Run battery discharge simulation
+    
+    Args:
+        SOC_0: Initial SOC [0-1]
+        T_0: Initial temperature [K]
+        power_func: Power demand function P(t) [mW]
+        t_span: Time interval (t_start, t_end) [s]
+        T_amb: Ambient temperature [K]
+    
+    Returns:
+        Dictionary with time, states, voltage, and current trajectories
+    """
+    x0 = [SOC_0, 0.0, 0.0, T_0]  # Initial state
+    
+    # SOC termination event
+    def soc_event(t, x):
+        return x[0] - self.params.SOC_min
+    soc_event.terminal = True
+    soc_event.direction = -1
+    
+    # Solve ODE
+    sol = solve_ivp(
+        lambda t, x: self.battery_ode(t, x, power_func, T_amb),
+        t_span, x0, method='RK45', events=soc_event, max_step=10.0
+    )
+    
+    # Compute voltage and current trajectories
+    V_traj, I_traj = [], []
+    for i in range(len(sol.t)):
+        SOC, V_RC1, V_RC2, T = sol.y[:, i]
+        P = power_func(sol.t[i])
+        I, V = self.power_to_current(P, SOC, T, V_RC1, V_RC2, 1.0)
+        V_traj.append(V); I_traj.append(I)
+    
+    return {
+        't': sol.t, 'SOC': sol.y[0], 'V_RC1': sol.y[1],
+        'V_RC2': sol.y[2], 'T': sol.y[3],
+        'V': np.array(V_traj), 'I': np.array(I_traj),
+        't_empty': sol.t[-1] if sol.t_events[0].size > 0 else None
+    }
+
+def predict_empty_time(self, SOC_0: float, P_load_mW: float,
+                       SOH: float = 1.0, T: float = 298.15) -> float:
+    """Quick estimation of time-to-empty [seconds]"""
+    p = self.params
+    Q_eff = p.Q_nom * SOH
+    usable_SOC = SOC_0 - p.SOC_min
+    V_avg = self.ocv((SOC_0 + p.SOC_min) / 2, T)
+    
+    energy_Wh = Q_eff * usable_SOC * V_avg
+    P_W = P_load_mW / 1000
+    
+    t_hours = energy_Wh / P_W
+    return t_hours * 3600  # Return in seconds
+\end{lstlisting}
+
+\subsection{Extended Kalman Filter for SOC Estimation}
+
+\begin{lstlisting}[caption={EKF Implementation for Online SOC Estimation}, label={lst:ekf}]
+class BatteryEKF:
+    """Extended Kalman Filter for battery SOC estimation"""
+    
+    def __init__(self, params: BatteryParams, dt: float = 1.0):
+        self.params = params
+        self.dt = dt
+        
+        # State: [SOC, V_RC1, V_RC2]
+        self.x = np.array([0.5, 0.0, 0.0])
+        
+        # Covariance matrices
+        self.P = np.diag([0.01, 0.001, 0.001])  # State covariance
+        self.Q = np.diag([1e-6, 1e-4, 1e-5])    # Process noise
+        self.R = np.array([[0.01**2]])           # Measurement noise (V)
+    
+    def predict(self, I: float, T: float):
+        """EKF prediction step"""
+        SOC, V_RC1, V_RC2 = self.x
+        p = self.params
+        dt = self.dt
+        
+        Q_eff = p.Q_nom * 3600  # Assume SOH = 1
+        tau1 = p.R1 * p.C1
+        tau2 = p.R2 * p.C2
+        
+        # State prediction
+        SOC_new = SOC - I * dt / Q_eff
+        V_RC1_new = V_RC1 * np.exp(-dt/tau1) + I * p.R1 * (1 - np.exp(-dt/tau1))
+        V_RC2_new = V_RC2 * np.exp(-dt/tau2) + I * p.R2 * (1 - np.exp(-dt/tau2))
+        
+        self.x = np.array([SOC_new, V_RC1_new, V_RC2_new])
+        
+        # Jacobian of state transition
+        F = np.array([
+            [1, 0, 0],
+            [0, np.exp(-dt/tau1), 0],
+            [0, 0, np.exp(-dt/tau2)]
+        ])
+        
+        # Covariance prediction
+        self.P = F @ self.P @ F.T + self.Q
+    
+    def update(self, V_meas: float, I: float, T: float):
+        """EKF update step with voltage measurement"""
+        SOC, V_RC1, V_RC2 = self.x
+        p = self.params
+        
+        # Predicted voltage
+        V_OC = p.K0 + p.K1*SOC + p.K2*np.log(max(SOC,0.01)) \
+               + p.K3*np.log(max(1-SOC,0.01))
+        V_pred = V_OC - I * p.R0 - V_RC1 - V_RC2
+        
+        # Measurement Jacobian
+        dVoc_dSOC = p.K1 + p.K2/max(SOC,0.01) - p.K3/max(1-SOC,0.01)
+        H = np.array([[dVoc_dSOC, -1, -1]])
+        
+        # Innovation
+        y = V_meas - V_pred
+        S = H @ self.P @ H.T + self.R
+        
+        # Kalman gain
+        K = self.P @ H.T @ np.linalg.inv(S)
+        
+        # State and covariance update
+        self.x = self.x + (K @ np.array([[y]])).flatten()
+        self.P = (np.eye(3) - K @ H) @ self.P
+        
+        # Constrain SOC
+        self.x[0] = np.clip(self.x[0], 0.0, 1.0)
+        
+        return self.x[0]  # Return estimated SOC
+\end{lstlisting}
+
+\subsection{Sobol Sensitivity Analysis}
+
+\begin{lstlisting}[caption={Sobol Sensitivity Analysis Implementation}, label={lst:sobol}]
+from SALib.sample import saltelli
+from SALib.analyze import sobol
+
+# Problem definition for sensitivity analysis
+SENSITIVITY_PROBLEM = {
+    'num_vars': 9,
+    'names': ['brightness', 'cpu_load', 'network_power', 'gps_on',
+              'T_amb', 'SOC_0', 'SOH', 'Q_nom', 'R0'],
+    'bounds': [
+        [0.1, 1.0],    # brightness
+        [0.05, 0.95],  # cpu_load
+        [50, 500],     # network_power [mW]
+        [0, 1],        # gps_on
+        [263, 318],    # T_amb [K]
+        [0.2, 1.0],    # SOC_0
+        [0.7, 1.0],    # SOH
+        [2.5, 5.0],    # Q_nom [Ah]
+        [0.05, 0.15]   # R0 [Ohm]
+    ]
+}
+
+def run_sobol_analysis(model_func, n_samples=1024):
+    """Run Sobol global sensitivity analysis"""
+    # Generate samples
+    param_values = saltelli.sample(SENSITIVITY_PROBLEM, n_samples)
+    
+    # Evaluate model
+    Y = np.zeros(param_values.shape[0])
+    for i, params in enumerate(param_values):
+        param_dict = dict(zip(SENSITIVITY_PROBLEM['names'], params))
+        Y[i] = model_func(param_dict)
+    
+    # Analyze
+    results = sobol.analyze(SENSITIVITY_PROBLEM, Y, print_to_console=False)
+    
+    # Return rankings by total effect
+    names = SENSITIVITY_PROBLEM['names']
+    sorted_idx = np.argsort(results['ST'])[::-1]
+    
+    return {
+        'parameters': [names[i] for i in sorted_idx],
+        'S1': results['S1'][sorted_idx],
+        'ST': results['ST'][sorted_idx]
+    }
+\end{lstlisting}
+
+\newpage
+\section{Appendix B: AI Use Disclosure}
+\label{app:ai}
+
+In accordance with MCM/ICM guidelines, we disclose the following uses of artificial intelligence tools in the preparation of this paper:
+
+\subsection{AI Tools Used}
+
+\begin{enumerate}
+    \item \textbf{Claude (Anthropic)}: Used for literature review assistance, equation verification, and LaTeX formatting suggestions.
+    
+    \item \textbf{GitHub Copilot}: Used for code completion and debugging assistance in Python implementation.
+\end{enumerate}
+
+\subsection{Specific Uses}
+
+\begin{table}[H]
+\centering
+\caption{Summary of AI Tool Usage}
+\begin{tabular}{p{3cm}p{4cm}p{5cm}}
+\toprule
+\textbf{Task} & \textbf{AI Tool} & \textbf{How Used} \\
+\midrule
+Literature search & Claude & Suggested relevant papers on battery modeling and smartphone power consumption \\
+\addlinespace
+Equation checking & Claude & Verified dimensional consistency of ODE system \\
+\addlinespace
+Code debugging & Copilot & Auto-completed boilerplate code and suggested bug fixes \\
+\addlinespace
+LaTeX formatting & Claude & Assisted with TikZ diagrams and table formatting \\
+\addlinespace
+Writing refinement & Claude & Suggested improvements to technical writing clarity \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Human Oversight}
+
+All AI-generated content was carefully reviewed, verified, and modified by team members. The mathematical models, analysis methodology, and conclusions represent our original work. AI tools served as assistants to enhance productivity, not as primary content generators.
+
+\subsection{Verification Process}
+
+\begin{itemize}
+    \item All equations were independently verified using dimensional analysis
+    \item Code implementations were tested with known benchmark cases
+    \item Literature citations were manually verified for accuracy
+    \item Numerical results were cross-checked with hand calculations
+\end{itemize}
+
+\vspace{1cm}
+\noindent\textit{We affirm that this paper represents our own work and that all AI assistance has been disclosed as required.}

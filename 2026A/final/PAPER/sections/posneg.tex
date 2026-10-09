@@ -1,0 +1,70 @@
+\section{Strengths and Weaknesses}
+\label{sec:posneg}
+
+\subsection{Strengths}
+
+\begin{enumerate}
+    \item \textbf{Continuous-Time ODE Formulation.} 
+    The five-state ODE system provides natural representation of battery dynamics, flexibility in time-step selection, and seamless integration with control systems.
+    
+    \item \textbf{Multi-Physics Coupling.} 
+    Our model integrates electrochemical (SOC, voltage), thermal, and degradation processes within a unified framework, capturing critical interactions often neglected in simpler models.
+    
+    \item \textbf{Computational Efficiency.} 
+    The 2-RC equivalent circuit model achieves real-time capability ($<$1~ms per step) with only 6--8 parameters, compared to 50+ parameters for full electrochemical models.
+    
+    \item \textbf{Uncertainty Quantification.} 
+    Monte Carlo propagation provides confidence intervals for all predictions, enabling risk-aware battery management decisions.
+    
+    \item \textbf{Actionable Sensitivity Analysis.} 
+    Sobol-based global sensitivity analysis identifies prioritized user actions (initial SOC: $S_T=0.71$, CPU utilization: $S_T=0.39$), enabling targeted optimization.
+    
+    \item \textbf{Validated Accuracy.} 
+    Drive cycle validation demonstrates SOC RMSE of 2.1\%, terminal voltage RMSE of 18~mV, and time-to-empty prediction error below 5\%.
+\end{enumerate}
+
+\subsection{Weaknesses and Mitigations}
+
+\begin{enumerate}
+    \item \textbf{Lumped Thermal Model.} 
+    Single-temperature assumption may underestimate internal gradients in large cells or during fast charging.
+    \textit{Mitigation:} Extend to 1D spatial discretization for high-power scenarios.
+    
+    \item \textbf{Semi-Empirical Aging.} 
+    The Arrhenius-based aging model captures calendar and cycle aging but lacks electrochemical mechanistic detail for SOH $<$70\%.
+    \textit{Mitigation:} Incorporate physics-based SEI growth models for long-term predictions.
+    
+    \item \textbf{Usage Pattern Dependency.} 
+    Predictions assume stable usage within the forecast horizon; sudden mode changes degrade accuracy.
+    \textit{Mitigation:} Integrate usage prediction models with rolling forecast updates.
+    
+    \item \textbf{Limited Extreme Condition Accuracy.} 
+    Model validated for 0--40$^\circ$C; accuracy degrades at sub-zero temperatures.
+    \textit{Mitigation:} Add low-temperature lithium plating sub-model.
+    
+    \item \textbf{Component Power Simplification.} 
+    OLED content-dependent power and background process variations are simplified.
+    \textit{Mitigation:} Device-specific power profiling with runtime learning.
+\end{enumerate}
+
+\subsection{Comparison with Alternative Approaches}
+
+\begin{table}[H]
+    \centering
+    \caption{Comparison of battery modeling approaches for smartphone applications.}
+    \label{tab:model_comparison}
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        \textbf{Aspect} & \textbf{Our Model} & \textbf{Data-Driven} & \textbf{Electrochemical} \\
+        \midrule
+        Prediction Accuracy & Good (2--5\%) & Variable & Excellent ($<$1\%) \\
+        Computational Cost & Low ($<$1~ms) & Medium & High (minutes) \\
+        Real-Time Capable & Yes & Yes & No \\
+        Interpretability & High & Low & High \\
+        Calibration Effort & Medium & Low & High \\
+        Generalizability & Good & Limited & Excellent \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Our ODE-based approach balances accuracy, efficiency, and interpretability, making it well-suited for real-time smartphone battery management where computational resources are constrained and actionable insights are valued.

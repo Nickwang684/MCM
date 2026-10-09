@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MCM/ICM LaTeX Template %%
+%% 2026 MCM/ICM           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{left=1in,right=0.75in,top=1in,bottom=1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Replace ABCDEF in the next line with your chosen problem
+% and replace 1111111 with your Team Control Number
+\newcommand{\Problem}{A}
+\newcommand{\Team}{2602272}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{newtxtext}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newtxmath} % must come after amsXXX
+
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\lhead{Team \# \Team}
+\rhead{}
+\cfoot{}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+
+% Custom commands for battery symbols
+\newcommand{\SOC}{\text{SOC}}
+\newcommand{\SOH}{\text{SOH}}
+\newcommand{\OCV}{\text{OCV}}
+\newcommand{\Qnom}{Q_{\text{nom}}}
+\newcommand{\Tamb}{T_{\text{amb}}}
+\newcommand{\Tref}{T_{\text{ref}}}
+
+% Table of Contents title styling (to match MCM/ICM sample look)
+\renewcommand{\contentsname}{\centering\LARGE\bfseries Contents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\graphicspath{{figures/}{.}}  % Place your graphic files in the same directory as your main document
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif, .png}
+\thispagestyle{empty}
+\vspace*{-16ex}
+\centerline{\begin{tabular}{*3{c}}
+	\parbox[t]{0.3\linewidth}{\begin{center}\textbf{Problem Chosen}\\ \Large \textcolor{red}{\Problem}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{2026\\ MCM/ICM\\ Summary Sheet}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{Team Control Number}\\ \Large \textcolor{red}{\Team}\end{center}} \\
+	\hline
+\end{tabular}}
+%%%%%%%%%%% Begin Summary %%%%%%%%%%%
+% Enter your summary here replacing the (red) text
+% Replace the text from here ...
+\input{sections/summary}
+% to here
+%%%%%%%%%%% End Summary %%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagestyle{fancy}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\tableofcontents
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Begin your paper here
+\input{sections/introduction}
+\input{sections/assumptions}
+\FloatBarrier
+\input{sections/model1_soc}
+\input{sections/model2_prediction}
+\input{sections/model3_performance}
+\input{sections/sensitivity}
+\input{sections/strengths}
+\input{sections/conclusion}
+
+% References
+\bibliographystyle{plain}
+\bibliography{references}
+
+% AI Usage Report (per COMAP 2025 policy - outside page limit)
+\clearpage
+\input{sections/ai_report}
+
+\end{document}

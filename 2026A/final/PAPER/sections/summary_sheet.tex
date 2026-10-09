@@ -1,0 +1,19 @@
+% Summary sheet (COMAP-style). This file is included by main.tex.
+
+\thispagestyle{empty}
+\vspace*{-16ex}
+\centerline{\begin{tabular}{*3{c}}
+    \parbox[t]{0.3\linewidth}{\begin{center}\textbf{Problem Chosen}\\ \Large \textcolor{red}{\Problem}\end{center}}
+    & \parbox[t]{0.3\linewidth}{\begin{center}\textbf{2026\\ MCM/ICM\\ Summary Sheet}\end{center}}
+    & \parbox[t]{0.3\linewidth}{\begin{center}\textbf{TeamControl Number}\\ \Large \textcolor{red}{\Team}\end{center}}\\
+    \hline
+\end{tabular}}
+
+%%%%%%%%%%% Begin Summary %%%%%%%%%%%
+\input{sections/summary}
+%%%%%%%%%%% End Summary %%%%%%%%%%%
+
+\clearpage
+\pagestyle{fancy}
+\setcounter{page}{1}
+\rhead{Page \thepage\ }

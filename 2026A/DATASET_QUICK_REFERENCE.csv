@@ -1,0 +1,13 @@
+Category,Dataset Name,Location,File Count,Total Size (MB),Key File Types,Temperature Range (°C),Samples,Validation Purpose,Priority
+OCV Validation,Low Current OCV,battery data/低电流开路电压,2,7.8,XLS/XLSX,Various,2,OCV characterization at low current,HIGH
+OCV Validation,Incremental Current OCV,battery data/增量电流开路电压,2,7.8,XLS/XLSX,Various,2,OCV characterization with incremental current,HIGH
+ECM/Thermal,LG 18650HG2 Original,LG_HG2_Original_Dataset.../0degC through 40degC,~350,1200,MAT/CSV,-20 to 40,10+,Voltage response ECM parameters thermal effects,CRITICAL
+ECM/Thermal,LG 18650HG2 Prepared,LG_HG2_Prepared_Dataset.../,Variable,N/A,Processed,All,All,Pre-processed ready-to-use ECM data,CRITICAL
+Thermal,Panasonic 18650PF,-20degC to 25degC/-10degC to 25degC,~200,800,MAT/CSV,-20 to 25,Multiple,Temperature rise analysis impedance validation,HIGH
+Thermal,Panasonic EIS Data,Panasonic 18650PF Data/*/EIS,~30,Variable,CSV,-20 to 25,Multiple,Frequency-domain impedance characterization,HIGH
+Power/Device,Mobile Power Reference,3Ws.pdf,1,0.5,PDF,N/A,Device-level,Device power consumption benchmarking,LOW
+Power/Device,Component Power Analysis,AndroWatts*.pdf,1,0.5,PDF,N/A,Mobile devices,Mobile component power breakdown,LOW
+ML Reference,SOC Estimator Script,LG-18650HG2-SOC-Estimation/FNN_*.mlx,1,1200,MATLAB,25,10+,Deep learning SOC estimation example,MEDIUM
+ML Reference,SOC Pipeline Code,LG-18650HG2-SOC-Estimation/src,~50,500,Python/Git,25,10+,End-to-end ML pipeline reference,MEDIUM
+Aging,Charge Sequences,LG_HG2_Original_Dataset/*/Charge*.csv,~350,Variable,CSV,-20 to 40,10+,Capacity fade degradation tracking,MEDIUM
+Aging,Panasonic Discharge,Panasonic*/Discharge_tests,~50,Variable,CSV,-20 to 25,Multiple,Discharge capacity degradation analysis,MEDIUM

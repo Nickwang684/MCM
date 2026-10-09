@@ -1,0 +1,5 @@
+file,rmse_V,mae_V,max_err_V
+D:\jingsai\shumo\MCM\2026A\dataset\battery data\低电流开路电压\sample1\SP1_Initial capacity_10_16_2015\10_16_2015_Initial capacity_SP20-1.xlsx,0.42252115302755827,0.36923562403504073,1.2259063690197194
+D:\jingsai\shumo\MCM\2026A\dataset\battery data\低电流开路电压\sample2\SP3_Initial capacity_10_16_2015\10_16_2015_Initial capacity_SP20-3.xls,0.4397599241050029,0.3879506027099,1.2290027020336813
+D:\jingsai\shumo\MCM\2026A\dataset\battery data\增量电流开路电压\sample1\SP1_Initial capacity_10_16_2015\10_16_2015_Initial capacity_SP20-1.xlsx,0.42252115302755827,0.36923562403504073,1.2259063690197194
+D:\jingsai\shumo\MCM\2026A\dataset\battery data\增量电流开路电压\sample2\SP3_Initial capacity_10_16_2015\10_16_2015_Initial capacity_SP20-3.xls,0.4397599241050029,0.3879506027099,1.2290027020336813

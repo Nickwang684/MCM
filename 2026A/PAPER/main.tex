@@ -1,0 +1,119 @@
+% MCM 2026 Problem A: Smartphone Battery Discharge Modeling
+% Team #XXXXXX
+\documentclass[12pt]{article}
+
+% ===== Packages =====
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{lastpage}
+
+% ===== Page Setup =====
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Team \#XXXXXX}
+\lhead{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+% ===== Custom Commands =====
+\newcommand{\SOC}{\text{SOC}}
+\newcommand{\SOH}{\text{SOH}}
+\newcommand{\OCV}{V_{\text{OC}}}
+\newcommand{\Qnom}{Q_{\text{nom}}}
+\newcommand{\Tamb}{T_{\text{amb}}}
+\newcommand{\Tref}{T_{\text{ref}}}
+\newcommand{\dd}{\mathrm{d}}
+
+% ===== Code Style =====
+\lstset{
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    frame=single,
+    language=Python,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red!70!black}
+}
+
+% ===== Title =====
+\title{\textbf{Continuous-Time Mathematical Modeling of Smartphone Battery State of Charge}}
+\author{Team \#XXXXXX}
+\date{MCM 2026 -- Problem A}
+
+\begin{document}
+
+% ===== Summary Sheet =====
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Large \textbf{PROBLEM CHOSEN}}\\[0.5cm]
+{\LARGE \textbf{A}}\\[2cm]
+
+{\Large \textbf{2026}}\\
+{\Large \textbf{MCM/ICM}}\\
+{\Large \textbf{Summary Sheet}}\\[2cm]
+
+{\Large \textbf{Team Control Number}}\\[0.3cm]
+{\LARGE \textbf{XXXXXX}}\\[2cm]
+
+\rule{\textwidth}{1pt}\\[0.5cm]
+{\Large \textbf{Continuous-Time Mathematical Modeling of Smartphone Battery State of Charge}}\\[0.5cm]
+\rule{\textwidth}{1pt}
+
+\vfill
+
+\end{titlepage}
+
+% ===== Summary =====
+\input{sections/summary}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ===== Main Content =====
+\input{sections/introduction}
+\input{sections/assumptions}
+\input{sections/model1_soc}
+\input{sections/model2_prediction}
+\input{sections/model3_performance}
+\input{sections/sensitivity}
+\input{sections/strengths}
+\input{sections/conclusion}
+
+% ===== References =====
+\newpage
+\bibliographystyle{plain}
+\bibliography{references}
+
+% ===== Appendix =====
+\newpage
+\appendix
+\input{sections/appendix}
+
+\end{document}

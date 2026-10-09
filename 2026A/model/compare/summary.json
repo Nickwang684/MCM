@@ -1,0 +1,21 @@
+{
+  "ocv": {
+    "count": 4,
+    "rmse_V_mean": 0.4311405385662806,
+    "points": 1600
+  },
+  "lg_cycles": {
+    "count": 30,
+    "rmse_soc_mean": 0.41511253981624735,
+    "rmse_v_mean": 0.38096509462933575,
+    "rmse_temp_C_mean": 25.398169943544517
+  },
+  "panasonic_eis": {
+    "count": 20,
+    "has_zreal": 0,
+    "has_zimag": 0
+  },
+  "uncertainty": {
+    "samples": 200
+  }
+}

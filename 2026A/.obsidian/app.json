@@ -1,0 +1,12 @@
+{
+  "showLineNumber": true,
+  "trashOption": "local",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "草稿箱",
+  "attachmentFolderPath": "附件",
+  "promptDelete": false,
+  "strictLineBreaks": true,
+  "livePreview": true,
+  "defaultViewMode": "source",
+  "readableLineLength": false
+}

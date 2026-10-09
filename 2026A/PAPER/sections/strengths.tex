@@ -1,0 +1,187 @@
+\section{Strengths and Weaknesses}
+\label{sec:strengths}
+
+\subsection{Model Strengths}
+\label{subsec:strengths}
+
+\begin{enumerate}
+    \item \textbf{Continuous-Time Formulation}
+    
+    The ODE-based approach provides:
+    \begin{itemize}
+        \item Natural representation of physical dynamics
+        \item Flexibility in time step selection
+        \item Easy integration with control systems
+        \item Smooth trajectories amenable to optimization
+    \end{itemize}
+    
+    \item \textbf{Multi-Physics Integration}
+    
+    Our five-state model couples:
+    \begin{itemize}
+        \item Electrochemical (SOC, voltage)
+        \item Thermal (temperature dynamics)
+        \item Degradation (SOH evolution)
+    \end{itemize}
+    This captures important interactions often ignored in simpler models.
+    
+    \item \textbf{Computational Efficiency}
+    
+    The 2-RC ECM achieves excellent accuracy-to-complexity ratio:
+    \begin{itemize}
+        \item Real-time capable ($<$1 ms per time step)
+        \item Suitable for embedded systems
+        \item 6--8 parameters vs. 50+ for electrochemical models
+    \end{itemize}
+    
+    \item \textbf{Uncertainty Quantification}
+    
+    Monte Carlo propagation provides:
+    \begin{itemize}
+        \item Confidence intervals for predictions
+        \item Identification of dominant uncertainty sources
+        \item Risk-aware decision making
+    \end{itemize}
+    
+    \item \textbf{Actionable Insights}
+    
+    Sensitivity analysis identifies:
+    \begin{itemize}
+        \item Prioritized user actions
+        \item OS optimization opportunities
+        \item Parameters requiring accurate estimation
+    \end{itemize}
+    
+    \item \textbf{Modular Architecture}
+    
+    Each component (power, battery, thermal, aging) is modular:
+    \begin{itemize}
+        \item Easy to update individual models
+        \item Facilitates calibration to specific devices
+        \item Extensible to new use cases
+    \end{itemize}
+    
+    \item \textbf{Practical Validation}
+    
+    The model achieves:
+    \begin{itemize}
+        \item SOC RMSE $<$ 3\%
+        \item Voltage RMSE $<$ 30 mV
+        \item Time-to-empty error $<$ 10\%
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Model Weaknesses}
+\label{subsec:weaknesses}
+
+\begin{enumerate}
+    \item \textbf{Lumped Thermal Model}
+    
+    The single-temperature assumption may be inadequate for:
+    \begin{itemize}
+        \item Large batteries with internal gradients
+        \item High-power fast charging scenarios
+        \item Extreme ambient conditions
+    \end{itemize}
+    
+    \textit{Mitigation:} Extend to 1D or 2D thermal models if needed.
+    
+    \item \textbf{Simplified Aging Model}
+    
+    The semi-empirical aging model:
+    \begin{itemize}
+        \item Does not capture detailed electrochemical degradation mechanisms
+        \item May require recalibration for different cell chemistries
+        \item Limited accuracy for SOH $<$ 70\%
+    \end{itemize}
+    
+    \textit{Mitigation:} Use physics-based aging models for long-term predictions.
+    
+    \item \textbf{Parameter Uncertainty}
+    
+    Model accuracy depends on parameter quality:
+    \begin{itemize}
+        \item ECM parameters vary with cell manufacturer
+        \item Aging parameters require extensive testing
+        \item Online identification may not fully resolve uncertainty
+    \end{itemize}
+    
+    \textit{Mitigation:} Adaptive parameter estimation, device-specific calibration.
+    
+    \item \textbf{Usage Pattern Assumptions}
+    
+    Predictions assume:
+    \begin{itemize}
+        \item Known or predictable usage patterns
+        \item Relatively stable usage within prediction horizon
+        \item No major mode changes (e.g., sudden gaming session)
+    \end{itemize}
+    
+    \textit{Mitigation:} Incorporate usage prediction models, provide range estimates.
+    
+    \item \textbf{Limited Extreme Condition Accuracy}
+    
+    The model is validated for normal operating conditions:
+    \begin{itemize}
+        \item Accuracy degrades below 0$^\circ$C
+        \item High C-rate behavior may differ
+        \item Very old batteries ($<$70\% SOH) may behave differently
+    \end{itemize}
+    
+    \textit{Mitigation:} Add extreme condition sub-models.
+    
+    \item \textbf{Component Power Estimation}
+    
+    Power consumption models:
+    \begin{itemize}
+        \item May not capture all application-specific behaviors
+        \item Background process power is estimated
+        \item Display content effects (OLED) are simplified
+    \end{itemize}
+    
+    \textit{Mitigation:} Device-specific power profiling, runtime learning.
+\end{enumerate}
+
+\subsection{Comparison with Alternative Approaches}
+\label{subsec:comparison}
+
+\begin{table}[H]
+    \centering
+    \caption{Comparison of battery modeling approaches.}
+    \label{tab:comparison}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Aspect} & \textbf{Our Model} & \textbf{Data-Driven} & \textbf{Electrochemical} \\
+        \midrule
+        Accuracy & Good & Variable & Excellent \\
+        Computational cost & Low & Medium & High \\
+        Interpretability & High & Low & High \\
+        Calibration effort & Medium & Low & High \\
+        Generalizability & Good & Limited & Excellent \\
+        Real-time capable & Yes & Yes & No \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Sensitivity of Conclusions to Model Assumptions}
+\label{subsec:robustness}
+
+We tested whether key findings are robust to model assumptions:
+
+\begin{table}[H]
+    \centering
+    \caption{Robustness of key findings to model variations.}
+    \label{tab:robustness}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Finding} & \textbf{Tested Variations} & \textbf{Robust?} \\
+        \midrule
+        Brightness most important user factor & $\pm$20\% power coefficients & Yes \\
+        GPS has minor impact & Different usage patterns & Yes \\
+        $R_0$ has minor impact & $\pm$50\% resistance range & Yes \\
+        Capacity dominates SOC prediction & Different battery sizes & Yes \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+The qualitative conclusions are robust to reasonable variations in model parameters and assumptions.

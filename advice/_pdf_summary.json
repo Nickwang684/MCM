@@ -1,0 +1,1813 @@
+{
+  "root": "D:\\jingsai\\shumo\\MCM\\advice",
+  "total": 360,
+  "files": [
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\2012A 葡萄酒的评价3(二等).pdf",
+      "rel": "2012A 葡萄酒的评价3(二等).pdf",
+      "pages": 34,
+      "images": 2,
+      "tables": 23,
+      "fig_refs": 0,
+      "section_hits": {},
+      "headings": [
+        "时，又给出了合理的评价的方法。",
+        "葡萄酒的评价"
+      ],
+      "image_style": {
+        "small": 0,
+        "medium": 2,
+        "large": 0
+      },
+      "math_density": 0.0053076469431885195,
+      "sample": "1\n葡萄酒的评价 \n摘  要 \n本文讨论的是葡萄酒的评价问题，通过建立不同模型，分析出了两组评酒员的评价\n结果有无显著性差异，对酿酒葡萄进行了分级，并找出了酿酒葡萄与葡萄酒的量化指标\n间的联系，最后把芳香物质加入指标对酿酒葡萄与葡萄酒的指标关系进行论证。 \n \n对于问题一，要求根据附件 1 的数据，判断两组评酒员的评价结果有无显著性差异。\n通过建立分组 T 检验和成对数据检验两个模型，得出若分别考虑红、白葡萄酒，则认为\n两组评酒员的评价结果都存在显著性差异，若对红、白葡萄酒综合考虑时，则认为两组\n评价员的评价结果无显著性差异。最后，以方差为参考指标，得出第二组评酒员的评价\n结果更可信。 \n \n对于问题二，要求根据酿酒葡萄的理化指标和葡萄酒的质量对酿酒葡萄进行分类，\n采用系统聚类分析法，运用 SPSS 软件得出谱系聚类图和不同分类数时的分类结果。分\n类完成后，以每个类所包含样品的质量得分的均值作为参考，对类进行分级，具体结果\n见正文。 \n \n对于问题三，要求分析酿酒葡萄与葡萄酒的理化指标间的联系，我们建立了偏最小\n二乘法回归分析模型——综合主成分分析与经典的多元回归分析。首先对附件 2 中酿酒\n葡萄的 30 个一级理化指标进行主成分分析，之后利用多元回归得出葡萄酒的 9 个一级\n理化指标关于酿酒葡萄的 30 指标的回归方程，具体结果见正文。 \n \n对于问题四，首先求出酿酒葡萄、葡萄酒的一级指标与葡萄酒质量的四个方面的相\n关系数，分析得出分别影响葡萄酒外观、口感、香气、整体的主要指标；为了论证能否\n用葡萄和葡萄酒的理化指标来评价葡萄酒的质量，建立加入芳香物质和未加入芳香物质\n时各指标与可信质量得分的多元统计回归模型，对回归值与评酒员的评分结果的差值是\n进行 T 检验，得出不能仅仅用葡萄和葡萄酒的理化指标来评价葡萄酒的质量的论证，同\n时，又给出了合理的评价的方法。 \n \n \n \n \n \n \n \n \n \n \n关键字：分组数据检验   聚类分析  偏最小二乘模型   芳香物质\n2\n \n \n \n \n一、 问题重述 \n确定葡萄酒质量时一般是通过聘请一批有资质的评酒员进行品评。每个评酒员在对\n葡萄酒进行品尝后对其分类指标打分，然后求和得到其总分，从而确定葡萄酒的质量。\n酿酒葡萄的好坏与所酿葡萄酒的质量有直接的关系，葡萄酒和酿酒葡萄检测的理化指标\n会在一定程度上反映葡萄酒和葡萄的质量。附件 1 给出了某一年份一些葡萄酒的评价结\n果，附件 2 和附件 3 分别给出了该年份这些葡萄酒的和酿酒葡萄的成分数据。请尝试建\n立数学模型讨论下列问题： \n1. 分析附件 1 中两组评酒员的评价结果有无显著性差异，哪一组结果更可信？ \n2. 根据酿酒葡萄的理化指标和葡萄酒的质量对这些酿酒葡萄进行分级。 \n3. 分析酿酒葡萄与葡萄酒的理化指标之间的联系。 \n4．分析酿酒葡萄和葡萄酒的理化指标对葡萄酒质量的影响，并论证能否用葡萄和葡萄\n酒的理化指标来评价葡萄酒的质量？ \n \n二、 问题假设 \n1.附件中的数据真实的反映葡萄酒和酿酒葡萄的变量值； \n2.芳香物质对香气的贡献率相同； \n3，各个评分员的评分公平公正，对不同样本的标准相同 \n。 \n三、 符号说明 \n0\nia ：葡萄酒i 的质量分数，\n1,2,\n,55\ni =\n�\n； \n:\n1,2,\n,55;\n1\n2\n1,2,\n10\niamn\ni\nm\nn\n=\n=\n=\n�\n�\n或 ；\n； \ni\nX ：第一组评酒员对样品i 的评价结果均值，\n1,2,\n,55\ni =\n�\n，前 27 个对应红葡萄酒，后\n28 个对应白葡萄酒； \niY ：第二组评酒员对样品i 的评价结果均值，\n1,2,\n,55\ni =\n�\n，前 27 个对应红葡萄酒，后\n28 个对应白葡萄酒； \ni\nD ：两组评酒员对样品i 的评价结果均值的差值，\n1,2,\n,55\ni =\n�\n； \nis ：第i 组评酒员的评酒结果方差； \nij\nd ：样品i 与样品 j 间的距离， ,\n1,2,\n,55\ni j =\n�\n； \ni\nϖ ：酿酒葡萄的第i 个一级指标的距离权重，\n1,2,\n,31\ni =\n�\n；"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\2012A葡萄酒的评价1（一等）写作方面有较大的改进余地.pdf",
+      "rel": "2012A葡萄酒的评价1（一等）写作方面有较大的改进余地.pdf",
+      "pages": 41,
+      "images": 2,
+      "tables": 31,
+      "fig_refs": 0,
+      "section_hits": {},
+      "headings": [
+        "题目：葡萄酒的评价"
+      ],
+      "image_style": {
+        "small": 0,
+        "medium": 2,
+        "large": 0
+      },
+      "math_density": 0.005669303403497347,
+      "sample": "1\n题目：葡萄酒的评价 \n摘要 \n本题是利用葡萄酒品尝评分表、葡萄和葡萄酒的理化指标、葡萄和葡萄酒的芳\n香物质对葡萄酒进行评价。 \n问题一，我们以评酒员对各分类指标打分的总分表示该评酒员对这种酒的总评\n价。由于每个评酒员评分相互独立又有随机误差，我们用方差显著性检验的方法检\n验了两组评酒员对每种酒的评价是否有显著性差异，我们用 EXCEL 的统计函数进行\n计算，得到结论：两组评酒员对第 2、11、12、13、16、24 种红葡萄酒和第 5、27\n种白葡萄酒的评价具有显著性差异。又因为两组评酒员对同一种酒评分的分差是随\n机的且服从正态分布，用 t-检验来检验两组评酒员总体评价是否存在显著性差异，用\nEXCEL 计算得到结论：两组评酒员的评价具有显著性差异。我们认为方差较小的一\n组更可信，即第二组的结果更可信。然后进行了误差分析。 \n    问题二，我们用主成分分析法对每种葡萄按照其理化指标综合打分，然后引入\n权值λ 对葡萄酒分数和理化指标分数进行加权得到总分，用 MATLAB 编程计算，按\n总分分数段分别将红葡萄和白葡萄分成 5 类，得到葡萄的分类如下： \n红葡萄的分类：10、25； 4、6、7、8、11、13、15、18、26、27；1、5、12、14、\n16、17、19、20、22、24； 2、21、23；3、9。 \n白葡萄的分类：16；8、11；1、2、4、12、13、14、17、19、22、26；3、6、7、9、\n10、15、18、20、21、23、24、25、28；5、27； \n问题三，我们用两种模型求解：模型一对葡萄的每种理化指标和葡萄酒的理化\n指标分别作相关性检验，对每个因变量取相关性较强的 5 个自变量进行多元线性拟\n合，用 MATLAB 的 regress()命令求解，得到关系式见式(4.3.2)和(4.3.3)。模型二先对\n理化指标进行聚类分析，分成了 5 类，以每类平均相关性指标为自变量建立多元线\n性回归模型，仍然用 MATLAB 求解，得到关系式见式(4.3.4)和(4.3.5)，并进行统计\n检验，方程回归效果显著。 \n    问题四，我们认为影响葡萄酒质量的主要因素有五类指标：酸类、糖类、酚醇\n类、色素和芳香物质，其中四类是理化指标。评价葡萄酒质量主要有三个方面：外\n观、香气和口感。我们对这五类指标进行量化处理，探究五类指标和三个方面的关\n系，看芳香物质对葡萄酒质量影响的大小，我们得到结论：芳香物质对葡萄酒的影\n响较大，不能忽略，因此不能仅用理化指标来衡量葡萄酒的质量。并用层次分析法\n进行验证，得到的结果一致。 \n \n \n \n \n \n \n \n \n \n关键词：显著性检验；主成分分析；聚类分析；相关性；层次分析模型；EXCEL；\nMATLAB；SPSS\n2\n正文 \n一、 问题重述： \n确定葡萄酒质量时一般是通过聘请一批有资质的评酒员进行品评。每个评酒员\n在对葡萄酒进行品尝后对其分类指标打分，然后求和得到其总分，从而确定葡萄酒\n的质量。酿酒葡萄的好坏与所酿葡萄酒的质量有直接的关系，葡萄酒和酿酒葡萄检\n测的理化指标会在一定程度上反映葡萄酒和葡萄的质量。附件 1 给出了某一年份一\n些葡萄酒的评价结果，附件 2 和附件 3 分别给出了该年份这些葡萄酒的和酿酒葡萄\n的成分数据。请尝试建立数学模型讨论下列问题： \n1. 分析附件 1 中两组评酒员的评价结果有无显著性差异，哪一组结果更可信？ \n2. 根据酿酒葡萄的理化指标和葡萄酒的质量对这些酿酒葡萄进行分级。 \n3. 分析酿酒葡萄与葡萄酒的理化指标之间的联系。 \n4．分析酿酒葡萄和葡萄酒的理化指标对葡萄酒质量的影响，并论证能否用葡萄和葡\n萄酒的理化指标来评价葡萄酒的质量？ \n \n二、 基本假设： \n1．每个评酒员对葡萄酒质量的评估结果为分类指标分数求和得到的总分； \n2．评酒员对葡萄酒的评价距标准有一定的误差，这个误差是随机的； \n3．每个评酒员都是经过认真品尝后进行评分，所有分数都是可信的，且相互独立； \n4．显著性水平α 取 0.05； \n5．每种葡萄酒是由其对应编号的葡萄酿成的； \n6．所有种类葡萄酒都是用同种方法酿制，不会因为酿制方法不同而导致酿酒葡萄的\n成分发生不同的变化； \n7．影响葡萄酒质量的理化指标有糖类、酸类、酚醇类和色素类，其他的指标可以认\n为与葡萄酒质量无关； \n8．葡萄酒的各理化指标之间是相互独立的； \n9．酿酒葡萄和葡萄酒的理化指标为线性关系。 \n \n三、 基本符号约定： \n符号 \n意义 \nn  \n葡萄酒种类的总数，红葡萄酒为 27，白葡萄酒为 28 \nk\nij\nA  \n第 k 组第 j 个评酒员对第i 种红葡萄酒的总评分， k =1,2， j =1,2,…10，\ni =1,2,… n  \nk\nij\nB  \n第 k 组第 j 个评酒员对第i 种"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\2012A葡萄酒的评价2（一等）.pdf",
+      "rel": "2012A葡萄酒的评价2（一等）.pdf",
+      "pages": 36,
+      "images": 29,
+      "tables": 11,
+      "fig_refs": 0,
+      "section_hits": {},
+      "headings": [
+        "葡萄酒的质量分析与评价",
+        " "
+      ],
+      "image_style": {
+        "small": 39,
+        "medium": 0,
+        "large": 1
+      },
+      "math_density": 0.0006698387767358064,
+      "sample": "1 \n \n \n葡萄酒的质量分析与评价 \n摘要 \n本文针对葡萄酒的质量分析与评价问题，以置信区间、优势矩阵、逐步回归分\n析等方法和方差分析理论为基础，首先分析了两组评酒员评价结果，并确定可信的\n评价组别；然后建立基于优势矩阵的等级划分模型，对两组葡萄样本进行了等级划\n分；再利用关联度分析和逐步回归分析两种方法分析了酿酒葡萄和葡萄酒的理化指\n标之间的联系；最后对逐步回归分析法作多级嵌套改进，对葡萄和葡萄酒的理化指\n标能否评价葡萄酒质量的命题进行了论证。 \n针对问题一，考虑到评酒员之间可能存在主观因素导致的对酒样的评价差异悬\n殊，分别构造了以评酒员和酒样为组别的方差数据序列，通过进行双向显著性检验\n得到原始数据下评酒员间主观因素导致的差异极显著。然后分别引入标准化处理和\n置信区间法对数据进行处理，得到基于置信区间法的检验结果更优，再使用置信区\n间法处理的数据进行了方差分析，通过比较 F 统计量得到针对红葡萄酒和白葡萄酒，\n分别为第一组和第二组的评价结果更可信的结论。 \n针对问题二，基于对葡萄品质的分析，以外观等四项品质类型结合酿造葡萄酒\n的质量构建了合理的葡萄等级划分指标体系。然后，通过均值聚类对理化指标进行\n了类别划分；再通过引入优势因子建立了优势因子矩阵，基于数值差异性对指标进\n行了清晰的等级划分。最后综合各项优势值与葡萄酒质量的优势值进行加权求和，\n以区间方式得到葡萄的划分等级，得到了红色类型葡萄的等级划分较为合理，白色\n类型葡萄的等级划分区分度较低的结论。 \n针对问题三，基于酿酒葡萄与葡萄酒的理化指标数据，首先构造了相关系数矩\n阵对双方的理化指标进行了关联性分析，并选取了关联性高的指标对进行了假设性\n探究；然后考虑了葡萄的多个理化指标对葡萄酒理化指标的综合影响，运用了逐步\n回归分析，得到相应的回归方程，并选取了其中检验量高的指标组合进行了假设性\n影响分析。 \n针对问题四，首先将葡萄酒的质量评价划分为外观、香气和口感三种类型的评\n价，然后分别针对三个方面以酒酿葡萄和葡萄酒的理化指标进行关联系分析；然后\n在逐步回归分析的基础上作多级嵌套改进，分别用第一级和第二级对葡萄酒理化指\n标和葡萄酒质量、酒酿葡萄和葡萄酒理化指标进行了逐步回归分析，最终经过论证\n得到红葡萄酒的香气和口感可以通过葡萄和葡萄酒的理化指标进行评价，并针对无\n法进行评价的部分进行了论证分析。 \n最后，对模型中运用的方法进行了科学性分析，并讨论了模型的优缺点，考虑\n了实际应用中的改进方向，提出了一些优化策略。 \n \n \n关键词： 质量评价  优势矩阵  逐步回归  置信区间  关联性分析\n2 \n \n1. 问题的重述 \n确定葡萄酒质量时一般是通过聘请一批有资质的评酒员进行品评。每个评酒员\n在对葡萄酒进行品尝后对其分类指标打分，然后求和得到其总分，从而确定葡萄酒\n的质量。酿酒葡萄的好坏与所酿葡萄酒的质量有直接的关系，葡萄酒和酿酒葡萄检\n测的理化指标会在一定程度上反映葡萄酒和葡萄的质量。题目附件一给出了某一年\n份一些葡萄酒的评价结果，题目附件二和题目附件三分别给出了该年份这些葡萄酒\n的和酿酒葡萄的成分数据。题目要求尝试建立数学模型讨论下列问题： \n1. 分析题目附件一中两组评酒员的评价结果有无显著性差异，并讨论哪一组结果\n更可信。 \n2. 根据酿酒葡萄的理化指标和葡萄酒的质量对这些酿酒葡萄进行分级。 \n3. 分析酿酒葡萄与葡萄酒的理化指标之间的联系。 \n4. 分析酿酒葡萄和葡萄酒的理化指标对葡萄酒质量的影响，并论证能否用葡萄和\n葡萄酒的理化指标来评价葡萄酒的质量。 \n \n2. 问题的分析 \n2.1 问题一的分析 \n该问题要求分析题目附件一中两组评酒员的评价结果有无显著性差异，并分析\n哪一组的结果更可信。 \n显著性差异是统计学上有量度的对数据差异性的或然评价。分析评酒员的评价\n结果有无显著性差异，即反映需研究评酒员对酒样评分的数值序列是否有较大的偏\n差。根据题意，葡萄酒的质量评价是通过评酒员的品评进行评分从而得到评价的，\n考虑到评酒员之间可能存在个人评酒风格等主观差异因素，若不同评酒员之间的主\n观因素差异过大，可能导致不同评酒员对于同一葡萄酒样的评价差异悬殊，影响酒\n样的质量鉴定，因此需要对主观因素的影响程度进行检验。 \n对于数据的偏差性检验和影响因素的挖掘，可采用方差分析对数据序列进行处\n理，通过将方差分析中的检验量与显著性水平下的检验值相比较从而验证差异性是\n否显著。考虑到涉及主观因素的差异性对酒样评分的影响是否显著，还可通过分别\n构造以评酒员为组别、元素为单个酒样的评分方差数据序列和以酒样为组别，元素\n为单个评酒员对全部酒样的评分方差数据序列，基于两类数据序列进行双向显著性\n检验，通过比较两者的检验量进行分析。若以评酒员为组别的序列的差异性检验量\n显著高于以酒样为组别的"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\2012年数学建模A题一等奖论文葡萄酒的评价 .pdf",
+      "rel": "2012年数学建模A题一等奖论文葡萄酒的评价 .pdf",
+      "pages": 41,
+      "images": 34,
+      "tables": 145,
+      "fig_refs": 0,
+      "section_hits": {},
+      "headings": [
+        ",10",
+        "1,2,",
+        "5.1 问题一的模型建立与求解",
+        "5.1.1 数据的预处理",
+        "5.1.2 各葡萄酒样本评分数据概率分布的确定",
+        "mx 为缺失值。",
+        "五、模型建立与求解",
+        "似地用正态分布来描述[2]。因此，对葡萄酒质量的评分进行正态性检验有助于我们分析",
+        "例如，第一组白葡萄酒品尝评分的数据中，可能由于手工输入的误差，品酒员 7 对",
+        "其中，",
+        "原始数据中，有的数据明显比两侧的数据过大或过小，显然是不合理数据。",
+        "在此我们将其正常化处理。",
+        "均值替换法就是将该项目剔除异常数据后取整剩余数据的平均值来替换异常或缺",
+        "失数据的方法，即：",
+        "如下表所示。",
+        "对两组品酒员差异性评价的假设检验一般要求数据符合正态分布。统计规律表明，",
+        "对于数据中存在的缺失现象，本文采用均值替换法对这种缺失数据进行处理。",
+        "对于类似的异常数据采取“先剔除，后替换”的策略，对异常数据进行修正。",
+        "度方面的优劣。",
+        "度方面的优劣。我们认为由以下三个步骤组成：",
+        "异常有可能对数据挖掘的结果产生不利影响。",
+        "得出该评分是否科学、合理。",
+        "来处理缺失数据是可行的。以“酒样品 20”色调数据为例进行修补，得到修正后的数据",
+        "样品 3 持久性评分的数据相对于相邻各品酒员的评分发生了明显的突变现象。这种数据",
+        "正态分布有极其广泛的实际背景，生产与科学实验中很多随机变量的概率分布都可以近",
+        "步骤一：葡萄酒样本评分概率分布的确定，其目的是确定显著性差异模型的类型；",
+        "步骤三：建立秩相关分析评价模型，并通过该模型判断两组品酒员评价结果在可信",
+        "步骤二：两组评酒员评价结果的显著性差异模型的建立，主要通过 Wilcoxon 符号",
+        "由于不同品酒师对同一样本相同项目的打分值差别不大，所以认为采用均值替换法",
+        "秩检验法进行显著性差异的假设检验；",
+        "经过对数据的查找，我们发现部分原始数据存在异常，另外有些类型数据存在缺失，",
+        "葡萄酒的评价",
+        "问题一要求分析两组评酒员的评价结果有无显著性差异，并判断两组结果在可信程",
+        "",
+        " ",
+        "（1）缺失数据的处理",
+        "（2）异常数据的修正"
+      ],
+      "image_style": {
+        "small": 35,
+        "medium": 4,
+        "large": 1
+      },
+      "math_density": 0.00792572463768116,
+      "sample": "1 \n葡萄酒的评价 \n摘 要 \n本文运用多种相关分析、综合评价和线性回归等方法解决了葡萄酒质量的评价问题。 \n对于问题一，首先通过单样本 K-S 检验等方法确定了各葡萄酒样本评分数据的概率\n分布，从而确定了显著性差异模型的建立，接着考虑两组评分数据的配对关系约束，引\n入 Wilcoxon 符号秩检验法来进行显著性差异的假设检验。结果显示对于红、白葡萄酒，\n两个品酒组的评价结果均存在显著性差异。最后利用秩相关分析，引入肯德尔和谐系数\n法评定评酒组的评分信度，评价结果显示对于红葡萄酒，第一组品酒员的品尝得分更为\n可信，而对于白葡萄酒则是第二组品酒员在可信度方面占优。 \n问题二，运用主成分分析法进行指标遴选，构建酿酒葡萄质量的综合评价指标体系，\n并利用该指标体系建立基于综合评价的酿酒葡萄分级模型，对酿酒葡萄进行分级。结果\n发现样本葡萄大多集中在二、三级，红葡萄样本中样本 23 质量最优，为特级葡萄；样\n本 12 质量相对欠缺，属六级葡萄。 \n问题三中，采用研究两组变量之间相关关系的多元统计方法——典型相关分析，识\n别并量化两组变量——酿酒葡萄与葡萄酒的理化指标——之间的关系。分析结果如下：\n第一，增大酿酒葡萄果皮的含量对葡萄酒中 DPPH 半抑制体积含量的增加有重要影响；\n第二，酿酒葡萄中的苹果酸不仅能促发酵，还能给对红葡萄酒起主要呈色作用的花色苷\n和对花色苷起中等辅色作用的单宁物质起保护作用，使得红葡萄酒呈色亮丽；第三，在\n葡萄总黄酮消除自由基的抗氧化作用和总酚保护清除自由基的共同作用下，酿酒葡萄中\n的 DPPH 自由基转化为葡萄酒中的 DPPH 半抑制体积。 \n对于问题四，首先在问题三分析酿酒葡萄与葡萄酒的理化指标间联系的基础上，在\n保留葡萄酒指标的前提下，剔除酿酒葡萄指标中某些认为可以被用于表示对应葡萄酒指\n标的部分。接着，利用筛选后的指标建立多元线性回归模型，探究酿酒葡萄和葡萄酒的\n理化指标对葡萄酒质量的影响。经检验样本组的线性回归模型评价值与评分值的显著性\n差异检验，用葡萄和葡萄酒的理化指标来评价葡萄酒的质量是可行的。 \n本文综合秩相关分析评价、基于层次分析法的综合评价、典型相关分析、多元线性\n回归等模型，结合 MATLAB、SPSS、SAS 和 EXCEL 等软件，对葡萄酒质量的评价问\n题进行了多角度的分析，并给出了利用理化指标评价葡萄酒质量的模型。在文章的最后\n对模型的适用范围做出了推广，在实际应用中有较大的参考价值。 \n关键词：秩相关 主成分分析 层次分析综合评价 典型相关分析 多元线性回归 \n更多数学建模资料请关注微店店铺“数学建模学习交流”\nhttps://k.weidian.com/RHO6PSpA\n2 \n \n一、问题重述 \n确定葡萄酒质量时一般是通过聘请一批有资质的评酒员进行品评。每个评酒员在对\n葡萄酒进行品尝后对其分类指标打分，然后求和得到其总分，从而确定葡萄酒的质量。\n酿酒葡萄的好坏与所酿葡萄酒的质量有直接的关系，葡萄酒和酿酒葡萄检测的理化指标\n会在一定程度上反映葡萄酒和葡萄的质量。附件 1 给出了某一年份一些葡萄酒的评价结\n果，附件 2 和附件 3 分别给出了该年份这些葡萄酒的和酿酒葡萄的成分数据。请尝试建\n立数学模型讨论下列问题： \n1. 分析附件 1 中两组评酒员的评价结果有无显著性差异，哪一组结果更可信？ \n2. 根据酿酒葡萄的理化指标和葡萄酒的质量对这些酿酒葡萄进行分级。 \n3. 分析酿酒葡萄与葡萄酒的理化指标之间的联系。 \n4．分析酿酒葡萄和葡萄酒的理化指标对葡萄酒质量的影响，并论证能否用葡萄和\n葡萄酒的理化指标来评价葡萄酒的质量？ \n \n二、问题分析 \n2.1 问题一的分析 \n问题一要求比较两组评价结果的是否存在差异，并建立合理的评价模型以判断两组\n结果在可信程度方面的优劣。首先，我们从问题分析可以得出品酒员对葡萄酒样本的品\n尝评分是属于感官评价，具有较大的主观性。因此，我们先从问题所给的数据入手，分\n析四组品酒结果中对不同样本打分分布。依靠葡萄酒样本评分的概率分布，建立显著性\n差异模型。由于品酒员间存在评价尺度、评价位置和评价方向等方面的差异，不同组别\n的品酒员对同一酒样的评价结果存在着差异。此时不适用参数检验的方法，而只能用非\n参数统计方法来处理。 \n对主观评分结果合理性的评价，仅仅局限于评分之间表面的数值关系是不够的。因\n此，考虑采取秩相关分析法建立评价模型，将评分结果的具体数值部分予以丢弃，只保\n留各评分秩大小关系的信息，以给出数据中最稳固、最一般的关系，度量整体评分结果\n在可信度方面的优劣。 \n2.2 问题二的分析 \n酿酒葡萄，是指以酿造葡萄酒为主要生产目的的葡萄品种[1]。问题二要求分析确定\n合理的评价指标体系，并运用该评价指标体系对酿酒葡萄进行分级。显而易见，该问题\n要求我们建"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2001334.pdf",
+      "rel": "outstanding\\2001334.pdf",
+      "pages": 31,
+      "images": 63,
+      "tables": 0,
+      "fig_refs": 34,
+      "section_hits": {
+        "summary": 5,
+        "model": 89,
+        "models": 2,
+        "validation": 5,
+        "introduction": 3,
+        "results": 31,
+        "sensitivity": 6,
+        "assumptions": 3,
+        "notations": 4,
+        "discussion": 2,
+        "conclusion": 2,
+        "references": 2,
+        "appendix": 4,
+        "solution": 3
+      },
+      "headings": [
+        "Contents",
+        "Forecasts for the Ecology and Fisheries Economy of Scottish",
+        "General Assumptions and Model Overview",
+        "Introduction",
+        "herring and mackerel"
+      ],
+      "image_style": {
+        "small": 2,
+        "medium": 27,
+        "large": 1
+      },
+      "math_density": 0.006022452638964684,
+      "sample": "Problem Chosen\nA\n2020\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2001334\nForecasts for the Ecology and Fisheries Economy of Scottish\nherring and mackerel\nAs the favorable food for Scotch, the herring and mackerel bring generous proﬁts to ﬁshing\ncompanies. Due to the hotter ocean, more ﬁsh move to the north to seek better habitats, laying a\nnegative impact on the ﬁshing industry. The aim of this report is to build a migratory prediction\nmodel to evaluate the inﬂuences on the income of ﬁshing companies. We are expected to provide\nsome strategies for ﬁshing companies who can adapt to the migration of ﬁsh under the constraints of\nvarious objective conditions and prevent themselves from going bankrupt as much as possible. Three\nmodels are established: Model I: Seawater Temperature Prediction Model; Model II: Fish Migration\nPrediction Model; Model III: Fishing Company Earnings Evaluation Model.\nFor Model I, global ocean temperature date monthly from 1960 to 2019 is ﬁrstly collected. Then,\nbased on the analysis of intrinsic trend of the data and the veriﬁcation of the stationarity, the validation\nof using ARIMA model to predict temperature is proved. Next, historical data is used to ﬁt the\nparameters of ARIMA, with introduction of k-fold cross validation to identify the ﬁnal prediction\nmodel as ARIMA(1,1,0). Finally, according to ARIMA(1,1,0), bootstrap method is used to simulate\n10000 possible prediction cases, which lays a great foundation to predict the migration of ﬁsh.\nFor Model II, ﬁrstly, according to the data of the migration speed and the ocean temperature, it is\ndetermined that the temperature gradient is the main factor aﬀecting the migration speed and direction.\nAnd the corresponding empirical equation is established to determine the impact of temperature on\nﬁsh migration. Then based on the 10000 temperature change samples generated by bootstrap method\nin Model I, migration situation of each sample is simulated to identify the most likely locations of the\nﬁsh. I"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2002354.pdf",
+      "rel": "outstanding\\2002354.pdf",
+      "pages": 25,
+      "images": 44,
+      "tables": 2,
+      "fig_refs": 24,
+      "section_hits": {
+        "summary": 2,
+        "model": 43,
+        "introduction": 2,
+        "assumptions": 3,
+        "notations": 5,
+        "sensitivity": 11,
+        "conclusion": 2,
+        "references": 2,
+        "appendix": 2,
+        "models": 4,
+        "discussion": 1,
+        "results": 7,
+        "validation": 1,
+        "abstract": 1,
+        "solution": 1
+      },
+      "headings": [
+        "4.1 Data processing",
+        "4.2 Grey Model for TSS",
+        "Contents",
+        "Fish Migration Prediction and Fishery Suggestions",
+        "I. Introduction",
+        "II. Assumptions",
+        "III. Notations",
+        "IV. Migration route of fish",
+        "under Marine Environment Changes"
+      ],
+      "image_style": {
+        "small": 2,
+        "medium": 16,
+        "large": 1
+      },
+      "math_density": 0.001521567764761957,
+      "sample": "Problem Chosen \nA\n2020 \nMCM/ICM \nSummary Sheet \nTeam Control Number \n2002354\nFish Migration Prediction and Fishery Suggestions \nunder Marine Environment Changes \nSummary \nThe effect of global warming has caused more and more concern all over the world. In \nparticular,  global warming is driving up temperatures in the seas around Scotland, threatening \nthe survival of fish species, including Scotland herring and mackerel. Fish are likely to migrate \nto the north, where sea temperatures are lower, for better conditions. \nWe begin with the grey prediction model to predict the sea surface temperature in the next 50 \nyears by combining the historical world greenhouse gas emissions, forest coverage and world \npopulation data. \nThen, we construct the Marine environment index for both species of fish. We weight the sea \nsurface temperature, the average sea surface salinity and sea depth on different areas of the ocean \nto get scores of the current environment for the two species. Each species of fish has a preferred \nrange for the environment, which we call the comfort zone. \nIn the fish migration model, we calculate the environment index of the two fish species based \non the predicted temperature data. The fish judge the current environment and choose whether to \nmigrate to a more suitable environment. We find that over the next 50 years herring would \ngradually move to the northeast near Norway, and mackerel will slowly move to the northwest, \nnear Iceland. \nTherefore, we have considered Scottish fishers. Due to technical shortcomings of small fishing \ncompanies, if fishing vessels are too far from the continental shelf, they will face problems such \nas insufficient energy, low safety, and difficulty in keeping fish fresh. Therefore, we estimate the \nelapsed time until the fishermen are unable to catch these two types of fish in their fishing area \nbased on how fast the temperature changes, with the best, worst, and most likely scenarios. We \nfind that in the most probabl"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2003298.pdf",
+      "rel": "outstanding\\2003298.pdf",
+      "pages": 24,
+      "images": 38,
+      "tables": 1,
+      "fig_refs": 17,
+      "section_hits": {
+        "summary": 1,
+        "results": 24,
+        "conclusion": 1,
+        "model": 37,
+        "sensitivity": 6,
+        "introduction": 2,
+        "assumptions": 4,
+        "solution": 10,
+        "models": 3,
+        "notations": 2,
+        "references": 1,
+        "appendix": 1
+      },
+      "headings": [
+        "Contents",
+        "Introduction",
+        "Model Assumptions and Symbols",
+        "Solution to Problem 1"
+      ],
+      "image_style": {
+        "small": 1,
+        "medium": 12,
+        "large": 1
+      },
+      "math_density": 0.001853118312779898,
+      "sample": "Problem Chosen \nA \n2020 \nMCM/ICM \nSummary Sheet \nTeam Control Number \n2003298 \n \nKeeping up with the Migrating Fish \nGradual rise of the ocean temperature results in a significant shift in the distribution of \nherring and mackerel. This situation may cause catastrophe for the small fishing companies in \nScotland, for they may not be able to catch sufficient fish in their current location. Our team was \nasked to identify the most likely distribution of herring and mackerel in the next 50 years, and \ngive practical suggestions to Scotland fishermen based on our study results. \nFor problem 1, we start by analyzing the sea surface temperature data for the past 39 \nyears and use Proper Orthogonal Decomposition to decompose the original dataset into two \nparts: the spatial term POD modes and the temporal term time coefficients. After retaining the 3 \nmost significant POD modes, we assume that the POD modes are stable over time and achieve \nour sea surface temperature prediction through the prediction of their corresponding time \ncoefficients. We proceed to estimate the locations of herring and mackerel over the next 50 years \nbased on their habitat temperature. Our conclusion is that in the Atlantic Ocean north-west to \nScotland, herring and mackerel will move northward away from the British Isles over the next 50 \nyears. And in the North Sea, herring will gradually move toward east direction. \nFor problem 2, we begin with developing a nutrient loss model to predict the freshness \nchange along with time. Given the maximum acceptable level of nutrient loss and storage \ntemperature, we are able to determine the expected storage time for the catch. Then we calculate \nthe maximum travelling distance for herring and mackerel catch to be 300 km and 500 km, \nrespectively. Based on the movement of fish over the next 50 years, we conclude that the earliest \ntime for mackerel and herring to move away from the fishing range is year 2027 and 2033, and \nthe most likely year is 2045 an"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2003485.pdf",
+      "rel": "outstanding\\2003485.pdf",
+      "pages": 37,
+      "images": 60,
+      "tables": 0,
+      "fig_refs": 22,
+      "section_hits": {
+        "summary": 1,
+        "results": 10,
+        "model": 41,
+        "introduction": 2,
+        "assumptions": 2,
+        "notations": 2,
+        "sensitivity": 2,
+        "discussion": 2,
+        "references": 2,
+        "solution": 18,
+        "appendix": 18
+      },
+      "headings": [
+        "1 Introduction",
+        "2 Assumptions and Justification",
+        "Contents",
+        "Survival or Death: Moving Fish and Fishery"
+      ],
+      "image_style": {
+        "small": 7,
+        "medium": 12,
+        "large": 2
+      },
+      "math_density": 0.008432084079924112,
+      "sample": "Problem Chosen \nA \n2020 \nMCM/ICM \nSummary Sheet \nTeam Control Number \n2003485 \n \nSurvival or Death: Moving Fish and Fishery \nAs global ocean temperatures rises, Scottish herring and mackerel may migrate away from \ntheir current habitat near Scotland, which is undoubtedly a huge blow to Scottish fisheries. As a \nspecial consultant hired by the Scottish North Atlantic Fisheries Management Association, we \nwill conduct an in-depth analysis of this situation. \nThe first problem is to determine the migration route of the herring and mackerel in the next \nfifty years. We searched the Atlantic data from 1980 to 2019 on NOAA. Considering the ocean \ndepth, temperature, salinity, oxygen content, and pH, a series of data processing was performed: \npreprocessing, making a fit between temperature and time, and make an interpolation between \ntemperature, latitude and longitude. The intermediate result data is obtained and displayed \nvisually in the form of three-dimensional images and contour lines. Observe the changes of \ncontour and roughly select the discrete migration points according to the different living habits of \nthe herring and mackerel. Then, the position coordinates were selected and used to fit by the \nleast squares method to obtain the migration routes of herring and mackerel, which were \nvisually displayed in the form of images. The results were placed in the text. \nThe time needs to be obtained that herring and mackerel leave the fishing company's \ncatchment area under the best and worst case. First, the temperature changes are divided into five \nforms: rapid growth, slow growth, maintaining stability, slow decline, and rapid decline, and set \nthe rates for the five cases. Then use the Markov model to calculate the probability that the \ntemperature is in each state at each time point at each location. By using the initial data of these \nprobability and temperature and combining with the living habits of the two fish, we can know \nthe fastest and slowest deteriora"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2004833.pdf",
+      "rel": "outstanding\\2004833.pdf",
+      "pages": 34,
+      "images": 42,
+      "tables": 16,
+      "fig_refs": 28,
+      "section_hits": {
+        "summary": 2,
+        "model": 72,
+        "conclusion": 5,
+        "results": 11,
+        "sensitivity": 12,
+        "introduction": 2,
+        "assumptions": 4,
+        "models": 6,
+        "solution": 9,
+        "references": 3,
+        "appendix": 2,
+        "discussion": 1
+      },
+      "headings": [
+        "1. Introduction",
+        "2. Symbols",
+        "3. Our work",
+        "4. Simplifying assumptions",
+        "Analysis and Prediction of Fish Migration via Oceanic",
+        "Thermal Equilibrium Model"
+      ],
+      "image_style": {
+        "small": 17,
+        "medium": 8,
+        "large": 0
+      },
+      "math_density": 0.006431302001349224,
+      "sample": "Problem Chosen \nA \n2020 \nMCM/ICM \nSummary Sheet \nTeam Control Number \n2004833 \n \n \nAnalysis and Prediction of Fish Migration via Oceanic  \nThermal Equilibrium Model \nThis article analyzes the relationship between the seawater warming and fisheries in \nScotland by establishing an oceanic thermal equilibrium model, and further predicts the \npossible migration routes of fisheries. \nFor the first question, we first take the Atlantic Ocean with a latitude range of 55°N ~ \n65°N as the research region, and synthesize the ocean surface heat budget and intra-ocean \nheat exchange to establish an oceanic thermal equilibrium model. Then, we predict the annual \nseawater temperature change rate of the sea within 50 years, and obtain the conclusion that \nthe temperature will increase 2.6 °C over 50 years. Finally, we further predict the possible \nmigration routes of two fish species within 50 years based on the seawater temperature \nchange.  \nFor question two, according to the temperature change rate in question 1, we establish a \nfish school growth model. Then, we consider that the minimum temperature change rate is \nthe best case, and the maximum is the worst case for the increasing of temperature change \nrate can promote the reduction of the total fish population. Finally, we set 10% of the initial \nfish weight as the threshold for fishing. Below this value, almost no fish can be caught. \nThrough the simulation, we obtain that the times of almost no fish are: at best, it is the 46th or \nthe 45th year; at worst, it is the 17th year; and the most likely time is the 31st year. \nFor question three, we can get conclusion that both species are in decline. Therefore, the \ncompanies should change their operations. Then, we set up the economic benefit model, and \nanalysis the benefits of the four business methods: not changing the operation, relocating \nassets (mode 1), using new fishing boats (mode 2), and catching new fish species (mode 3). \nThe analysis results validate our judgment,"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2007799.pdf",
+      "rel": "outstanding\\2007799.pdf",
+      "pages": 30,
+      "images": 648,
+      "tables": 10,
+      "fig_refs": 44,
+      "section_hits": {
+        "summary": 4,
+        "model": 52,
+        "results": 7,
+        "sensitivity": 6,
+        "introduction": 2,
+        "notation": 2,
+        "discussion": 4,
+        "references": 2,
+        "appendix": 10,
+        "assumptions": 6,
+        "models": 5,
+        "conclusion": 5,
+        "solution": 1
+      },
+      "headings": [
+        "1 Introduction",
+        "2 Assumption",
+        "3 Notation",
+        "4 Survival position of two fish species over next 50 years",
+        "Companies Business Strategies with Species Migration",
+        "Contents",
+        "Summary",
+        "Under Global Warming: Small Scottish Fishing"
+      ],
+      "image_style": {
+        "small": 615,
+        "medium": 8,
+        "large": 0
+      },
+      "math_density": 0.0031447576396206535,
+      "sample": "Problem Chosen \nA \n2020 \nMCM/ICM \nSummary Sheet \nTeam Control Number \n2007799 \n \n \nUnder Global Warming: Small Scottish Fishing \nCompanies Business Strategies with Species Migration \n \nSummary \n \nChanges in global ocean temperature affect a large number of marine lives in colder \nenvironments. As a consultant to the Scottish North Atlantic Fisheries Management Consortium, \nour paper studied Scottish fishing companies’ business strategies with species migration \n \nFirst, we collected sea surface temperature changes in the Northeast Atlantic and North Sea \nover the past forty years and use the Power Function to describe the temperature development \ntrend and Trigonometric Function to describe the periodic temperature change, then we build \na superposing model to predict sea temperature in the next fifty years. In order to identify the \nposition of herring and mackerel, we established a Moore-type Cellular Automaton. Com-\nbined with predicted temperature data, the model shows herring will live in the sea near Alesund, \nNorway, which is 801 km northeast of Scotland, mackerel will live in the sea which is 268km \nnorthwest of Bergen, Norway and 544 km northeast of Scotland in 2070. Secondly, we studied \nthe relationship between speeds and vessel design parameters and established a speed \nestimation formula. Combined with the fish preservation time for fresh, we established a \nMaximum Range of Fishing Vessel Model. Model shows the maximum range of a middle \nfishing vessel is a circle with a radius of 108.6km. Next, we selected 10 typical port locations \nin Scotland, substituted the range into the CA cell space, use the SST prediction data of best \ncase and worst case to simulate the elapsed time of each port. The results show that the average \nelapsed time of each port in the best and worst case are 21.2 years and 13.7 years respectively \nand most ports will be unavailable after 2050. \n \n \nBased on the above analysis, we believe that small fisheries companies should change"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2017785.pdf",
+      "rel": "outstanding\\2017785.pdf",
+      "pages": 39,
+      "images": 62,
+      "tables": 11,
+      "fig_refs": 38,
+      "section_hits": {
+        "summary": 1,
+        "model": 59,
+        "sensitivity": 5,
+        "models": 4,
+        "introduction": 2,
+        "assumptions": 4,
+        "results": 8,
+        "conclusion": 3,
+        "solution": 2,
+        "references": 1
+      },
+      "headings": [
+        "A Fishy Situation",
+        "Contents",
+        "Introduction",
+        "Methodology",
+        "inside source!” Hook Line and Sinker"
+      ],
+      "image_style": {
+        "small": 13,
+        "medium": 8,
+        "large": 2
+      },
+      "math_density": 0.004782498092088527,
+      "sample": "Problem Chosen\nA\n2020\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2017785\nDue to the eﬀects of global warming, rising ocean water temperatures are causing ﬁsh to migrate\nnorthward in search of cooler waters. With the success of ﬁshing companies dependent on their\nproximity to ﬁsh, this poses a problem for small ﬁshing companies who do not have the resources\nto reach migrating ﬁsh. Particularly worrisome is the northward migration of Atlantic herring and\nAtlantic mackerel - the two most valuable species in the Scottish ﬁshing industry.\nFirst, to predict future ocean temperatures in the Scotland region, we computed a linear re-\ngression equation for each geographic coordinate that predicts temperature as a function of time\nbased on historical sea surface temperature data. This allows for diﬀerent geographical locations\nin our model to change temperature at diﬀerent rates. Overall, we found that Scotland region ocean\ntemperature increases an average of 1.59°C over 50 years.\nThen, to predict ﬁsh migration patterns, we developed an agent-based model with ﬁsh schools\nstochastically moving on a dynamic ﬁeld of ocean temperatures that change according to the linear\nregression equations, which is used to represent gradient and partial derivative equations that form\nthe basis for each ﬁsh’s decision making behavior on a micro-scale. This model took into account\na wide variety of relevant factors and parameters, including total population, initial spatial density\ndistributions, and optimal temperature ranges for each species, number of ﬁshing vessels, vessel\ncapacity, ﬁshing area radius, catch proportion, etc., all based on information from reputable sources.\nOur scalable model allows for visualization of migration patterns over time - overall, herring and\nmackerel migrate to the northeast towards Iceland, though herring migrate much more rapidly due\nto their colder preferred temperatures.\nNext, to assess the impact of ﬁsh migration on small ﬁshing companies, we evaluated viabil"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2018167.pdf",
+      "rel": "outstanding\\2018167.pdf",
+      "pages": 32,
+      "images": 81,
+      "tables": 1,
+      "fig_refs": 0,
+      "section_hits": {
+        "summary": 1,
+        "model": 5,
+        "references": 1,
+        "sensitivity": 1
+      },
+      "headings": [
+        "Migration of Herring and Mackerel"
+      ],
+      "image_style": {
+        "small": 25,
+        "medium": 24,
+        "large": 1
+      },
+      "math_density": 0.00035676061362825543,
+      "sample": "Problem Chosen\nA\n2020\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2018167\nMigration of Herring and Mackerel\nGlobal ocean temperature changes greatly nowadays, some ocean-dwelling species are likely\nto migrate, which might seriously affect the companies who depend on these species.\nIn order to predict the ocean temperature in next 50 years, we collect the global sea surface\ntemperature data for past 50 years, and deal with them as signals in time dimension. We adopt\nmoving average filtering method to reduce the influence of random interference. Then, we\nbuild a linear prediction model to forecast the temperature in next 50 years. And the annual\naverage temperature will increase 1℃ to 3℃ gradually at the region of Scottish coast in next\n50 years. In order to predict the locations of herring and mackerel, we get the optimum living\ntemperature of herring and mackerel by consulting relevant references. With the temperature\nprediction data above, we can get the most likely center location of herring is (61°N, 7°W)\nand (60°N, 1°W), and the mackerel’s is (62°N, 4°W).\nAiming at the problem of estimating the time that the small fishing companies can hardly\nharvest, we build a cellular automaton based prediction model. By analyzing the migration\nand reproduction law of fish with the Logistic Curve and normal distribution, we set\ncorresponding rules to the cellular automaton to operate. Supposing that the extra 100\nkilometer to catch fish will make the small fishing companies hardly harvest, we take 1000\nindependent repeat experiments, then get the most likely elapsed time of herring and\nmackerel is 24 years and 10 years, the best cases are 35 years and 23 years, and the worst\ncases are 16 years and 9 years.\nTo estimate the effectiveness of strategy, we use the fuzzy comprehensive evaluation method\nto analyze several factors that affecting the economic benefit including short term cost, long\nterm cost, fishing harvest, sales revenue and implementation difficulty. After giving the"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2025_MCM_Problem_A.pdf",
+      "rel": "outstanding\\2025_MCM_Problem_A.pdf",
+      "pages": 2,
+      "images": 1,
+      "tables": 0,
+      "fig_refs": 1,
+      "section_hits": {
+        "model": 2,
+        "solution": 6,
+        "summary": 1,
+        "references": 1
+      },
+      "headings": [],
+      "image_style": {
+        "small": 0,
+        "medium": 1,
+        "large": 0
+      },
+      "math_density": 0.0008670019074041963,
+      "sample": "| ©2025 by COMAP, Inc. | www.comap.org | www.mathmodels.org | info@comap.org | \n \n2025 MCM  \nProblem A: Testing Time: The Constant Wear On Stairs \n \nStone is a symbol of steadfast permanence, and carved rock is used as a building material \nbecause of its ability to resist wear. Despite its durability, even stone is not impervious to \nwear. One of the few things more resilient is the persistence of people.  \n \n \nFigure 1: Example of steps that have uneven wear after long term use. \n \nThe stone and other materials used to create steps are subject to constant, long-term wear, and \nthe wear can be uneven. For example, extremely old temples and churches may have stairs in \nwhich the center of the steps has been worn down more than their edges, and the treads no \nlonger have a level top but can appear to be bowed. Due to the nature of such structures, the \nbuildings tend to have been inhabited by people over a very long period, but the presence of \npeople at a particular site often predates the construction of buildings. This can make it \ndifficult to accurately determine the date a structure was constructed. The situation is further \ncomplicated when construction on a structure occurs over a very long time, renovations have \nbeen made, and new parts to the structure have been added over time. \n \nYour team is asked to provide guidance on what information archaeologists can determine \nfrom a set of worn stairs. The stairs may be constructed from various materials, for example \nstone or wood. Also, an estimate of when a set of stairs was constructed may be available, \nhowever, it may be difficult to get a precise time. It may not be clear from the historical \nrecords which set of stairs in a structure was constructed in each time period.  \n \nIn addition to age, an archaeologist may also be interested in determining the traffic patterns \nassociated with how a stairwell was used. For example, were people moving up as well as \ndown the stairs at the same time or was a predomin"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2200289.pdf",
+      "rel": "outstanding\\2200289.pdf",
+      "pages": 25,
+      "images": 49,
+      "tables": 0,
+      "fig_refs": 31,
+      "section_hits": {
+        "summary": 3,
+        "model": 65,
+        "sensitivity": 18,
+        "results": 10,
+        "introduction": 2,
+        "notations": 4,
+        "discussion": 4,
+        "assumptions": 1,
+        "solution": 12,
+        "references": 1,
+        "models": 1
+      },
+      "headings": [
+        "Assuptions and Justiﬁcations",
+        "Contents",
+        "Game Theory in Cycling",
+        "Introduction"
+      ],
+      "image_style": {
+        "small": 1,
+        "medium": 22,
+        "large": 1
+      },
+      "math_density": 0.0019895718990120747,
+      "sample": "Problem Chosen\nA\n2022\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2200289\nGame Theory in Cycling\nSummary\nThe rider’s strategy has a huge impact on the outcome of the race. In this article, we\nanalyze the physiological and dynamic model of the rider’s power output, on the basis of which\nwe obtain the optimal power output strategy over the entire course using Simulated Annealing\nAlgorithm. We then conduct sensitivity analysis of possible inﬂuential factors. We extend our\nmodel to Team time trial.\nIn Model 1, we establish a model describing the rider’s power limit and physical strength\nbased on physiology. By ﬁtting the data in the literature, we obtain the quantitative parameters\nof rider’s physical ability. Then a model describing the relation between power output and\nduration is established and utilized to give power proﬁles of three diﬀerent types of riders.\nIn model 2, the courses are divided into 1164 sections. We ﬁrst conduct analysis of power\noutput, dynamic model and weather condition to quantitatively solve for energy and speed\nvariation and time for each section of the course. We use Simulated Annealing Algorithm to\noptimize the power distribution over the course with the optimization objective of reducing the\ntotal race time. We then apply the model to two realistic courses and one self-designed course\nand give the optimal power distributions accordingly. All the results are properly explained.\nIn sensitivity analysis, we ﬁrst examine the inﬂuence of wind speed and wind direction\non results in Model 2 by changing the two parameters in two diﬀerent types of courses. And\nwe ﬁnd that the closer the course gets to the circle ,the less sensitive our model is to weather\nconditions.\nWhen analyzing the sensitivity of the optimized results of the model to the deviations of\ncyclists’ power distribution, We ﬁnd that the total time is positively correlated with the variance\nof disturbance and is fairly sensitive to it. Then we conduct sensitivity analysis on each road\nse"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2207343.pdf",
+      "rel": "outstanding\\2207343.pdf",
+      "pages": 25,
+      "images": 96,
+      "tables": 4,
+      "fig_refs": 26,
+      "section_hits": {
+        "summary": 3,
+        "model": 95,
+        "sensitivity": 19,
+        "results": 42,
+        "introduction": 2,
+        "assumptions": 4,
+        "notations": 4,
+        "models": 8,
+        "solution": 12,
+        "discussion": 4,
+        "conclusion": 6,
+        "references": 1,
+        "validation": 1
+      },
+      "headings": [
+        "Assumptions and Justiﬁcations",
+        "Contents",
+        "Introduction",
+        "Notations",
+        "Optimal Power Allocation − Ride to The Future",
+        "Three stage power-duration models",
+        "www.madio.net",
+        "数学中国"
+      ],
+      "image_style": {
+        "small": 46,
+        "medium": 18,
+        "large": 3
+      },
+      "math_density": 0.002388732825010988,
+      "sample": "Problem Chosen\nA\n2022\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2207343\nOptimal Power Allocation − Ride to The Future\nWho would have thought that the champion of the Tokyo Olympics cycling time trial was a\nmathematician? Believe it or not, math does it. In this paper, we will build a mathematical model of\nthe power curve to help riders win races.\nIn Task 1, we build a power-duration model based on biological principles. This model has three\nstages: Extreme, Severe, Heavy. After substituting the searched rider data into the model, we plot\nthe power curves of the sprinter and time trial specialist of diﬀerent genders.\nIn Task 2, we ﬁrst use the power curve in Task 1 to build the Human Energy Expenditure\nModel, which describes the rider’s constraints on energy limits. We analyzed the dynamic bicycle\nmodel to determine the Pout − v relationship during cycling. By analyzing the characteristics of the\ntrack, we establish a piecewise nonlinear programming model with a wide range of applications for\nstraights, curves, and slopes. For large slope segments or sharp bends, we made detailed calculations\nindividually. Finally, the optimal output power curves of the riders when riding on the three courses\nin Task 1 are solved by Mathematica. The completion times are shown in the table below. Compared\nwith the champion, our model lags within 6%, reﬂecting the model’s accuracy.\nCourse\nMale sprinter\nFemale sprinter\nMale time\ntrial specialist\nFemale time\ntrial specialist\nSelf-designed\n47.53min\n48.58min\n46.48min\n48.20min\nIn Japan\n62.68min\n40.97min\n56.03min\n33.63min\nIn Belgium\n58.15min\n59.62min\n53.03min\n54.05min\nAfter the model is solved, we perform sensitivity analysis in Task 3 and Task 4. For weather\nfactors, we focus on the eﬀects of wind speed and direction. When the wind speed changes within\n±2m/s and the direction changes within ±180◦, we get the change graph of the output power with\nPython. We conclude that the model is robust as its sensitivity to crosswinds is within 1%. And "
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2209466.pdf",
+      "rel": "outstanding\\2209466.pdf",
+      "pages": 25,
+      "images": 54,
+      "tables": 6,
+      "fig_refs": 35,
+      "section_hits": {
+        "model": 149,
+        "results": 22,
+        "sensitivity": 10,
+        "summary": 2,
+        "introduction": 3,
+        "assumptions": 4,
+        "notations": 6,
+        "discussion": 4,
+        "conclusion": 2,
+        "references": 2,
+        "appendix": 5,
+        "abstract": 3,
+        "solution": 5,
+        "models": 4,
+        "validation": 1
+      },
+      "headings": [
+        "1 Introduction",
+        "1 Introduction................................................................................................... 3",
+        "2 Assumptions and Justifications",
+        "2 Assumptions and Justifications .................................................................... 5",
+        "3 Definitions and Notations ............................................................................. 6",
+        "4 Cyclist’s Physiological Model of Fatigue ..................................................... 6",
+        "5 Optimal Individual Power Distribution Model ......................................... 10",
+        "6 Sensitivity Analysis...................................................................................... 17",
+        "7 Model Evaluation and Further Discussion ................................................ 19",
+        "8 Conclusion ................................................................................................... 21",
+        "Appendix ........................................................................................................ 25",
+        "Contents",
+        "Men Elite Individual Time Trial Guidance .................................................. 22",
+        "Optimal Power Distribution of a Cyclist",
+        "References ...................................................................................................... 24"
+      ],
+      "image_style": {
+        "small": 7,
+        "medium": 21,
+        "large": 1
+      },
+      "math_density": 0.0008830536996617738,
+      "sample": "Optimal Power Distribution of a Cyclist \nBicycle road races have always been popular and competitive. For the cyclists, it is of \nvital importance to distribute the power properly on the course. In order to help riders distribute \ntheir limited energy reasonably, we established a model to simulate the rider's power output to \nfind the optimal distribution of their power. \nFirstly, we established a Fatigue Physiological Model to characterize riders' power curve, \nwhich describes a rider's average power output as a function of sustained output time. From the \nperspective of aerobic respiration and anaerobic respiration, we fully consider the limitation of \nenergy and the process of energy recovery, and establish Aerobic and Anaerobic Energy Fa-\ntigue Model. We fit the model to the obtained data using the ordinary least squares to verify \nthe validity of the model, considering different types and genders of the riders. The power \ncurves of different riders are provided, and the relationship between their features and model \nparameters was also explored. The specific results are shown in Figure 6 and its analysis. \nSecondly, we establish an Optimal Individual Power Distribution Model to provide an \noptimal power allocation strategy, which describes the relationship between the power applied \nby the rider and the position on the track. A Single Objective Programming model is estab-\nlished, using the race time as the optimization objective, the rider state and track conditions as \nconstraints, and the power applied by the rider as the decision variable. A resistance model is \nbuilt to describe resistance and a track undulation and turn model are used to describe the \ntrack conditions. Based on above model and rider's power curve, we use dynamic program-\nming to obtain the optimal power distribution strategy and corresponding shortest time. The \neffect of track conditions and rider status on rider power distribution was also investigated. \nDistribution diagrams of power ou"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2209812.pdf",
+      "rel": "outstanding\\2209812.pdf",
+      "pages": 24,
+      "images": 888,
+      "tables": 14,
+      "fig_refs": 48,
+      "section_hits": {
+        "summary": 4,
+        "models": 7,
+        "sensitivity": 21,
+        "model": 55,
+        "solution": 9,
+        "results": 8,
+        "introduction": 2,
+        "assumptions": 7,
+        "notations": 4,
+        "references": 2,
+        "memo": 2
+      },
+      "headings": [
+        "1.3",
+        "2.1",
+        "Assumptions and Explanations",
+        "Contents",
+        "Introduction",
+        "Our Work",
+        "Power Curve Make Cyclists Faster and Faster",
+        "Preparation of the Models",
+        "Sensitivity{",
+        "Sensitvity{",
+        "www.madio.net",
+        "数学中国"
+      ],
+      "image_style": {
+        "small": 5446,
+        "medium": 27,
+        "large": 2
+      },
+      "math_density": 0.002116138669322213,
+      "sample": "Problem Chosen\nA\n2022\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2209812\nPower Curve Make Cyclists Faster and Faster\nSummary\nEvery ride has a pace—whether or not you’re in control of that pace all comes down to essential\nplanning based on his or her power profile. In this paper, we develop models to guide cycling races\nbased on power curves (PC), measure the sensitivity to weather and power distribution’s deviation,\nand optimal power use for a team time trial.\nIn Task 1 & 2: First, we choose a three-parameter hyperbolic model based on exercise physi-\nology that is more accurate in the critical power (CP) model. Based on it, we utilize data to define\nthe PC of male and female time trial specialists, male and female sprinters (Figure 7). Among them,\nthe sprinters have higher explosive power, but the time trial specialists (TTS) have more long-term\nendurance, and female players have less explosive power and endurance than male players.\nAfter that, we found out the fatigue and recovery (FR) model, forming optimal pacing control.\nThen we obtain the necessary condition based on the Pontryagin’s Minimum Principle (PMP)\nand the numerical solution of Behrman equation based on dynamic programming (DP) and\nBehrman’s principle. We apply the PC to the time trial course of Tokyo Olympic, UCI World\nChampionship and own design, which is located at Italy’s San Felice Circeo (Figure 12), and the\npower distribution of cyclists are shown in Figure 10, 11, and 13. We found this result to be\nconsistent with the characteristics of the cyclists above, which including the duration of man time\ntrial specialist in Tokyo Olympic is 1h:41m:29.4s (3641.49 s), and the woman is 0h:33m:4.51s\n(1984.51 s).\nIn Task 3 & 4: in this section, we measure the sensitivity of our model to weather and power\ndistribution’s deviation.\nFor wind, the sensitivity to wind effect is up to corresponding course. The closer the course is\nto a bar or strip, the more regular the wind direction and velocity is to the cyclis"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2210307.pdf",
+      "rel": "outstanding\\2210307.pdf",
+      "pages": 25,
+      "images": 48,
+      "tables": 12,
+      "fig_refs": 25,
+      "section_hits": {
+        "summary": 2,
+        "model": 83,
+        "results": 17,
+        "sensitivity": 14,
+        "introduction": 2,
+        "assumptions": 5,
+        "notations": 2,
+        "solution": 10,
+        "models": 2,
+        "references": 1
+      },
+      "headings": [
+        "Assumptions and Justiﬁcation",
+        "Contents",
+        "Introduction",
+        "Model Preparation",
+        "Notations",
+        "Power Planning Model: Magic Weapon for Cyclists",
+        "www.madio.net",
+        "数学中国"
+      ],
+      "image_style": {
+        "small": 5,
+        "medium": 18,
+        "large": 0
+      },
+      "math_density": 0.001154453761088832,
+      "sample": "数学中国\nwww.madio.net\nProblem Chosen\nA\n2022\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2210307\nPower Planning Model: Magic Weapon for Cyclists\nSummary\nIn the time trial, many factors will aﬀect the rider’s performance. To help riders achieve\nbetter results, we need to establish a model that can comprehensively consider many factors and\nprovide a reasonable power distribution plan at diﬀerent course positions.\nFirst, we established a Rider Ability Evaluation Model and deﬁned the rider’s power proﬁle.\nA power-time scatterplot is drawn from the relationship between power and the maximum\nduration at this power level. Then four diﬀerent exercise intensity domains were divided\naccording to the power-time relationship. We selected the 3P-CP Model to ﬁt the scatter plot,\nand obtained the rider’s power-time curve, thereby obtaining the three important rider ability\nindicators: Maximum instantaneous power (Pmax), critical power (CP) and anaerobic energy\nreserve (W ′). We take multiple sets of data to evaluate the ﬁtting results. After calculation, the\nﬁtting degree is stable at about 0.86, indicating good ﬁtting eﬀect.\nSecondly, we built an External Factor Analysis Model to identify the potential impact of\nexternal conditions. We quantitatively evaluated the inﬂuence of weather and environment from\ntwo aspects, namely road rolling resistance and wind resistance. After that, we select actual\ncourses for veriﬁcation and the degree of compliance exceeds 90%.\nThirdly, Power Overall Planning Model is established. After the course segmentation and\ndynamics analysis, the average power (AP) and normalized power (NP) are proposed, and\nthe constraints of the power of each track are obtained, so that the problem can be transformed\ninto a multivariate nonlinear programming problem with total time t as objective function.\nWe use gradient descent method to gradually approach the local minimum of t and give a\npower distribution plan for each road section. The deviation between our results and t"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2212245.pdf",
+      "rel": "outstanding\\2212245.pdf",
+      "pages": 25,
+      "images": 54,
+      "tables": 0,
+      "fig_refs": 30,
+      "section_hits": {
+        "summary": 2,
+        "model": 70,
+        "results": 16,
+        "sensitivity": 7,
+        "introduction": 4,
+        "assumptions": 6,
+        "notations": 5,
+        "models": 2,
+        "solution": 2,
+        "discussion": 4,
+        "references": 2,
+        "notation": 1
+      },
+      "headings": [
+        "Assumptions and Notations",
+        "Contents",
+        "How to Ride a Cycling Time Trial",
+        "Introduction",
+        "Supply Systems",
+        "The Cyclist Energy Supply Model: A Mixture of Three Energy",
+        "www.madio.net",
+        "数学中国"
+      ],
+      "image_style": {
+        "small": 10,
+        "medium": 18,
+        "large": 1
+      },
+      "math_density": 0.0030088285363632766,
+      "sample": "数学中国\nwww.madio.net\nProblem Chosen\nA\n2022\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2212245\nHow to Ride a Cycling Time Trial\nSummary\nAs a mathematician you’re used to solving problems on your own, so that’s the way I approach\ncycling.\n—— Anna Kiesenhofer,\nthe winner of women’s road race in Tokyo 2020\nAs Anna Kiesenhofer, a Ph.D. in mathematics, said, a proper mathematical model can help cyclists\nto plan their races better and more efficiently. And that is exactly what we do in this paper.\nWe begin with the analysis on energy supply system of the cyclists. According to basic biological\nknowledge, we divide the contribution of overall output power into three different energy supply sys-\ntems: ATP-CP system, glycolysis system and aerobic system. We base our model on ODEs to describe\nthe change of content of various substances in human body during cycling.\nBased on our energy supply model, we then define the power profiles of the time trial specialists and\nsprinters, with different genders considered. The comparison between our theoretical power curves\nand real-world power curves implies the reliability of the energy model we have developed. It is\nworth noting that power curves here is presented as an intermediate results. We use our energy model\nfor further discussions, which is more essential and accurate.\nThen in order to evaluate the power needed for maintaining a given speed, we analyze the motion\nof bicycle-cyclist system. We include different drag resistances, hilly terrain and sharp turnings into\nour model. A motion equation is obtained here to determine the relation between the acceleration and\npropulsive force.\nWith the energy model and motion model developed, we discuss the optimal strategies on each\ncharacteristic terrains. It is found that the optimal strategy in most cases is to maintain a fixed speed,\nthreshold speed, all along the race. The exception is when on a hilly course or sharply curved road.\nSlowing down is generally needed for cycling uphill or s"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2216547.pdf",
+      "rel": "outstanding\\2216547.pdf",
+      "pages": 25,
+      "images": 48,
+      "tables": 3,
+      "fig_refs": 34,
+      "section_hits": {
+        "summary": 3,
+        "solution": 11,
+        "model": 73,
+        "models": 5,
+        "introduction": 2,
+        "assumptions": 3,
+        "notations": 3,
+        "results": 14,
+        "sensitivity": 2,
+        "discussion": 1,
+        "references": 1
+      },
+      "headings": [
+        "Assumptions and Justification",
+        "Contents",
+        "Introduction",
+        "Newtonian Mechanics and Dynamic Programming",
+        "Notations",
+        "Optimal Cycling Solution Based on Physiology,",
+        "Our Model",
+        "www.madio.net",
+        "数学中国"
+      ],
+      "image_style": {
+        "small": 3,
+        "medium": 19,
+        "large": 1
+      },
+      "math_density": 0.0015894363614133756,
+      "sample": "数学中国\nwww.madio.net\nProblem Chosen\nA\n2022\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2216547\nOptimal Cycling Solution Based on Physiology,\nNewtonian Mechanics and Dynamic Programming\nSummary\nIn this paper, we want to figure out the power curves of different riders and how riders\ncan allocate their power during the course to get better performance in an individual time trial\ncompetition.\nTo begin with, We design the Muscle Fatigue-Recovery Model and the Energy Reserve\nModel, and combine them to obtain the Rider Power Output Model. Then, we use the data from\nthe \"maximum-effort\" experiment in [4] [5] to adjust the model parameters. After that, we take\nboth male and female of Time Trial Specialist(TTS) and Sprinter as examples, obtaining their\npower curves by using our model.\nNext, We collect the coordinate information of real-world road points from Google Earth,\nto build a data structure of roads and define its attribute fields to re-express the road elevation,\nlength, curvature and other attributes in the computer. Thus the bike course can be visualized.\nThen, using the bike course information, we model the Newtonian mechanics of the bicycle\nand established the equations of motion of the rider based on Newton’s second law.\nLater, based on these three models, we formally define the power planning optimization\nproblem. The optimal solution of this problem is found by dynamic programming algorithm.\nFurthermore, based on this model, we add the environmental factors of wind speed, wind\ndirection, and the ground humidity.\nBesides, we investigate the effect of the rider on the\nexecution error of the plan.\nFinally, we modified the parameters of the previous model to simulate Team Time Trials,\nin which teams often use the \"mountain train\" tactic: the team members line up to minimize\noverall air resistance by finding information and processing data in [13].\nBased on the above modeling, we can draw the following conclusions:\n1. For a relatively undulating section of road, the opt"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2300336.pdf",
+      "rel": "outstanding\\2300336.pdf",
+      "pages": 25,
+      "images": 23,
+      "tables": 0,
+      "fig_refs": 38,
+      "section_hits": {
+        "summary": 3,
+        "model": 49,
+        "conclusion": 4,
+        "results": 8,
+        "introduction": 2,
+        "notations": 4,
+        "assumptions": 5,
+        "sensitivity": 17,
+        "models": 3,
+        "validation": 1,
+        "references": 1
+      },
+      "headings": [
+        "Community Succession Simulation: Surviving Drought",
+        "Contents",
+        "Introduction",
+        "MCM/ICM",
+        "Notations and Assumptions",
+        "Summary Sheet"
+      ],
+      "image_style": {
+        "small": 0,
+        "medium": 23,
+        "large": 0
+      },
+      "math_density": 0.0009314545020300931,
+      "sample": "Problem Chosen\nA\n2023\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2300336\nCommunity Succession Simulation: Surviving Drought\nSummary\nThe species richness of plant communities has a significant influence on their ability to withstand\ndrought. From an ecological niche perspective, we simulate plant community succession under\ndrought conditions and analyze the effects of various factors.\nFirst, we develop the Plant Community Succession Model based on niche theory to simulate\ncommunity succession under drought conditions. The model applies changes in niche width as\nthe indicator to simulate community succession and utilizes competition matrix to describe in-\nteractions between species, including competition and facilitation. Then, the Niche Width Model\nis established, comprehensively considering the effects of reproduction, mortality, and uncer-\ntainties. Among them, reproduction depends on the degree of drought, niche width, interspecific\nrelationships, and environmental capacity, while mortality depends on the degree of drought and\nthe niche width. Uncertainties are measured with Gaussian white noise.\nA niche width differential equation model is built based on the Beverton-Holt and the Lotka-\nVolterra equations. To account for various irregular weather cycles, we utilize random variables\nobeying normal distribution to simulate the extent and duration of drought. As a case study, we\nsimulate the evolution of a three-species community and draw the conclusion that the total niche\nwidth of the community increases, suggesting long-term survival.\nTo investigate the influence of species number on community dynamics, we utilize the Plant\nCommunity Evolution Model to simulate communities containing one to four species separately.\nThe results demonstrate that three species are necessary for the community to benefit. Additionally,\nas the number of species increases, the drought resistance improves and then stabilizes.\nBased on the competition matrix, we set up three distinct commu"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2300661.pdf",
+      "rel": "outstanding\\2300661.pdf",
+      "pages": 25,
+      "images": 35,
+      "tables": 12,
+      "fig_refs": 44,
+      "section_hits": {
+        "summary": 2,
+        "model": 57,
+        "models": 5,
+        "sensitivity": 6,
+        "results": 7,
+        "introduction": 2,
+        "assumptions": 2,
+        "notation": 3,
+        "solution": 2,
+        "references": 2
+      },
+      "headings": [
+        "Assumptions",
+        "Contents",
+        "Introduction",
+        "List of Notation",
+        "Model Establishment and Solution"
+      ],
+      "image_style": {
+        "small": 9,
+        "medium": 24,
+        "large": 2
+      },
+      "math_density": 0.004186155285313377,
+      "sample": "Problem Chosen\nA\n2023\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2300661\nThe Comprehensive Prediction Model for Drought-Striken Plant Communities\nSummary\nGlobal warming is becoming more and more serious, which has also led to increased drought\nin some areas. It seriously affects the long-term viability of local plant communities. In order to\nunderstand the changing patterns of plant communities in arid regions, we propose three models, a\nLogistic model that takes into account drought and intermediate interactions, a new model that\nmeasures changes in biomass and benefits, and a modified model that takes into account pollution\nand habitat reduction.\nFirst, we establish a Logistic model considering drought and interspecific interactions to pre-\ndict the population changes of four plant species in the Tengger Desert, Northwest China. Through\nthe comparison of plant quantity changes under regular and irregular drought cycles, it is found\nthat different plants have different adaptability to drought environment because of their own char-\nacteristics. At the same time, we find that heavy rainfall followed by rapid drought processes can\nseriously threaten plant survival.\nSecond, we use biomass to construct a new model to measure the benefit degree of plant com-\nmunities, and randomly select 2, 3 and 4 species from the four plant species for analysis. On the one\nhand, we find that as the number of species increases, more and more selected combinations show\npositive benefits, and the benefits are gradually increasing.On the other hand, we divide the plants\ninto sensitive types and drought-tolerant types, and find that the biomass of sensitive types is more\nsusceptible to fluctuation of drought intensity, while the biomass of drought-tolerant types remain\nstable under drought, but decrease due to increased competition under sufficient rainfall.\nThird, we use the Monte Carlo method to generate two new precipitation distributions with\ngreater and lesser drought frequency and seve"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2303950.pdf",
+      "rel": "outstanding\\2303950.pdf",
+      "pages": 25,
+      "images": 19,
+      "tables": 5,
+      "fig_refs": 23,
+      "section_hits": {
+        "summary": 2,
+        "model": 82,
+        "models": 5,
+        "results": 18,
+        "sensitivity": 10,
+        "introduction": 4,
+        "assumptions": 3,
+        "notations": 4,
+        "references": 3,
+        "discussion": 2,
+        "solution": 1
+      },
+      "headings": [
+        "1 Introduction",
+        "1 Introduction ...................................................................................................... 3",
+        "2 Assumptions and Justifications",
+        "2 Assumptions and Justifications ....................................................................... 4",
+        "3 Notations",
+        "4 Model Establishment ....................................................................................... 6",
+        "5 Model Computed and Results Analysis ....................................................... 15",
+        "6 Sensitivity Analysis and Stability Analysis .................................................. 21",
+        "7 Strengths and Weaknesses ............................................................................. 24",
+        "A Methodology to Simulate Drought-Stricken Plant Communities",
+        "Content",
+        "References .......................................................................................................... 25"
+      ],
+      "image_style": {
+        "small": 0,
+        "medium": 17,
+        "large": 2
+      },
+      "math_density": 9.631127805065973e-05,
+      "sample": "A Methodology to Simulate Drought-Stricken Plant Communities \nSummary \nThe study of plant communities in arid areas is an indispensable part of environmental \nprotection. In these regions, annual plants are important components of vegetation, by virtue \nof their unique characteristics. This paper presents a method of simulation for the growth, \ncompetition, and facilitation of annual plants, which can be applied to various circumstances. \nTo begin with, we establish the Growth Model of annual plants. At first, we determine \nthe relationship between soil water content and the natural growth rate in Logistic Model. Then, \nwe build the differential equation of soil water content, based on the stochastic rainfall model. \nFinally, we establish the law of annual plant reproduction. To estimate the statistical parameters \nin the stochastic rainfall model, we use Normal Equation to get the optimal parameters \naccording to Least Square Method. \nBased on the Growth Model, we establish the Competition Model of various plants to \nsimulate their root competition. For the competition coefficient in Lotka-Volterra Model, we \ninnovatively determine its relationship with root growth and water-utilizing capacity of plants. \nConsidering the structure of root system, we estimate the parameters in the model reasonably. \nBased on the Competition Model, we further establish the Facilitation Model of shrub \nplants to herbaceous plants. Given the water-lifting action of shrub plants, we modify the water \nabsorption rate in the Competition Model. So far, our models have been elaborated and the \nparameters have been estimated properly. \nAfter that, we use the fourth order Runge-Kutta algorithm to give numerical solutions \nto the differential equations. And the problems in the Requirement have been solved as follows: \n⚫ Based on the results from our TOPSIS model, at least eight plant species are required \nto provide overall benefits for the community. As the number of plant species grows, the "
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2309229.pdf",
+      "rel": "outstanding\\2309229.pdf",
+      "pages": 25,
+      "images": 34,
+      "tables": 0,
+      "fig_refs": 52,
+      "section_hits": {
+        "summary": 3,
+        "model": 33,
+        "models": 12,
+        "results": 20,
+        "sensitivity": 4,
+        "introduction": 2,
+        "assumptions": 4,
+        "notations": 3,
+        "validation": 2,
+        "conclusion": 3,
+        "discussion": 3,
+        "references": 2,
+        "notation": 1,
+        "solution": 1
+      },
+      "headings": [
+        "Contents",
+        "Introduction",
+        "Model Preparation",
+        "The Warriors against Drought: Plant Communities"
+      ],
+      "image_style": {
+        "small": 15,
+        "medium": 19,
+        "large": 1
+      },
+      "math_density": 0.0011306656179333398,
+      "sample": "Problem Chosen\nA\n2023\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2309229\nThe Warriors against Drought: Plant Communities\nSummary\nAs the severe drought increases since the global warming, many plant communities die\nout for lack of water, while others can recover after drought. To explore this phenomenon,\nwe develop GIID model to describe the response of communities to drought and analyse\nwhether species diversity can help communities withstand drought.\nBefore all the models are established, we select ﬁve typical plant species and classiﬁy them\ninto three categories, according to their inherent growth rate and optimum soil moisture. In\naddition, we estimate the parameters used in our models.\nFor Task 1: To simulate plant growth and interspeciﬁc competition, we ﬁrst developed\nthe Lotka-Volterra competition model. Then, considering optimum soil moisture of each\nspecies, we set the environmental capacity of them as a function of soil moisture. Finally, we\nmodeled the soil moisture variation to describe the interaction between plants and the en-\nvironment. We consider the water absorption by plants, irregular rainfall, and other factors.\nWe summarize these analysis and devise our GIID model. Then, we verify the correctness of\nmodel. The results are shown in Figure 7.\nFor Task 2: First, we do the qualitative analysis and ﬁnd that the Five Species Community is\nmore stable in drought. To quantify how the community beneﬁts from the species diversity,\nwe calculate total biomass, coefﬁcient of variation of total biomass, and S-W index to evaluate\nthe vigor, stability, and evenness of the ecosystem respectively. The experimental results\nshow that as the number of species increases, the total biomass of the community increases\nand then decreases, while the stability and evenness keep increasing. Besides, two species\nare required for the community to beneﬁt. The results are shown in Figure 10 to 13.\nFor Task 3: To explore the effect of species type, we choose three typical species "
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2316994.pdf",
+      "rel": "outstanding\\2316994.pdf",
+      "pages": 25,
+      "images": 17,
+      "tables": 0,
+      "fig_refs": 44,
+      "section_hits": {
+        "summary": 2,
+        "model": 57,
+        "introduction": 2,
+        "assumptions": 3,
+        "notations": 2,
+        "results": 18,
+        "sensitivity": 5,
+        "discussion": 5,
+        "solution": 1,
+        "models": 2,
+        "conclusion": 1,
+        "references": 1
+      },
+      "headings": [
+        "Assumptions and Justification",
+        "Communities Can Survive!",
+        "Contents",
+        "Dry or Die? Drought-Stricken Plant",
+        "Introduction",
+        "Notations"
+      ],
+      "image_style": {
+        "small": 1,
+        "medium": 11,
+        "large": 5
+      },
+      "math_density": 0.001543895268912717,
+      "sample": "Problem Chosen\nA\n2023\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2316994\nDry or Die? Drought-Stricken Plant\nCommunities Can Survive!\nSummary\nUnder climate change, there will probably be an increase in inter-annual variability in precipitation\nregimes and more intense and frequent extreme weather and climate events, including multi-year\ndroughts. Therefore, it’s necessary to focus on the drought adaptability of plant community. Our team\nbuild the following mathematical model to explore the responsive mechanism of plant community to\ndrought in this paper.\nFirstly, to consider the influence of plants’ interspecific interactions, we have improved on the\nclassical model Lotka-Volterra Model by adjusting the equation between two species to multispecies\ndifferential equations based on Logistic Equation. We use Spearman Correlation Analysis to get the\ncoefficients to measure the interaction between different species. When the distribution of two species\nis positively correlated, we believe that the two species are mutually beneficial to a certain extent.\nThen, we consider the impact of environmental factors. Collecting the weather data for the past\n15 years, we fit the linear relationship between precipitation, temperature, and soil moisture. We also\ndefine a environmental impact factor Q, adding it to the basic differential equations. Then We use\nthe computer to set up temperature and precipitation and control changing period to simulate irregular\nweather cycles. The stochastic simulation is based on real data and can be adjusted artificially. By\nthis model we predict the change trend of plant communities over time.\nNext, by measuring the Shannno-Wiener index and ICV (the reciprocal of variation coefficient\nof species’ biomass), we get specific quantitative indicators for the drought adaptability of plant\ncommunity. We calculate the change rates of the two indexes of plant communities after a period of\ntime under different situations. Measuring each community with different"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2321860.pdf",
+      "rel": "outstanding\\2321860.pdf",
+      "pages": 24,
+      "images": 140,
+      "tables": 15,
+      "fig_refs": 21,
+      "section_hits": {
+        "summary": 2,
+        "model": 67,
+        "results": 12,
+        "introduction": 2,
+        "assumptions": 2,
+        "notations": 4,
+        "solution": 2,
+        "sensitivity": 3,
+        "discussion": 2,
+        "conclusion": 2,
+        "models": 1,
+        "references": 1
+      },
+      "headings": [
+        "Contents",
+        "Drought Tolerance of a Plant Community",
+        "Introduction",
+        "under Multi-species Interaction"
+      ],
+      "image_style": {
+        "small": 207,
+        "medium": 4,
+        "large": 0
+      },
+      "math_density": 0.001202557015970801,
+      "sample": "Problem Chosen\nA\n2023\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2321860\nDrought Tolerance of a Plant Community\nunder Multi-species Interaction\nSummary\nDrought conditions have a significant effect on plant growth, and different species\nrespond differently to drought. Population interactions in communities can affect the\nevolution of communities under drought conditions. To study the response of plant\ncommunities to drought under multi-species interactions, we used population density,\nbiomass, net primary production (NPP) and soil water content as four evaluation\nindicators, and integrated the effects of precipitation, evaporation, inter-species in-\nteractions, pollution and habitat reduction on plant communities.\nBased on the traditional Logistic model, we modified the growth rate term, the maxi-\nmum environmental holding capacity and the water use efficiency in it, and added an in-\nterspecific interaction term. Specifically, a Soil water content model was constructed,\nand applied to the above three terms (taking into account the drought stress threshold\nresponse); an Interspecies interaction model was constructed by analyzing the com-\npetition between two plants and applied to multiple populations in the community; the\ninterspecific interaction term was added to the population density model and corrected.\nAfter establishing the Population density model, we used the Michaelis-Menten equa-\ntion to construct the Biomass model from population density and then calculate the net\nprimary productivity (NPP) per unit area of the community. Our fitting results were\nclose to the real values, demonstrating the plausibility of our model.\nTo explore the effects of various irregular weather cycles on plant communities, we\nsimulated three different precipitation patterns, and used our model to predict four indi-\ncators mentioned above. It was found that a moderate, steady humidity is conducive to\nthe growth of plants, and high drought tolerant plants adapt better in dry environment"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2322687.pdf",
+      "rel": "outstanding\\2322687.pdf",
+      "pages": 25,
+      "images": 56,
+      "tables": 1,
+      "fig_refs": 43,
+      "section_hits": {
+        "summary": 4,
+        "model": 85,
+        "sensitivity": 6,
+        "models": 6,
+        "introduction": 2,
+        "assumptions": 3,
+        "notation": 3,
+        "results": 14,
+        "conclusion": 2,
+        "references": 2,
+        "validation": 1
+      },
+      "headings": [
+        "Contents",
+        "Developing the Plant Community Model",
+        "Equations Model for Plant Growth During Drought Cycles",
+        "Introduction",
+        "Is There Space for More? A Spatiotemporal Partial Differential"
+      ],
+      "image_style": {
+        "small": 43,
+        "medium": 11,
+        "large": 2
+      },
+      "math_density": 0.0037479041325574514,
+      "sample": "Problem Chosen\nA\n2023\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2322687\nIs There Space for More? A Spatiotemporal Partial Differential\nEquations Model for Plant Growth During Drought Cycles\nSummary\nDroughts pose a significant risk to the survival of a community of plants. Although individual\nplants may struggle to adapt to a lack of water caused by a drought, existing literature has suggested a\npositive relationship between the biodiversity of a plant community and its ability to survive drought\ncycles. We have been tasked to verify this claim and build a generalized biome-independent model\nthat predicts changes in a plant community through cycles of drought.\nOur approach was to develop a parameterized partial differential equations model for the growth\nof multiple plant species over time on the basis of the amount of water available. Crucially, we also\nincorporate spatial dimensions and analysis into the model, which allows us to consider plant dispersal\nand water diffusion across physical boundaries. To support this growth model, we also implement a\nsub-model for rainfall that can simulate the effect of a variety of droughts by changing drought timing\nand severity. Incorporating this into the plant growth model, we model plant growth in Mathematica\nusing numerical analysis of the partial differential equations. We conduct a sensitivity analysis of\nthe model’s parameters, simulating the effects of biodiversity by steadily increasing the number of\nunique species starting from a control of just one species. We also analyze the impact of different types\nof droughts, as well as different types of plants as measured by their resistance and resilience. We\nconclude by studying the impacts of external factors, such as pollution or habitat reduction.\nUltimately, we find that although increasing the number of unique plants in a given community\ngenerates inter-species competition, it cumulatively benefits the overall system by increasing the\ntotal amount of long-term plant bi"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2400996.pdf",
+      "rel": "outstanding\\2400996.pdf",
+      "pages": 24,
+      "images": 24,
+      "tables": 0,
+      "fig_refs": 20,
+      "section_hits": {
+        "summary": 2,
+        "models": 14,
+        "model": 100,
+        "results": 14,
+        "sensitivity": 5,
+        "conclusion": 5,
+        "introduction": 2,
+        "assumptions": 2,
+        "notations": 4,
+        "discussion": 2,
+        "references": 2,
+        "solution": 1
+      },
+      "headings": [
+        "Adaptive Sex of Lamprey: gift or curse?",
+        "Contents",
+        "Introduction",
+        "Model Preparation",
+        "公众号：数学建模BOOM"
+      ],
+      "image_style": {
+        "small": 4,
+        "medium": 16,
+        "large": 4
+      },
+      "math_density": 0.0016800599153897536,
+      "sample": "Problem Chosen\nA\n2024\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2400996\nAdaptive Sex of Lamprey: gift or curse?\nSummary\nWhile having great food and research value, the lamprey has long been a cause for\nconcern because it is an invasive species in some areas. Because of this complexity, it\nhas long been in the spotlight. Is this a gift or a curse? To explore this phenomenon,\nwe modeled the iterative process of lamprey populations and analyzed the effects of\nadaptive-sex on lamprey populations and the larger ecosystem.\nSeveral models are established: Model I: Lamprey Population Iteration Model;\nModel II: BDS Assessment Model, etc.\nBefore all the models are established, based on the special characteristics of lamprey\nmetamorphosis, we divided the lamprey population into two parts: larval and adult\nbank, so as to simulate the ecosystem with higher simulation. In addition, we collected\ndata and set reasonable parameters through calculation.\nFor Model I, we established three sub-models to form the Lamprey Population Iter-\nation Model. The sub-model i is based on Lotka-Volterra basic model, modiﬁed for the\nnature of the larval and adult bank, which describes the competition between lamprey\nand other species in the ecosystem. The sub-model ii is based on bioenergetic theory\nand establishes the relationship between resource availability and sex ratio. The sub-\nmodel iii is based on the cost of reproduction, and establishes the relationship between\nsex ratio and fertility rate, which serves as a bridge between sub-models i and ii.\n• For task 2, we simulated the iteration with and without adaptive sex lamprey\npopulation respectively, and adjusted the environmental parameters downward\nand upward at the two time points for comparative analysis, and the results show\nthat adaptive sex enhances the resilience stability of the population and reduces\nthe resistance stability of the population, for details, see 4.1.3.\n• For task 4, we added a reasonably set Correlation Matrix that cov"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2405424.pdf",
+      "rel": "outstanding\\2405424.pdf",
+      "pages": 25,
+      "images": 21,
+      "tables": 1,
+      "fig_refs": 52,
+      "section_hits": {
+        "summary": 1,
+        "model": 106,
+        "models": 26,
+        "introduction": 21,
+        "results": 12,
+        "sensitivity": 6,
+        "assumptions": 4,
+        "notations": 2,
+        "conclusion": 3,
+        "references": 4,
+        "letter": 1,
+        "discussion": 3,
+        "solution": 2
+      },
+      "headings": [
+        "1.3",
+        "Contents",
+        "Introduction",
+        "Lamprey: a Vivid Example of the Doctrine of the Mean",
+        "Literature Review",
+        "Model Preparation",
+        "公众号：数学建模BOOM"
+      ],
+      "image_style": {
+        "small": 5,
+        "medium": 10,
+        "large": 6
+      },
+      "math_density": 0.001526603864914175,
+      "sample": "Problem Chosen\nA\n2024\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2405424\nLamprey: a Vivid Example of the Doctrine of the Mean\nThe survival mechanism of the lamprey, one of the oldest organisms on earth, has\nalways been a topic of interest for researchers. When it comes to lampreys and resource\navailability, the phenomenon that their populations can change their sex ratio has\nbecome an inescapable topic. Studies have found that resource availability affects the\nsex ratio of lamprey populations.\nIn order to study the ability of species to change their sex ratios according to resource\navailability, we adopted the Lotka-Volterra predator-prey model and the Nicholson-\nBailey host-parasite model as modeling bases, and then constructed the Ideal Reference\nModel, the Constant Sex Ratio Model, and the Models of Changing Sex Ratios, and\nsuccessfully solved the problem.\nFor Task 1,we first found that the total amount of resources in the ecosystem de-\nclined with the introduction of lamprey or other parasites, while the number of species\nsurviving was highest in the model with lamprey. Therefore, we conclude that lamprey\nwith altered sex ratios are less stressful to other organisms than ordinary parasites,\nwhich is conducive to increasing the diversity of the ecosystem.\nFor Task 2, we artificially worsened the environmental resources, and plotted the\nchange curves of the number of lamprey in Constant Sex Ratio Model and Models\nof Changing Sex Ratios, respectively. Obviously, the population size of conventional\nparasitic species is severely affected by the environment, while lamprey, which is able\nto change its sex ratio, is very stable, which is the greatest population advantage\nof lamprey.However, win some, lose some.With higher resilience to environmental\nrisk comes lower population size, which is the disadvantages to the population of\nlampreys.\nFor Task 3, we collected a large amount of data and analyzed the final ecosystem\nstability of the three models through the entropy we"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2407093.pdf",
+      "rel": "outstanding\\2407093.pdf",
+      "pages": 27,
+      "images": 38,
+      "tables": 3,
+      "fig_refs": 54,
+      "section_hits": {
+        "summary": 3,
+        "model": 51,
+        "validation": 1,
+        "results": 15,
+        "conclusion": 1,
+        "sensitivity": 8,
+        "introduction": 2,
+        "assumptions": 3,
+        "notations": 4,
+        "discussion": 2,
+        "models": 4,
+        "references": 1
+      },
+      "headings": [
+        "Coexist or Extinct? Relationship between",
+        "Contents",
+        "Introduction",
+        "Lampreys and Environment",
+        "Model Preparations",
+        "公众号：数学建模BOOM"
+      ],
+      "image_style": {
+        "small": 17,
+        "medium": 21,
+        "large": 0
+      },
+      "math_density": 0.0014294971981854915,
+      "sample": "Problem Chosen\nA\n2024\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2407093\nCoexist or Extinct? Relationship between\nLampreys and Environment\nSummary\nUnlike most other animals, lampreys can change their sex ratio in response to envi-\nronmental changes. In this article, we established BFM Model to explain the high adapt-\nability of lampreys with variable sex ratios to environmental changes.\nWe made preparations before starting all tasks. We divide the lamprey population\ninto three categories: juveniles, adult females, and adult males. We first introduce the\nLogistic Model to describe lampreys’ growth. Then, we introduce the sex differentiation\nratio α and the growth time of juvenile lampreys τ to describe the population’s sex and\nage structure. Therefore, we obtain the BFM Model and conduct a preliminary validation.\nWe find that tasks 1 and 4 are closely related. To complete the tasks more smoothly,\nwe answer the tasks in the order of 1, 4, 2, 3.\nFor tasks 1 & 4: First, we set both α and τ in the BFM model as constants and as func-\ntions that change over time, respectively. Subsequently, we introduce the Lotka-Volterra\nModel and Nicholson-Bailey Model to describe the relationship between lampreys and\ntheir natural enemies, hosts, and parasites. Then, we compare the results of simulations\nunder the two scenarios. We find that a variable sex ratio in lamprey populations can\nreduce the risk of extinction of other species in the ecosystem. By calculating the Simp-\nson’s diversity index and Shannon-Weiner index, the variable sex ratio of lampreys can\nimprove species diversity in the larger ecological system.\nFor task 2: To discuss the advantages and disadvantages of variable sex, we conduct\nnumerical simulations by changing the adult lampreys’ death rate µ to place the lamprey\npopulation in suitable and perturbative environments. It is found that adaptive sex ratio\nvariation can make the lamprey population more stable in both environments. Then, we\ndefine the reproductive suc"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2424371.pdf",
+      "rel": "outstanding\\2424371.pdf",
+      "pages": 25,
+      "images": 29,
+      "tables": 0,
+      "fig_refs": 29,
+      "section_hits": {
+        "summary": 2,
+        "models": 5,
+        "model": 57,
+        "solution": 8,
+        "introduction": 3,
+        "assumptions": 3,
+        "notations": 2,
+        "results": 15,
+        "sensitivity": 3,
+        "conclusion": 5,
+        "references": 2,
+        "notation": 1
+      },
+      "headings": [
+        "Assumptions and Justifications",
+        "Contents",
+        "Introduction",
+        "Lampreys in the Ecosystem",
+        "Magic Sex Ratio : Exploring the Important Role of",
+        "Model I : Population Growth Model Induced by Lam-",
+        "Notations",
+        "preys Sex Ratio",
+        "公众号：数学建模BOOM"
+      ],
+      "image_style": {
+        "small": 12,
+        "medium": 15,
+        "large": 2
+      },
+      "math_density": 0.0017293472211179137,
+      "sample": "Problem Chosen\nA\n2024\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2424371\nMagic Sex Ratio : Exploring the Important Role of\nLampreys in the Ecosystem\nSummary\nAs one of the oldest vertebrates, the sea lampreys has unique mechanisms of gender\ndifferentiation.In order to examine the advantages and disadvantages of the lampreys’\nability to change its sex ratio according to resource availability, we develop two main\nmodels, the Population Growth Model Induced by Sex Ratio and the 3-R Index Model of\nEcosystem Stability.\nFirstly, we develop a Population Growth Model based on differential equations,\nwhich mainly considers the factors of sex ratio, migration and inter-organism interac-\ntions of the lampreys. In terms of the induced factors and effects of sex ratio, we use the\nLeast Squares Method to fit a functional relationship between the larval growth rate and\nfood density of the lampreys, then establish a sex logistic function to determine the effect\nof larval growth rate on the sex differentiation of the lampreys. Lastly, we consider the\neffect of sex ratio on the growth rate. In terms of interactions among creatures, we mainly\nconsider the parasitic relationship between lampreys and host-fish in the ocean and the\npredation relationship between lampreys and plankton in the river, and integrate the im-\nproved Logistic Model and the Lotka-Volterra Equations to establish differential equa-\ntions for biomass of different species over time. Finally, Finite Volume Method (FVM) is\nused to solve the numerical solution of the PDE.\nFor problem 1, given the same initial conditions and using a population growth model,\nconsider the trends in biomass of different species when the lampreys can change the sex\nratio and when it cannot change the sex ratio, respectively, and then analyse the impact\nof the lampreys on the larger ecosystem. (result:Figure 8-11)\nFor problem 2, we adjust the model parameters to simulate the impacts of harsh en-\nvironments on the ecosystems of lampreys, such as"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2425397.pdf",
+      "rel": "outstanding\\2425397.pdf",
+      "pages": 27,
+      "images": 42,
+      "tables": 0,
+      "fig_refs": 69,
+      "section_hits": {
+        "summary": 4,
+        "model": 52,
+        "abstract": 1,
+        "results": 4,
+        "introduction": 4,
+        "conclusion": 5,
+        "assumptions": 5,
+        "notations": 6,
+        "solution": 2,
+        "sensitivity": 3,
+        "models": 5,
+        "references": 2,
+        "validation": 1
+      },
+      "headings": [
+        "Assumptions and Notations",
+        "Contents",
+        "Introduction",
+        "The Lampreys Ecosystem Model",
+        "公众号：数学建模BOOM"
+      ],
+      "image_style": {
+        "small": 5,
+        "medium": 37,
+        "large": 0
+      },
+      "math_density": 0.0012569330832768045,
+      "sample": "Problem Chosen\nA\n2024\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2425397\nPopulation analysis of lampreys: a discrete population dynamics model based on age grouping\nAbstract\nIn this paper, we model the ecosystem of lampreys and analyze the impacts of changes in the\nsex ratio of lampreys on populations and ecosystems.First, we establish a discrete population dy-\nnamics model with age groups. Based on the biological characteristics of lampreys, we divide\nthe lampreys population into seven age groups, and consider the ecosystems in which they live as\nwell as bait for larvae, competitors for larvae, bait for adults, competitors for adults, and artificial\nfisheries. The model takes into account the fact that the sex ratio varies according to the external\nenvironment.\nFor task 1, we focus on the effects of changes in the sex ratio of lampreys on the larger ecosys-\ntem. The results of the discrete population dynamics model reflect that the changeable sex ratio of\nlampreys is conducive to the stabilization of its population size, making it dominant in the ecosys-\ntem. Compared with the changes in population size before and after the invasion of lampreys in an\necosystem, we conclude that the variable sex ratio of lampreys as an invasive species is detrimental\nto the native population of the ecosystem, but at the same time, the larvae of lampreys can purify\nthe water quality and promote nutrient cycling in the benthic environment.\nFor task 2, we apply our model by focusing on the advantages and disadvantages of the biolog-\nical characteristics of variable sex ratio, metamorphosis, one-time reproduction and migration of\nlampreys for their own populations. Through the discrete population dynamics model to calculate\nthe situation of changing environmental resources and sudden changes in the external environment,\nwe obtain that the population of lampreys with metamorphic and variable sex ratio is more stable,\nand the population of lampreys with metamorphic is more capable of reali"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2500836.pdf",
+      "rel": "outstanding\\2500836.pdf",
+      "pages": 25,
+      "images": 72,
+      "tables": 6,
+      "fig_refs": 32,
+      "section_hits": {
+        "summary": 3,
+        "model": 61,
+        "results": 11,
+        "sensitivity": 11,
+        "introduction": 2,
+        "assumptions": 5,
+        "notations": 4,
+        "solution": 6,
+        "conclusion": 2,
+        "references": 2,
+        "appendix": 2,
+        "abstract": 1
+      },
+      "headings": [
+        "1 Introduction",
+        "2 Assumptions and Justifications",
+        "Contents",
+        "QQ群：837344007",
+        "Stairs: The Glory of the Ordinary",
+        "公众号：云顶数模"
+      ],
+      "image_style": {
+        "small": 54,
+        "medium": 18,
+        "large": 1
+      },
+      "math_density": 0.0008095527221210282,
+      "sample": "Stairs: The Glory of the Ordinary \n Summary \nStairs have long been a fundamental architectural element widely utilized in building design to \nfacilitate transportation connections. They embody the characteristics of both a \"platform\" and a \n\"stair,\" serving as pathways for individuals to ascend and descend, enhancing the architectural aesthetic, \nand enriching the spatial hierarchy of structures. This article examines the construction duration, usage, \nand human behavior patterns associated with steps by analyzing their degree of wear. \nIn the Model Preparation phase, the research subjects were identified as the stairs inside the \nLeaning Tower of Pisa, which also determined the material and environmental conditions of the stairs. \nThen, Computer Vision techniques were used to obtain the required wear depth data of the stairs, and \nthe focus was further narrowed to the bottom step of the Leaning Tower of Pisa. Finally, based on \npractical experience and literature, we concluded that the wear depth distribution on the stair surface \nfollows a two-dimensional normal distribution. The parameters were then fitted using a Particle \nSwarm Optimization algorithm(PSO). \nTo address the first three issues, we developed a Step Wear Analysis Model. Firstly, we used \npedestrian traffic, defined as the number of people using the stairs daily, to represent and calculate the \nstair usage frequency. Given the known distribution of wear depth, and based on Archard's Law, we \nintegrated to find that the daily pedestrian traffic is 1,175. Next, by considering people's typical force \napplication habits when ascending and descending stairs, we defined a direction preference index and, \nbased on the wear depth distribution, determined that people prefer to descend the stairs. Finally, a \ncontinuity equation for simulating pedestrian flow was established based on Navier-Stokes Equations. \nThen we used the finite difference method to calculate the pedestrian density during stair usage and \n"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2501567.pdf",
+      "rel": "outstanding\\2501567.pdf",
+      "pages": 25,
+      "images": 60,
+      "tables": 4,
+      "fig_refs": 24,
+      "section_hits": {
+        "summary": 2,
+        "model": 73,
+        "models": 10,
+        "validation": 4,
+        "introduction": 2,
+        "assumptions": 4,
+        "notations": 2,
+        "discussion": 2,
+        "conclusion": 2,
+        "results": 8,
+        "solution": 1,
+        "references": 1
+      },
+      "headings": [
+        "1.3",
+        "Assumption 2.1. The initial material properties of each step of the staircase (such as hard-",
+        "Assumption 2.2. The surface of the staircase is assumed to be flat when first constructed,",
+        "Assumption 2.3. The human flow is assumed to have a dominant direction during a",
+        "Assumptions and Justifications",
+        "Assumptions are made as follows to simplify the problem.",
+        "Contents",
+        "Introduction",
+        "Notations",
+        "Our Work",
+        "Page 3 of 24",
+        "Patterns and Temporal Use in Ancient Staircases",
+        "QQ群：837344007",
+        "Step Chronicles: A Multiscale Model Linking Wear",
+        "Team # 2501567",
+        "accuracy of this estimate based on wear patterns.",
+        "certain period, rather than having large amounts of people moving in both directions",
+        "ness and density) are assumed to be uniform, with no significant quality differences.",
+        "pairs or renovations have occurred.",
+        "simultaneously.",
+        "torical data and the expected wear based on the materials’ origin, and assess if re-",
+        "with no initial wear or construction irregularities.",
+        "• Age and Reliability Estimate: Estimate the age of the staircase and evaluate the",
+        "• Wear Consistency and Material Origin: Verify if the wear patterns align with his-",
+        "公众号：云顶数模"
+      ],
+      "image_style": {
+        "small": 54,
+        "medium": 7,
+        "large": 2
+      },
+      "math_density": 0.0024240502027593393,
+      "sample": "Problem Chosen\nA\n2025\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2501567\nStep Chronicles: A Multiscale Model Linking Wear\nPatterns and Temporal Use in Ancient Staircases\nSummary\nStaircase wear is a complex phenomenon influenced by various factors such as mate-\nrial properties, frequency of use, and environmental conditions. However, understand-\ning this wear is crucial in archaeology, providing valuable insights into ancient societies,\ntheir daily activities, and technological advancements. To aid archaeological studies, we\ndeveloped models to simulate staircase wear, offering a more precise understanding of\nhow wear is produced.\nIn Task 1, we establish a model based on Archard’s Wear Law and Human Behavior\nAnalysis to address the usage frequency and volume of the wear of staircases. By ana-\nlyzing wear depth W(x, y) and fitting Ground Reaction Forces data, the model estimates\nthe quantity of the wear and the frequency of staircase usage fuse. Besides, validation\nthrough 3D scanning data further confirm the model’s accuracy.\nIn Task 2, we employ a probabilistic model based on and Gaussian Mixture Model\nand Bayesian Information Criterion to analyze the direction and usage pattern of stair-\ncases. The model evaluates the preference of the direction by comparing nup and ndown,\nwhich are statistically computable parameters in the model by Expectation-Maximization\nAlgorithm. The number of people using the stairs simultaneously, which is related to the\nnumber of mixture Gaussian distribution, can be accessed by minimizing Bayesian Infor-\nmation Criterion.\nIn Task 3, we develop a model combining Monte Carlo simulations and Smooth-\nness Detection to verify wear consistency and material origin. The model evaluates wear\ndepth W(x, y) and surface gradient S(x, y) to detect disruptions in natural wear patterns,\nindicating repairs or renovations. The model also simulate wear progression during us-\nage and predict the remaining service life before reaching the safety limit. Apart "
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2501909.pdf",
+      "rel": "outstanding\\2501909.pdf",
+      "pages": 25,
+      "images": 34,
+      "tables": 0,
+      "fig_refs": 33,
+      "section_hits": {
+        "summary": 2,
+        "models": 6,
+        "model": 67,
+        "results": 18,
+        "sensitivity": 7,
+        "introduction": 5,
+        "assumptions": 7,
+        "notations": 6,
+        "solution": 3,
+        "conclusion": 4,
+        "references": 2
+      },
+      "headings": [
+        "Assumptions and Notations",
+        "Contents",
+        "Introduction",
+        "QQ群：837344007",
+        "Stair Wear: Traces of History",
+        "公众号：云顶数模"
+      ],
+      "image_style": {
+        "small": 21,
+        "medium": 12,
+        "large": 1
+      },
+      "math_density": 0.0022637238256932655,
+      "sample": "Problem Chosen\nA\n2025\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2501909\nStair Wear: Traces of History\nSummary\nEven the hardest stone steps can wear down over time under the repeated footsteps of peo-\nple. Stairs record history in the unique way. To assist archaeologists in extracting more infor-\nmation from a set of worn stairs, we analyze measurable data and establish relevant models.\nFor task1:To analyze stair basic information, we established the Stair Wear Model, which\nis consisting of the Wear Volume Model (WVM) and the Wear Distribution Model (WDM). We\nrasterize the top view of the steps and combine it with wear data to create a wear measurement\nmatrix. Based on this matrix and Archard Wear Law, we develop the WVM. We introducing\nand analyze parameters such as the wear coefﬁcient, average human weight, material hardness,\nand stair area to calculate the stair’s age and usage frequency. Additionally, we established the\nWDM based on the Central Limit Theorem. It calculate the marginal distribution of the wear\nmeasurement matrix and ﬁt the wear distribution in the X and Y directions with a Gaussian\nMixture Algorithm. In the Y-direction, the number and location of normal distribution indicate\nwalking direction, while the X-direction distribution reﬂects the parallelism of movement.\nWe provided archaeologists with measurements and queries (Table 3) and detailed usage\ninstructions (Figure 7). All the methods we propose follow the non-destruction principle. As an\nexample, a set of ancient sandstone steps in Edinburgh is analyzed. The results demonstrate the\nsteps were built about a century ago, typically used by three people walking side by side. Both\ndirections were used, with an upward-to-downward ratio of 3:2 and a daily usage frequency of\n261. More detailed results are presented in Table 5, Table 6 and Figure 8.\nFor Task 2: We address further problems with the Stair Wear Model and information avail-\nable. To assess wear distribution consistency, we deﬁne a consist"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2504218.pdf",
+      "rel": "outstanding\\2504218.pdf",
+      "pages": 26,
+      "images": 17,
+      "tables": 0,
+      "fig_refs": 19,
+      "section_hits": {
+        "summary": 5,
+        "model": 56,
+        "models": 7,
+        "sensitivity": 6,
+        "results": 11,
+        "assumptions": 3,
+        "notations": 3,
+        "solution": 9,
+        "notation": 2,
+        "discussion": 2,
+        "conclusion": 1,
+        "references": 1
+      },
+      "headings": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "2.3",
+        "Assumptions and Justifications",
+        "Bayesian posterior",
+        "Bayesian prior",
+        "Contents",
+        "Data Collection and Preparation",
+        "Description",
+        "Figure 1: Worn stairs in famous ancient buildings",
+        "Figure 2: Overview of this work",
+        "Introduciton",
+        "Journey through Staircase Wear",
+        "Model Preparation",
+        "Notation",
+        "Notations",
+        "Our Work",
+        "Poisson process arrival rate",
+        "Problem Background",
+        "QQ群：837344007",
+        "Restatement of the Problem",
+        "Table 1: Important notations.",
+        "Where Footsteps Collide: A Spatiotemporal",
+        "area of application",
+        "average pressure",
+        "combined coefficient",
+        "environment constant",
+        "mean lateral distance between left and right footprints",
+        "p(Θ)",
+        "p(Θ|·)",
+        "parameter vector",
+        "probability of parallel usage of stairs",
+        "wear height",
+        "width of the single-foot peak",
+        "α(N)",
+        "公众号：云顶数模"
+      ],
+      "image_style": {
+        "small": 4,
+        "medium": 12,
+        "large": 1
+      },
+      "math_density": 0.002628699933142892,
+      "sample": "Problem Chosen\nA\n2025\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2504218\nWhere Footsteps Collide: A Spatiotemporal\nJourney through Staircase Wear\nSummary\nStones and other materials in historic building steps undergo continuous, long-\nterm wear, a process archaeologists examine to uncover valuable insights. To sup-\nport archaeological research and long-term maintenance, we propose a wear model\nfor steps and investigate how measurement data can invert key parameters within\nthat process.\nSeveral models are established: Model I: Hybrid Wear Model; Model II: Wear-\nparameter Inversion Model, etc.\nBefore building the models, we identified archaeologists’ data collection method:\nusing 3D scanners to create point cloud maps, which is cost-effective and non-destructive.\nWe also gathered data through calculations and set reasonable parameters.\nFor Model I, we introduced three submodels that form a hybrid wear framework.\nSub-model i, grounded in Archard’s theory and PDEs, provides a probabilistic equa-\ntion for archaeological contexts, laying the foundation to describe stair-wear dynam-\nics. Sub-model ii then incorporates a single-parallel hybrid approach, showing how\ndifferent single/parallel usage ratios influence final wear through foot traffic; by ex-\namining how those ratios relate to foot traffic, we determine the influence of stair usage\nfrequency on final wear. Finally, sub-model iii, based on human dynamics, extends\nsub-model ii to produce a 3D wear-depth distribution, applying Gaussian blurring\nand random offsets to generate realistic footprints.\nFor Model II, we devised a comprehensive inversion approach that uses mea-\nsurement data to estimate optimal wear parameters, taking the hybrid wear equation\nfrom Model I as the forward model. We incorporate stair-material and archaeologi-\ncal insights in a Bayesian framework by assigning prior distributions to multiple pa-\nrameters. The likelihood function is formed from the residual between measurement\nand simulation. After "
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\2511565.pdf",
+      "rel": "outstanding\\2511565.pdf",
+      "pages": 31,
+      "images": 35,
+      "tables": 1,
+      "fig_refs": 20,
+      "section_hits": {
+        "summary": 3,
+        "model": 62,
+        "sensitivity": 15,
+        "results": 12,
+        "introduction": 2,
+        "notations": 4,
+        "assumptions": 4,
+        "models": 8,
+        "references": 2,
+        "solution": 3,
+        "validation": 1
+      },
+      "headings": [
+        "Contents",
+        "Introduction",
+        "Preparation",
+        "QQ群：837344007",
+        "Staircase Wear Analysis - Walking Through History",
+        "公众号：云顶数模"
+      ],
+      "image_style": {
+        "small": 25,
+        "medium": 10,
+        "large": 0
+      },
+      "math_density": 0.004556989170449266,
+      "sample": "Problem Chosen\nA\n2025\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2511565\nStaircase Wear Analysis - Walking Through History\nSummary\nStair wear patterns in historic buildings can provide valuable archaeological evidence regard-\ning the building’s age, usage and traffic patterns throughout history. In this paper, we develop a\ncomprehensive mathematical framework to analyze wear patterns and provide archaeologists with\nquatitative tools for historical interpretation.\nFirst, we establish a non-destructive measurement methodology including physical, chemical\nand biological measurements. Physical measurements involve 3D scanning of stairs and monoc-\nular depth estimation. Chemical measurements include isotope analysis and mineral composition\ntesting. Biological measurements involve the study of microbial colonies. Then, we personally col-\nlected top-down photos of stairs from ancient buildings. Using depth map estimation methods,\nwe drew heatmaps and obtained wear data.\nFollowing data collection, we address the challenge of quantifying wear volume from discrete\npoint cloud data. We employ Delaunay triangulation to transform the theoretical volume integral\ninto a weighted summation of local triangular volumes, thus accurately calculating spatial wear\nvolume.\nSecond, we build a Daily Foot Traffic Model based on the Archard equation. We take Ar-\nchard Adhesive Wear Model and Abrasive Wear Model both into consideration. Besides, we\nuse Bayesian Inversion Framework to calculate the construction time to provide essential param-\neter.\nThird, we establish a Wear Distribution Model to determine movement patterns and simul-\ntaneous occupancy levels. The model analyzes wear patterns to deduce whether people moved in\nsingle file or side by side, and whether there were predominant directional preferences.\nFor age estimation, we employ multiple approaches: C14 dating method for wooden stair-\ncases, weathering degree analysis for stone staircases, and Bayesian inversion.We constructed a\nw"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2001334.pdf",
+      "rel": "outstanding\\A-2001334.pdf",
+      "pages": 31,
+      "images": 63,
+      "tables": 0,
+      "fig_refs": 34,
+      "section_hits": {
+        "summary": 5,
+        "model": 89,
+        "models": 2,
+        "validation": 5,
+        "introduction": 3,
+        "results": 31,
+        "sensitivity": 6,
+        "assumptions": 3,
+        "notations": 4,
+        "discussion": 2,
+        "conclusion": 2,
+        "references": 2,
+        "appendix": 4,
+        "solution": 3
+      },
+      "headings": [
+        "Contents",
+        "Forecasts for the Ecology and Fisheries Economy of Scottish",
+        "General Assumptions and Model Overview",
+        "Introduction",
+        "herring and mackerel"
+      ],
+      "image_style": {
+        "small": 2,
+        "medium": 27,
+        "large": 1
+      },
+      "math_density": 0.006022452638964684,
+      "sample": "Problem Chosen\nA\n2020\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2001334\nForecasts for the Ecology and Fisheries Economy of Scottish\nherring and mackerel\nAs the favorable food for Scotch, the herring and mackerel bring generous proﬁts to ﬁshing\ncompanies. Due to the hotter ocean, more ﬁsh move to the north to seek better habitats, laying a\nnegative impact on the ﬁshing industry. The aim of this report is to build a migratory prediction\nmodel to evaluate the inﬂuences on the income of ﬁshing companies. We are expected to provide\nsome strategies for ﬁshing companies who can adapt to the migration of ﬁsh under the constraints of\nvarious objective conditions and prevent themselves from going bankrupt as much as possible. Three\nmodels are established: Model I: Seawater Temperature Prediction Model; Model II: Fish Migration\nPrediction Model; Model III: Fishing Company Earnings Evaluation Model.\nFor Model I, global ocean temperature date monthly from 1960 to 2019 is ﬁrstly collected. Then,\nbased on the analysis of intrinsic trend of the data and the veriﬁcation of the stationarity, the validation\nof using ARIMA model to predict temperature is proved. Next, historical data is used to ﬁt the\nparameters of ARIMA, with introduction of k-fold cross validation to identify the ﬁnal prediction\nmodel as ARIMA(1,1,0). Finally, according to ARIMA(1,1,0), bootstrap method is used to simulate\n10000 possible prediction cases, which lays a great foundation to predict the migration of ﬁsh.\nFor Model II, ﬁrstly, according to the data of the migration speed and the ocean temperature, it is\ndetermined that the temperature gradient is the main factor aﬀecting the migration speed and direction.\nAnd the corresponding empirical equation is established to determine the impact of temperature on\nﬁsh migration. Then based on the 10000 temperature change samples generated by bootstrap method\nin Model I, migration situation of each sample is simulated to identify the most likely locations of the\nﬁsh. I"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2100454.pdf",
+      "rel": "outstanding\\A-2100454.pdf",
+      "pages": 25,
+      "images": 37,
+      "tables": 2,
+      "fig_refs": 46,
+      "section_hits": {
+        "summary": 2,
+        "model": 44,
+        "results": 10,
+        "sensitivity": 6,
+        "conclusion": 4,
+        "introduction": 2,
+        "assumptions": 3,
+        "appendix": 1,
+        "references": 1
+      },
+      "headings": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "Assumptions",
+        "Background",
+        "Biodiversity Based on Gause’s Model",
+        "Contents",
+        "Data Pre-processing",
+        "February 9, 2021",
+        "GAME: A Seer on Fungi Living Strategies and",
+        "Introduction",
+        "MCM/ICM",
+        "Our Work",
+        "Summary Sheet"
+      ],
+      "image_style": {
+        "small": 13,
+        "medium": 20,
+        "large": 2
+      },
+      "math_density": 0.008281048163867872,
+      "sample": "Problem Chosen\nA\n2021\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2100454\nGAME: A Seer on Fungi Living Strategies and\nBiodiversity Based on Gause’s Model\nSummary\nDecomposition of organic matters by fungi, an indispensable part of carbon cycle, can\nmake carbon reused in the environment. A recent article explores the impact of different\ntraits on its decomposition effeciency. In this paper, we focus on two main traits, hyphal\nextension rate and moisture tolerance, together with interactions among fungi and various\nenvironmental conditions, to simulate the breakdown of woody ﬁbers and comprehend the\nimportance of biodiversity.\nOur GAME model is made up of the initials of four task names. Before we start our ex-\nperiments, we build up a prediction model to simulate the cross action among different fungi\nand their effect on the decomposition process of woody ﬁbers. We adopt Gause’s Compet-\nitive Model to uncover the interactions among species and derive a differential system by\nconsidering the change of woody ﬁbers amount. The model describes growth, hyphal ex-\ntension, competition, and decomposition of fungi.\nFirstly, in order to simplify the model, we ﬁx temperature T = 22 ◦C, and set the trait\nparameters of three different fungi artiﬁcially. Experiment results shown that our model is\nof high reasonability since the predicted decomposition rate is nearly 30%, which approxi-\nmately equals to veriﬁed research results.\nSecondly, we are to choose ﬁve representitive fungi as our experiment objects, which are\nP.Flavidoalba.S., P.Hartigii.N., M.Tremellosus.N., P.Sangioneus.S., and H.Setigerum.N.,\nrespectively. After describing their typical characteristics, we introduce the Moisture/Tem-\nperature Tolerance Factor for calibrating. Based on the model proposed, we ﬁnd that the\nspecies P.Flavidoalba.S. is always dominant at Columbus (temperate) in short-term (7 days)\nand long-term (122 days), due to its general advantage on moisture. Also, rapid ﬂuctuation\nexperiment indicates thos"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2101951.pdf",
+      "rel": "outstanding\\A-2101951.pdf",
+      "pages": 25,
+      "images": 59,
+      "tables": 1,
+      "fig_refs": 30,
+      "section_hits": {
+        "summary": 1,
+        "model": 77,
+        "results": 15,
+        "introduction": 2,
+        "notations": 4,
+        "assumptions": 3,
+        "solution": 10,
+        "references": 2,
+        "appendix": 4,
+        "sensitivity": 1,
+        "conclusion": 11,
+        "models": 1,
+        "discussion": 1
+      },
+      "headings": [
+        "1 Introduction",
+        "1.1 Problem Background",
+        "1.2 Restatement of the Problems",
+        "2 Overview",
+        "3 Model Preparation",
+        "3.1 Notations",
+        "3.2 Basic Assumptions",
+        "3.3 Glossary",
+        "4 Solution to problem 1: Model Construction",
+        "4.1 The Influencing Factors of the Decomposition Process",
+        "A Simulation Based Modelling of Multiple",
+        "Contents",
+        "Fungal Ecosystems",
+        "公众号",
+        "校苑数模"
+      ],
+      "image_style": {
+        "small": 64,
+        "medium": 9,
+        "large": 0
+      },
+      "math_density": 0.003153336433387584,
+      "sample": "Problem Chosen \nA\n2021 \nMCM/ICM \nSummary Sheet \nTeam Control Number \n2101951\nA Simulation Based Modelling of Multiple \nFungal Ecosystems \nThis work has established a Multiple Fungal Model to analyze the breakdown of ground litter and woody \nfibers through fungal activity in different ecosystems, and uses this model to investigate the importance of \nbiodiversity in different environments. \nFor Problem 1, we first distinguish the factors that directly impact the decomposition rate (𝐷𝑅), i.e.  \ntemperature, moisture and the biomass of the fungi from those indirect ones, e.g., environmental capability \nand competition factor. Then we establish an improved logistic competition model to obtain a set of \nordinary differential equations (ODEs) of decomposition rate and fungal biomass growth, each of which \nrepresents the direct and indirect impacts on the ecosystem of fungal communities. \nFor Problem 2, we apply Lustenhouwer et al.’s data into our model to quantify the factors that defined in \nthe model and to determine the effect of hyphal extension rate (𝐸𝑅) and moisture tolerance (𝑀𝑇) on the \nsimulation results. When we analyze the factors’ impact on the result of the experiment, hypothesis testing \nmethod is used to determine the explicit expression of the differential equations and to obtain the values of \neach coefficients. To simulate the dynamics of the growth of fungi and the mass loss of organic compounds,\nwe used numerical integrations as our ODEs are non-integrable. Our simulated 𝐷𝑅 − 𝐸𝑅 curve is in a good\nagreement with Figure 1C of Lustenhouwer et al’s work. We find that 𝑀𝑇 is approximately inversely\nproportional to 𝐸𝑅, where the slope is -0.154 and the intercept is 2.96. Applying this correlation into our \nmodel, we could conclude that when multiple fungal species were competing in one system, the one with\nmedium extension rate are likely to outcompete the others in the long-term.\nFor Problem 3, we use the expression of the Multiple Fungal Ecosystem Model tha"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2103782.pdf",
+      "rel": "outstanding\\A-2103782.pdf",
+      "pages": 25,
+      "images": 56,
+      "tables": 0,
+      "fig_refs": 52,
+      "section_hits": {
+        "summary": 3,
+        "model": 60,
+        "sensitivity": 6,
+        "introduction": 4,
+        "assumptions": 4,
+        "notations": 4,
+        "results": 11,
+        "solution": 5,
+        "discussion": 7,
+        "models": 11,
+        "references": 3,
+        "appendix": 3,
+        "conclusion": 2
+      },
+      "headings": [
+        "1 Introduction",
+        "2 Assumptions and Justifications",
+        "3 Notations",
+        "4 Wood Decomposition Model of Multiple Fungi in a Patch of land",
+        "Content",
+        "Tiny Fungi: The Defender of Carbon Cycle Balance",
+        "公众号",
+        "校苑数模"
+      ],
+      "image_style": {
+        "small": 23,
+        "medium": 26,
+        "large": 7
+      },
+      "math_density": 0.0036327216554346534,
+      "sample": "Problem Chosen \nA\n2021 \nMCM/ICM \nSummary Sheet \nTeam Control Number \n2103782\nTiny Fungi: The Defender of Carbon Cycle Balance \nSummary \nFungi, as almost the only lignin-decomposing species on Earth, play an important role in the \nglobal carbon cycle. In this paper, a mathematical model is established to analyze various factors \naffecting the decomposition rate of woody fibers by fungi, so as to deepen the understanding of \nthe relationship between fungal communities and ecosystem functions. \nFirstly，we establish a Logistic Growth Model based on the interactions between different \nspecies of fungi. Considering the growth model and the moisture tolerance of the fungus, the \ndecomposition rate model of fungi on woody fibers is constructed. Then, we use the collected \nfungal dataset and obtain the unknown parameters of the model. Next, we choose a combination \nof fungi to test the model. The relative error between the calculated decomposition rate and the \nactual value is as low as 5.5%. Meanwhile, the interactions between different species of fungi in \na fixed patch of land are analyzed. \nSecondly, considering the rapid environmental fluctuations, we analyze the effect of \nhumidity on fungal activity in detail. We select a typical climate to study the short-term and \nlong-term trends of fungal growth and decomposition rate, as well as the interaction between \nfungi. We find that the increase of environmental humidity can promote the growth of fungi with \ndifferent promotion degree. Meanwhile, the relative competitive advantages of various fungi are \ndifferent when atmospheric trends change. This will lead to the succession of fungal \ncommunities in different directions. Moreover, we also find that fungi with stronger moisture \ntolerance are more likely to occupy a dominant position in the arid environment. \nThirdly, we employ K-means algorithm to cluster the collected dataset of fungi and analyze \nthe advantages and disadvantages of fungal species and combinations of s"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2110178.pdf",
+      "rel": "outstanding\\A-2110178.pdf",
+      "pages": 24,
+      "images": 14,
+      "tables": 17,
+      "fig_refs": 20,
+      "section_hits": {
+        "summary": 4,
+        "models": 1,
+        "model": 55,
+        "sensitivity": 9,
+        "introduction": 2,
+        "assumptions": 4,
+        "notations": 4,
+        "results": 8,
+        "references": 2
+      },
+      "headings": [
+        "Contents",
+        "Fungi that Change the Earth",
+        "Introduction",
+        "公众号",
+        "校苑数模"
+      ],
+      "image_style": {
+        "small": 4,
+        "medium": 5,
+        "large": 5
+      },
+      "math_density": 0.0015050663501081105,
+      "sample": "Problem Chosen\nA\n2021\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2110178\nFungi that Change the Earth\nSummary\nThe decomposition of organics by fungi plays a vital role in the natural carbon cycle. We are\nexpected to determine the interactions among diﬀerent fungi and the impact of environmental\nﬂuctuations. In this paper, white-rot fungi, brown-rot fungi and Aspergillus niger are the main\nresearch objects for analysis. Three models are established.\nModel I: Multi-Fungi Decomposition Model. First, based on the enzymatic reaction kinetic\nequation and Michaelis-Menten equation, we establish a single fungus decomposition model. Then,\nby introducing competitiveness index, the interactions of multiple fungi are described, and a multi-\nfungi decomposition model is established. It is found that the combination of white-rot fungi and\nAspergillus niger (WR & AN) would promote the decomposition of cellulose by Aspergillus niger;\nthe combination of white-rot fungi and brown-rot fungi would inhibit the decomposition of lignin\nby white-rot fungi.\nModel II: Multi-Fungi Interactions Model. We establish Logistic growth retardation model\nand Lotka-Volterra population competition model to consider the impact of short-term and long-\nterm interactions on fungal growth, respectively. In the short term (7 days), the growth of the\nthree fungi is linear due to the suﬃcient resource; in the long term (500 days), the combination of\nwhite-rot fungi and Aspergillus niger, as well as the combination of brown-rot fungi and Aspergillus\nniger (BR & AN) can coexist, showing a promoting eﬀect. However, the combination of white-rot\nfungi and brown-rot fungi has been eliminated from the population and cannot coexist.\nModel III: Multi-Fungi-Interactions-Environment Model. First, we establish the relation-\nship model of the growth rate with the environment, and determine the inﬂuence of two environ-\nmental variables on the fungal decomposition rate. Then, through sensitivity analysis of rapid\nenvironmental"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2120808.pdf",
+      "rel": "outstanding\\A-2120808.pdf",
+      "pages": 25,
+      "images": 52,
+      "tables": 15,
+      "fig_refs": 51,
+      "section_hits": {
+        "summary": 4,
+        "models": 11,
+        "model": 52,
+        "introduction": 3,
+        "assumptions": 4,
+        "notations": 4,
+        "results": 9,
+        "sensitivity": 7,
+        "conclusion": 5,
+        "references": 2,
+        "appendix": 4
+      },
+      "headings": [
+        "1 Introduction",
+        "1 Introduction ..................................................................................................... 3",
+        "2 Assumptions and Justifications",
+        "2 Assumptions and Justifications .................................................................. 4",
+        "3 Notations",
+        "3 Notations .......................................................................................................... 5",
+        "4 Data Description",
+        "4 Data Description ............................................................................................ 5",
+        "5 Fungal Decomposition Model ..................................................................... 9",
+        "6 Fungal Propagation Model ......................................................................... 11",
+        "7 Fungal Population Competition Model .................................................. 14",
+        "8 Model Evaluation and Possible Improvements ..................................... 20",
+        "9 Conclusion ..................................................................................................... 20",
+        "Appendices ....................................................................................................... 25",
+        "Cleaner of the Earth: Fungi",
+        "Contents",
+        "References ......................................................................................................... 24",
+        "公众号",
+        "校苑数模"
+      ],
+      "image_style": {
+        "small": 25,
+        "medium": 26,
+        "large": 0
+      },
+      "math_density": 0.001901317874252055,
+      "sample": "Cleaner of the Earth: Fungi \nSummary \nFungi decompose organics into inorganics through their respiration, playing a \ncrucial role in the ecosystem. In this paper, in order to discuss their decomposition \nability, multiple species interaction, and significance of biodiversity, we establish \nthree models: Fungal Decomposition Model, Fungai Propagation Model and Fungal \nPopulation Competition Model. \nTo begin with, we collect the original experimental data in literature. After clean-\ning off redundant values, we finally obtain 34 fungal samples. Then we examine their \ncredibility through conclusions of reference paper offered in requirement. Further, we \nsort these 34 samples into 3 categories through hierarchical clustering method in light \nof their moisture tolerance and hyphal extension rate. It covers Sprinter, Middle-dis-\ntance runner, and Long-distance runner. Moreover, we put forward 4 potential mod-\nels for fungal decomposition. Then, applying multiple linear regression analysis, we \nobtain Fungal Decomposition Model for multi species after comparison. \nThen, we establish population growth model for single species based on the dif-\nferential equation. Further, we obtain the Fungal Propagation Model by introducing \na relative environmental impact factor. Besides, we build Fungal Population Compe-\ntition model. Likewise, we quantify the interaction between fungi and environment \nby the introduction of relative environmental impact factor. Based on these models, \nwe conduct simulations and find that multiple species community’s population scale \nis 1.5 times that of single species and its decomposition rate will be 1.45 times on the \ncondition of optimal environment and same initial proportions. \nNext, we clarified the concrete form of environmental fluctuations. We assume \nthat moisture in environment and temperature change periodically like trigonometric \nfunctions. Further, combining the models we established before, we analyze the sen-\nsitivity of fungal popul"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2122025.pdf",
+      "rel": "outstanding\\A-2122025.pdf",
+      "pages": 25,
+      "images": 55,
+      "tables": 10,
+      "fig_refs": 34,
+      "section_hits": {
+        "summary": 1,
+        "models": 20,
+        "model": 91,
+        "results": 26,
+        "sensitivity": 11,
+        "introduction": 2,
+        "assumptions": 5,
+        "notations": 6,
+        "solution": 8,
+        "references": 2,
+        "letter": 1,
+        "appendix": 2,
+        "conclusion": 1,
+        "abstract": 1
+      },
+      "headings": [
+        "Assumptions and Notations",
+        "Contents",
+        "Descent and Cellular Automata",
+        "Fungal Decomposition Modeling via Stochastic Gradient",
+        "Introduction",
+        "公众号",
+        "校苑数模"
+      ],
+      "image_style": {
+        "small": 8,
+        "medium": 0,
+        "large": 0
+      },
+      "math_density": 0.0012752778283840408,
+      "sample": "Problem Chosen\nA\n2021\nMCM\nSummary Sheet\nTeam Control Number\n2122025\nFungal Decomposition Modeling via Stochastic Gradient\nDescent and Cellular Automata\nFungus plays an important role as decomposers in the ecosystem. However, the efﬁciency of\nfungal growth and decomposition is inﬂuenced by the environment and the interaction among\ndifferent species of fungi. Therefore, the study of factors affecting fungal activity is important.\nIn this paper, we establish relation models among the factors that affect the extension rate\nand decomposition rate of the fungi. Based on the relation models, we introduce the cellular\nautomata model to simulate the growth and decomposition of multiple species of fungi.\nSpeciﬁcally, we ﬁrst establish the extension rate model. The extension rate is modeled as\nArrhenius relation to the temperature and the humidity. Based on the extension rate model, we\nestablish the decomposition rate model. The decomposition rate is determined by extension\nrate and moisture trade-off, where the relation is nonlinear. To estimate the parameters in the\nnonlinear decomposition rate model, we establish an optimization model that ﬁts the collected\ndecomposition rate data. The stochastic gradient descent (SGD) algorithm is utilized to solve\nthe nonlinear optimization problem. The stable convergence behavior shows the effectiveness\nof the algorithm.\nBased on the decomposition rate model, we establish the cellular automata model to simu-\nlate the growth and decomposition of the fungi. The extension rate and decomposition rate are\nutilized to determine the rules of cellular automata. The simulation results show that under the\nsame environment, the number of different species of fungi increased signiﬁcantly at the ﬁrst\n5−10 days. Then, after about 10 days of extension, the number of fungi decreases to a certain\nextent and then stabilized after about 40 days. The decomposition rate after 122 days is 0.68.\nNext, we describe the interactions among different species of fun"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2209812.pdf",
+      "rel": "outstanding\\A-2209812.pdf",
+      "pages": 24,
+      "images": 888,
+      "tables": 14,
+      "fig_refs": 48,
+      "section_hits": {
+        "summary": 4,
+        "models": 7,
+        "sensitivity": 21,
+        "model": 55,
+        "solution": 9,
+        "results": 8,
+        "introduction": 2,
+        "assumptions": 7,
+        "notations": 4,
+        "references": 2,
+        "memo": 2
+      },
+      "headings": [
+        "1.3",
+        "2.1",
+        "Assumptions and Explanations",
+        "Contents",
+        "Introduction",
+        "Our Work",
+        "Power Curve Make Cyclists Faster and Faster",
+        "Preparation of the Models",
+        "Sensitivity{",
+        "Sensitvity{",
+        "www.madio.net",
+        "数学中国"
+      ],
+      "image_style": {
+        "small": 5446,
+        "medium": 27,
+        "large": 2
+      },
+      "math_density": 0.002116138669322213,
+      "sample": "Problem Chosen\nA\n2022\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2209812\nPower Curve Make Cyclists Faster and Faster\nSummary\nEvery ride has a pace—whether or not you’re in control of that pace all comes down to essential\nplanning based on his or her power profile. In this paper, we develop models to guide cycling races\nbased on power curves (PC), measure the sensitivity to weather and power distribution’s deviation,\nand optimal power use for a team time trial.\nIn Task 1 & 2: First, we choose a three-parameter hyperbolic model based on exercise physi-\nology that is more accurate in the critical power (CP) model. Based on it, we utilize data to define\nthe PC of male and female time trial specialists, male and female sprinters (Figure 7). Among them,\nthe sprinters have higher explosive power, but the time trial specialists (TTS) have more long-term\nendurance, and female players have less explosive power and endurance than male players.\nAfter that, we found out the fatigue and recovery (FR) model, forming optimal pacing control.\nThen we obtain the necessary condition based on the Pontryagin’s Minimum Principle (PMP)\nand the numerical solution of Behrman equation based on dynamic programming (DP) and\nBehrman’s principle. We apply the PC to the time trial course of Tokyo Olympic, UCI World\nChampionship and own design, which is located at Italy’s San Felice Circeo (Figure 12), and the\npower distribution of cyclists are shown in Figure 10, 11, and 13. We found this result to be\nconsistent with the characteristics of the cyclists above, which including the duration of man time\ntrial specialist in Tokyo Olympic is 1h:41m:29.4s (3641.49 s), and the woman is 0h:33m:4.51s\n(1984.51 s).\nIn Task 3 & 4: in this section, we measure the sensitivity of our model to weather and power\ndistribution’s deviation.\nFor wind, the sensitivity to wind effect is up to corresponding course. The closer the course is\nto a bar or strip, the more regular the wind direction and velocity is to the cyclis"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2424371.pdf",
+      "rel": "outstanding\\A-2424371.pdf",
+      "pages": 25,
+      "images": 29,
+      "tables": 0,
+      "fig_refs": 29,
+      "section_hits": {
+        "summary": 2,
+        "models": 5,
+        "model": 57,
+        "solution": 8,
+        "introduction": 3,
+        "assumptions": 3,
+        "notations": 2,
+        "results": 15,
+        "sensitivity": 3,
+        "conclusion": 5,
+        "references": 2,
+        "notation": 1
+      },
+      "headings": [
+        "Assumptions and Justifications",
+        "Contents",
+        "Introduction",
+        "Lampreys in the Ecosystem",
+        "Magic Sex Ratio : Exploring the Important Role of",
+        "Model I : Population Growth Model Induced by Lam-",
+        "Notations",
+        "preys Sex Ratio",
+        "公众号：数学建模BOOM"
+      ],
+      "image_style": {
+        "small": 12,
+        "medium": 15,
+        "large": 2
+      },
+      "math_density": 0.0017293472211179137,
+      "sample": "Problem Chosen\nA\n2024\nMCM/ICM\nSummary Sheet\nTeam Control Number\n2424371\nMagic Sex Ratio : Exploring the Important Role of\nLampreys in the Ecosystem\nSummary\nAs one of the oldest vertebrates, the sea lampreys has unique mechanisms of gender\ndifferentiation.In order to examine the advantages and disadvantages of the lampreys’\nability to change its sex ratio according to resource availability, we develop two main\nmodels, the Population Growth Model Induced by Sex Ratio and the 3-R Index Model of\nEcosystem Stability.\nFirstly, we develop a Population Growth Model based on differential equations,\nwhich mainly considers the factors of sex ratio, migration and inter-organism interac-\ntions of the lampreys. In terms of the induced factors and effects of sex ratio, we use the\nLeast Squares Method to fit a functional relationship between the larval growth rate and\nfood density of the lampreys, then establish a sex logistic function to determine the effect\nof larval growth rate on the sex differentiation of the lampreys. Lastly, we consider the\neffect of sex ratio on the growth rate. In terms of interactions among creatures, we mainly\nconsider the parasitic relationship between lampreys and host-fish in the ocean and the\npredation relationship between lampreys and plankton in the river, and integrate the im-\nproved Logistic Model and the Lotka-Volterra Equations to establish differential equa-\ntions for biomass of different species over time. Finally, Finite Volume Method (FVM) is\nused to solve the numerical solution of the PDE.\nFor problem 1, given the same initial conditions and using a population growth model,\nconsider the trends in biomass of different species when the lampreys can change the sex\nratio and when it cannot change the sex ratio, respectively, and then analyse the impact\nof the lampreys on the larger ecosystem. (result:Figure 8-11)\nFor problem 2, we adjust the model parameters to simulate the impacts of harsh en-\nvironments on the ecosystems of lampreys, such as"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\outstanding\\A-2500836.pdf",
+      "rel": "outstanding\\A-2500836.pdf",
+      "pages": 25,
+      "images": 72,
+      "tables": 6,
+      "fig_refs": 32,
+      "section_hits": {
+        "summary": 3,
+        "model": 61,
+        "results": 11,
+        "sensitivity": 11,
+        "introduction": 2,
+        "assumptions": 5,
+        "notations": 4,
+        "solution": 6,
+        "conclusion": 2,
+        "references": 2,
+        "appendix": 2,
+        "abstract": 1
+      },
+      "headings": [
+        "1 Introduction",
+        "2 Assumptions and Justifications",
+        "Contents",
+        "QQ群：837344007",
+        "Stairs: The Glory of the Ordinary",
+        "公众号：云顶数模"
+      ],
+      "image_style": {
+        "small": 54,
+        "medium": 18,
+        "large": 1
+      },
+      "math_density": 0.0008095527221210282,
+      "sample": "Stairs: The Glory of the Ordinary \n Summary \nStairs have long been a fundamental architectural element widely utilized in building design to \nfacilitate transportation connections. They embody the characteristics of both a \"platform\" and a \n\"stair,\" serving as pathways for individuals to ascend and descend, enhancing the architectural aesthetic, \nand enriching the spatial hierarchy of structures. This article examines the construction duration, usage, \nand human behavior patterns associated with steps by analyzing their degree of wear. \nIn the Model Preparation phase, the research subjects were identified as the stairs inside the \nLeaning Tower of Pisa, which also determined the material and environmental conditions of the stairs. \nThen, Computer Vision techniques were used to obtain the required wear depth data of the stairs, and \nthe focus was further narrowed to the bottom step of the Leaning Tower of Pisa. Finally, based on \npractical experience and literature, we concluded that the wear depth distribution on the stair surface \nfollows a two-dimensional normal distribution. The parameters were then fitted using a Particle \nSwarm Optimization algorithm(PSO). \nTo address the first three issues, we developed a Step Wear Analysis Model. Firstly, we used \npedestrian traffic, defined as the number of people using the stairs daily, to represent and calculate the \nstair usage frequency. Given the known distribution of wear depth, and based on Archard's Law, we \nintegrated to find that the daily pedestrian traffic is 1,175. Next, by considering people's typical force \napplication habits when ascending and descending stairs, we defined a direction preference index and, \nbased on the wear depth distribution, determined that people prefer to descend the stairs. Finally, a \ncontinuity equation for simulating pedestrian flow was established based on Navier-Stokes Equations. \nThen we used the finite difference method to calculate the pedestrian density during stair usage and \n"
+    },
+    {
+      "path": "D:\\jingsai\\shumo\\MCM\\advice\\正确写作美国大学生数学建模竞赛论文--参考书.pdf",
+      "rel": "正确写作美国大学生数学建模竞赛论文--参考书.pdf",
+      "pages": 220,
+      "images": 220,
+      "tables": 0,
+      "fig_refs": 0,
+      "section_hits": {},
+      "headings": [],
+      "image_style": {
+        "small": 0,
+        "medium": 0,
+        "large": 220
+      },
+      "math_density": 0.0,
+      "sample": "\n"
+    }
+  ],
+  "parser": "pymupdf"
+}

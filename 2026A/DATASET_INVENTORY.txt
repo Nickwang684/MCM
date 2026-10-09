@@ -1,0 +1,212 @@
+================================================================================
+MCM 2026A - BATTERY DATASET INVENTORY & VALIDATION MAPPING
+================================================================================
+Analysis Date: $(date)
+Total Data Files: ~700+
+Directory: D:/jingsai/shumo/MCM/2026A/dataset
+
+================================================================================
+1. DATASET CATEGORIES & ORGANIZATION
+================================================================================
+
+A. OPEN CIRCUIT VOLTAGE (OCV) VALIDATION
+─────────────────────────────────────────────────────────────────────────────
+  Location: battery data/ (Chinese names)
+  
+  ├─ 低电流开路电压 (Low Current OCV)
+  │  ├─ sample1/SP1_Initial capacity_10_16_2015/
+  │  │  └─ 10_16_2015_Initial capacity_SP20-1.xlsx (3.8M)
+  │  └─ sample2/SP3_Initial capacity_10_16_2015/
+  │     └─ 10_16_2015_Initial capacity_SP20-3.xls (4.0M)
+  │
+  └─ 增量电流开路电压 (Incremental Current OCV)
+     ├─ sample1/SP1_Initial capacity_10_16_2015/
+     │  └─ 10_16_2015_Initial capacity_SP20-1.xlsx (3.8M)
+     └─ sample2/SP3_Initial capacity_10_16_2015/
+        └─ 10_16_2015_Initial capacity_SP20-3.xls (4.0M)
+
+  VALIDATION USE: OCV characterization at different current protocols
+  FILE TYPES: XLS/XLSX (native spreadsheet format)
+  DATA CONTENT: Initial capacity tests, OCV curves vs. SOC
+  SAMPLE COUNT: 2 samples × 2 current profiles = 4 files
+  TOTAL SIZE: ~15.6 MB
+
+─────────────────────────────────────────────────────────────────────────────
+
+
+B. EQUIVALENT CIRCUIT MODEL (ECM) / THERMAL VALIDATION
+─────────────────────────────────────────────────────────────────────────────
+  Location: LG 18650HG2 Li-ion Battery Data.../ (McMaster University Dataset)
+  
+  Prepared Dataset: LG_HG2_Prepared_Dataset_McMasterUniversity_Jan_2020/
+    (Pre-processed data ready for modeling)
+  
+  Original Dataset: LG_HG2_Original_Dataset_McMasterUniversity_Jan_2020/
+    
+    Temperature-Stratified Testing:
+    ├─ 0degC/       (Cold condition)
+    ├─ -10degC/     (Very cold)
+    ├─ -20degC/     (Extreme cold)
+    ├─ 10degC/      (Cool)
+    ├─ 25degC/      (Room temperature - BASELINE)
+    └─ 40degC/      (Warm/High temperature)
+    
+  FILE TYPES: MAT (MATLAB binary) + CSV (text format)
+    
+  FILE PATTERNS BY TEST TYPE:
+    ├─ Charge*.mat/csv      → Charging profiles (capacity fade)
+    ├─ Dis_0p5C*.mat/csv    → Low discharge rate (0.5C)
+    ├─ Dis_2C*.mat/csv      → High discharge rate (2C)
+    ├─ C20DisCh*.mat/csv    → C/20 discharge (capacity reference)
+    ├─ HPPC*.mat/csv        → Hybrid Pulse Power Characterization
+    ├─ UDDS*.mat/csv        → Urban Dynamometer Driving Schedule
+    ├─ HWFET*.mat/csv       → Highway Federal Emission Test
+    ├─ LA92*.mat/csv        → LA92 driving cycle
+    ├─ US06*.mat/csv        → US06 aggressive driving cycle
+    ├─ Mixed*.mat/csv       → Mixed driving profiles
+    └─ PausCycl*.mat/csv    → Cycling with pause periods
+  
+  SAMPLE IDENTIFICATION: SP (samples) numbered 549-590
+    Each battery cell tested at multiple temperatures
+  
+  VALIDATION USE:
+    - ECM parameter extraction (voltage response, current profiles)
+    - Thermal behavior validation (temperature effects on capacity)
+    - Capacity fade aging validation
+    - Dynamic power profiles (HPPC for SOC estimation)
+    - Real-world driving cycles (UDDS, HWFET, LA92, US06)
+  
+  COVERAGE:
+    - Temperature range: -20°C to +40°C (7 conditions)
+    - Multiple samples: ~10+ different battery cells
+    - Diverse load profiles: static, dynamic, cyclic, pause
+    - Data volumes: CSV files 4KB-20MB range
+  
+  TOTAL FILES: ~400+ (MAT + CSV pairs for each test)
+  TOTAL SIZE: ~1.2 GB
+
+─────────────────────────────────────────────────────────────────────────────
+
+
+C. THERMAL DYNAMICS VALIDATION (Extended Coverage)
+─────────────────────────────────────────────────────────────────────────────
+  Location: wykht8y7tg-1/Panasonic 18650PF Data/
+  
+  Cell Type: Panasonic 18650PF (Different chemistry than LG)
+  
+  Temperature Conditions:
+    ├─ -20degC Trise (temperature rise analysis)
+    ├─ -20degC Trise with pause
+    ├─ -10degC/
+    ├─ 0degC/
+    ├─ 10degC Trise
+    ├─ 10degC Trise with pause
+    └─ 25degC/ (Room temperature baseline)
+  
+  TEST TYPES:
+    ├─ 5 pulse test          → Impedance characterization
+    ├─ Charges and Pauses    → Thermal effects during charging
+    ├─ Drive cycles          → Dynamic thermal response
+    ├─ EIS (Electrochemical   → Frequency response/impedance
+    │  Impedance Spectroscopy)
+    └─ 1C discharge tests    → Discharge capacity vs. temperature
+  
+  VALIDATION USE:
+    - Temperature rise (Trise) calculations for thermal models
+    - Impedance vs. temperature relationships
+    - Thermal effect validation for ECM parameters
+    - Alternative cell chemistry comparison
+    - EIS data for impedance modeling
+  
+  FILE TYPES: Primarily MAT and CSV
+  TOTAL FILES: ~200+ files
+  TOTAL SIZE: ~800+ MB
+
+─────────────────────────────────────────────────────────────────────────────
+
+
+D. POWER CONSUMPTION & DEVICE LEVEL VALIDATION
+─────────────────────────────────────────────────────────────────────────────
+  Location: Root dataset directory
+  
+  ├─ 3Ws.pdf (503K)
+  │  └─ Likely: "Watts-When-Where" reference paper
+  │     Use: Device power consumption benchmarks
+  │
+  └─ AndroWatts_Unpacking_the_Power_Consumption_of_Mobile_Devices_Components.pdf (511K)
+     └─ Use: Mobile device power breakdown, component-level power validation
+        Topics: CPU, GPU, display, radio, sensor power models
+  
+  VALIDATION USE:
+    - Cross-validation against real device power data
+    - Component-level power model calibration
+    - Mobile-specific use case validation
+  
+  FILE TYPES: PDF (reference documents)
+  TOTAL SIZE: ~1 MB
+
+─────────────────────────────────────────────────────────────────────────────
+
+
+E. AGING & DEGRADATION DATASETS
+─────────────────────────────────────────────────────────────────────────────
+  Distributed across temperature conditions in:
+    - LG 18650HG2 datasets (capacity fade via "Charge" test sequences)
+    - Panasonic 18650PF datasets (multiple test iterations)
+  
+  Key Files for Aging:
+    - Charge1.csv through Charge16.csv
+      (Sequential charging revealing capacity loss over time)
+    - Multiple discharge tests at same condition
+      (Comparison of performance degradation)
+  
+  VALIDATION USE:
+    - Battery aging models (capacity fade)
+    - Degradation rate estimation
+    - Cycle-life prediction validation
+    - Environmental (temperature) impact on aging
+  
+  OBSERVATION:
+    Dataset spans from 2015-2023 collection dates
+    Implies multi-year degradation studies
+  
+  TOTAL DATA: Embedded in ECM/Thermal datasets
+
+─────────────────────────────────────────────────────────────────────────────
+
+
+F. ML/DEEP LEARNING PROJECT FILES (Reference Implementation)
+─────────────────────────────────────────────────────────────────────────────
+  Location: LG-18650HG2-SOC-Estimation/ (Git repository)
+  
+  Purpose: Complete SOC estimation pipeline with neural networks
+  
+  Key Components:
+    ├─ FNN_xEV_Li_ion_SOC_EstimatorScript_March_2020.mlx (1.2M)
+    │  └─ MATLAB/Simulink example with pre-trained FNN
+    │
+    ├─ src/SOCEst/
+    │  ├─ components/    → Modular pipeline components
+    │  ├─ config/        → Configuration management
+    │  ├─ constants/     → Shared constants
+    │  ├─ entity/        → Data entity definitions
+    │  ├─ pipeline/      → Training/evaluation pipelines
+    │  └─ utils/         → Utility functions
+    │
+    ├─ config/          → Experiment configurations
+    ├─ artifacts/       → Model outputs and evaluations
+    ├─ mlruns/          → MLflow tracking (2+ experiments)
+    └─ templates/       → UI templates
+  
+  VALIDATION USE:
+    - Benchmarking proprietary models against published approach
+    - Deep learning validation (SOC estimation accuracy)
+    - Pipeline structure reference
+  
+  TOTAL SIZE: ~500+ MB (includes Python environment)
+
+─────────────────────────────────────────────────────────────────────────────
+
+
+================================================================================
+2. VALIDATI
